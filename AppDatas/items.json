@@ -1,0 +1,1099 @@
+{
+    "指令/技术性物品": [
+        {
+            "name": "空气",
+            "id": "minecraft:air",
+            "detail": "<div class='item-name'>空气</div><div class='item-id'>ID：minecraft:air</div><div class='badge'>指令/技术性物品</div><div class='section-title'>📦 物品信息</div><div class='info-line'>• <b>类型：</b>技术性方块/物品</div><div class='info-line'>• <b>最大堆叠：</b>64</div><div class='info-line'>• <b>加入版本：</b>Java版pre-Classic</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:air</code></div><div class='info-line'>• <b>特殊说明：</b>空气不能通过正常游戏获得，只能通过指令或命令方块获取。在1.7.2的13w38b版本中，空气曾被允许放入物品栏。常用于/fill指令清除方块：<code>/fill x1 y1 z1 x2 y2 z2 air</code></div><div class='section-title'>📜 用途</div><div class='info-line'>• 代表未被占用的空间</div><div class='info-line'>• 玩家和生物穿过时不会窒息</div><div class='info-line'>• 可用于清除指定区域的方块</div>"
+        },
+        {
+            "name": "命令方块",
+            "id": "minecraft:command_block",
+            "detail": "<div class='item-name'>命令方块</div><div class='item-id'>ID：minecraft:command_block</div><div class='badge'>指令/技术性物品</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>类型：</b>技术性方块</div><div class='info-line'>• <b>爆炸抗性：</b>3,600,000（不可破坏）</div><div class='info-line'>• <b>硬度：</b>-1（不可破坏）</div><div class='info-line'>• <b>合适工具：</b>无法破坏</div><div class='info-line'>• <b>加入版本：</b>Java版1.4.2</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:command_block</code></div><div class='info-line'>• <b>特殊说明：</b>命令方块只能通过指令获取，无法在生存模式获得。需要管理员权限才能使用。</div><div class='section-title'>📜 用途</div><div class='info-line'>• 执行预设的命令</div><div class='info-line'>• 制作自定义地图和迷你游戏</div><div class='info-line'>• 实现服务器自动化管理</div>"
+        },
+        {
+            "name": "连锁命令方块",
+            "id": "minecraft:chain_command_block",
+            "detail": "<div class='item-name'>连锁命令方块</div><div class='item-id'>ID：minecraft:chain_command_block</div><div class='badge'>指令/技术性物品</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>类型：</b>技术性方块</div><div class='info-line'>• <b>加入版本：</b>Java版1.9</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:chain_command_block</code></div><div class='section-title'>📜 用途</div><div class='info-line'>• 按顺序执行多个命令</div><div class='info-line'>• 创建复杂的命令链</div>"
+        },
+        {
+            "name": "循环命令方块",
+            "id": "minecraft:repeating_command_block",
+            "detail": "<div class='item-name'>循环命令方块</div><div class='item-id'>ID：minecraft:repeating_command_block</div><div class='badge'>指令/技术性物品</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>类型：</b>技术性方块</div><div class='info-line'>• <b>加入版本：</b>Java版1.9</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:repeating_command_block</code></div><div class='section-title'>📜 用途</div><div class='info-line'>• 每游戏刻执行一次命令</div><div class='info-line'>• 实现持续效果或监测</div>"
+        },
+        {
+            "name": "结构方块",
+            "id": "minecraft:structure_block",
+            "detail": "<div class='item-name'>结构方块</div><div class='item-id'>ID：minecraft:structure_block</div><div class='badge'>指令/技术性物品</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>类型：</b>技术性方块</div><div class='info-line'>• <b>加入版本：</b>Java版1.10</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:structure_block</code></div><div class='section-title'>📜 用途</div><div class='info-line'>• 保存和加载建筑结构</div><div class='info-line'>• 复制建筑到其他地方</div>"
+        },
+        {
+            "name": "结构空位",
+            "id": "minecraft:structure_void",
+            "detail": "<div class='item-name'>结构空位</div><div class='item-id'>ID：minecraft:structure_void</div><div class='badge'>指令/技术性物品</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>类型：</b>技术性方块</div><div class='info-line'>• <b>加入版本：</b>Java版1.10</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:structure_void</code></div><div class='section-title'>📜 用途</div><div class='info-line'>• 在结构方块保存时忽略该位置</div>"
+        },
+        {
+            "name": "屏障",
+            "id": "minecraft:barrier",
+            "detail": "<div class='item-name'>屏障</div><div class='item-id'>ID：minecraft:barrier</div><div class='badge'>指令/技术性物品</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>类型：</b>技术性方块</div><div class='info-line'>• <b>透明度：</b>完全透明</div><div class='info-line'>• <b>加入版本：</b>Java版1.8</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:barrier</code></div><div class='section-title'>📜 用途</div><div class='info-line'>• 创建不可穿越的隐形墙壁</div><div class='info-line'>• 限制玩家移动区域</div>"
+        },
+        {
+            "name": "调试棒",
+            "id": "minecraft:debug_stick",
+            "detail": "<div class='item-name'>调试棒</div><div class='item-id'>ID：minecraft:debug_stick</div><div class='badge'>指令/技术性物品</div><div class='section-title'>📦 工具信息</div><div class='info-line'>• <b>类型：</b>技术性工具</div><div class='info-line'>• <b>加入版本：</b>Java版1.13</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:debug_stick</code></div><div class='section-title'>📜 用途</div><div class='info-line'>• 调整方块状态属性</div><div class='info-line'>• 用于地图制作和调试</div>"
+        }
+    ],
+    "已移除/下线物品": [
+        {
+            "name": "照相机",
+            "id": "minecraft:camera",
+            "detail": "<div class='item-name'>照相机</div><div class='item-id'>ID：minecraft:camera</div><div class='badge'>已移除物品</div><div class='section-title'>📷 物品信息</div><div class='info-line'>• <b>类型：</b>特殊物品</div><div class='info-line'>• <b>历史版本：</b>历经多次加入和移除</div><div class='info-line'>• <b>物品ID历史：</b>456（早期）、498（0.14.2）</div><div class='section-title'>📜 版本历史</div><div class='info-line'>• <b>首次加入：</b>携带版Alpha 0.1.0</div><div class='info-line'>• <b>0.2.0：</b>移除三脚架材质</div><div class='info-line'>• <b>0.7.0：</b>相机被废弃</div><div class='info-line'>• <b>0.9.0：</b>相机被移除</div><div class='info-line'>• <b>0.14.0：</b>重新加入，ID变为498</div><div class='info-line'>• <b>0.16.0：</b>再次被移除</div><div class='info-line'>• <b>基岩版1.12.0：</b>再次重新加入</div><div class='info-line'>• <b>最后上线版本：</b>基岩版1.16.100（之后再次被移除）</div><div class='section-title'>🎯 获取方式（历史版本）</div><div class='info-line'>• <b>基岩版1.12：</b><code>/give @s minecraft:camera</code></div><div class='info-line'>• <b>早期版本：</b>可通过物品栏编辑器将刷怪蛋ID修改为258生成</div><div class='section-title'>📜 用途（历史功能）</div><div class='info-line'>• 拍摄游戏画面截图</div><div class='info-line'>• 早期版本中相机可放置为实体，点击后冒烟并拍照</div><div class='info-line'>• 0.14版本中相机可召唤闪电（通过放置后退出重进）</div><div class='info-line'>• 教育版中与公文包配合使用</div>"
+        },
+        {
+            "name": "公文包",
+            "id": "minecraft:portfolio",
+            "detail": "<div class='item-name'>公文包</div><div class='item-id'>ID：minecraft:portfolio</div><div class='badge'>已移除物品</div><div class='section-title'>📁 物品信息</div><div class='info-line'>• <b>类型：</b>特殊物品</div><div class='info-line'>• <b>加入版本：</b>教育版1.0</div><div class='section-title'>📜 用途（历史功能）</div><div class='info-line'>• 存放相机拍摄的照片</div><div class='info-line'>• 照片可以放入公文包收藏</div>"
+        },
+        {
+            "name": "锁链头盔（旧版材质）",
+            "id": "minecraft:chainmail_helmet",
+            "detail": "<div class='item-name'>锁链头盔</div><div class='item-id'>ID：minecraft:chainmail_helmet</div><div class='badge'>装备</div><div class='section-title'>📦 装备信息</div><div class='info-line'>• <b>类型：</b>头盔</div><div class='info-line'>• <b>护甲值：</b>+2</div><div class='info-line'>• <b>耐久度：</b>165</div><div class='info-line'>• <b>加入版本：</b>Indev 0.31 20091231-2147</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>交易：</b>与村民盔甲匠交易获得</div><div class='info-line'>• <b>生物掉落：</b>僵尸、骷髅有概率穿戴</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:chainmail_helmet</code></div>"
+        },
+        {
+            "name": "钉皮头盔",
+            "id": "",
+            "detail": "<div class='item-name'>钉皮头盔</div><div class='badge'>已移除物品</div><div class='section-title'>📜 版本历史</div><div class='info-line'>• <b>加入版本：</b>Indev 0.31 20091231-2147</div><div class='info-line'>• <b>移除版本：</b>Indev 0.31 20100110</div><div class='info-line'>• <b>说明：</b>钉皮套装是最早期版本中存在的装备，后被移除</div>"
+        }
+    ],
+    "建筑方块": [
+        {
+            "name": "石头",
+            "id": "minecraft:stone",
+            "detail": "<div class='item-name'>石头</div><div class='item-id'>ID：minecraft:stone</div><div class='badge'>建筑方块</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>类型：</b>固体方块</div><div class='info-line'>• <b>爆炸抗性：</b>6</div><div class='info-line'>• <b>硬度：</b>1.5</div><div class='info-line'>• <b>合适工具：</b>镐</div><div class='info-line'>• <b>加入版本：</b>Java版pre-Classic</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>挖掘：</b>使用镐挖掘石头获得圆石</div><div class='info-line'>• <b>烧炼：</b>圆石烧炼获得石头</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:stone</code></div><div class='section-title'>📜 用途</div><div class='info-line'>• 建筑材料</div><div class='info-line'>• 合成石砖、石台阶、石楼梯等</div>"
+        },
+        {
+            "name": "圆石",
+            "id": "minecraft:cobblestone",
+            "detail": "<div class='item-name'>圆石</div><div class='item-id'>ID：minecraft:cobblestone</div><div class='badge'>建筑方块</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>爆炸抗性：</b>6</div><div class='info-line'>• <b>硬度：</b>2</div><div class='info-line'>• <b>合适工具：</b>镐</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>挖掘：</b>使用镐挖掘石头获得</div><div class='info-line'>• <b>生成：</b>地牢、村庄等结构中自然生成</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:cobblestone</code></div>"
+        },
+        {
+            "name": "橡木木板",
+            "id": "minecraft:oak_planks",
+            "detail": "<div class='item-name'>橡木木板</div><div class='item-id'>ID：minecraft:oak_planks</div><div class='badge'>建筑方块</div><div class='section-title'>📦 方块信息</div><div class='info-line'>• <b>爆炸抗性：</b>3</div><div class='info-line'>• <b>硬度：</b>2</div><div class='info-line'>• <b>合适工具：</b>斧</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>合成：</b>橡木原木合成获得</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:oak_planks</code></div>"
+        }
+    ],
+    "工具与武器": [
+        {
+            "name": "木剑",
+            "id": "minecraft:wooden_sword",
+            "detail": "<div class='item-name'>木剑</div><div class='item-id'>ID：minecraft:wooden_sword</div><div class='badge'>工具与武器</div><div class='section-title'>⚔️ 工具信息</div><div class='info-line'>• <b>类型：</b>剑</div><div class='info-line'>• <b>攻击伤害：</b>4</div><div class='info-line'>• <b>攻击速度：</b>1.6</div><div class='info-line'>• <b>耐久度：</b>59</div><div class='info-line'>• <b>加入版本：</b>Indev 0.31 20100128</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>合成：</b>木棍 + 橡木木板</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:wooden_sword</code></div>"
+        },
+        {
+            "name": "石剑",
+            "id": "minecraft:stone_sword",
+            "detail": "<div class='item-name'>石剑</div><div class='item-id'>ID：minecraft:stone_sword</div><div class='badge'>工具与武器</div><div class='section-title'>⚔️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>5</div><div class='info-line'>• <b>耐久度：</b>131</div>"
+        },
+        {
+            "name": "铁剑",
+            "id": "minecraft:iron_sword",
+            "detail": "<div class='item-name'>铁剑</div><div class='item-id'>ID：minecraft:iron_sword</div><div class='badge'>工具与武器</div><div class='section-title'>⚔️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>6</div><div class='info-line'>• <b>耐久度：</b>250</div>"
+        },
+        {
+            "name": "金剑",
+            "id": "minecraft:golden_sword",
+            "detail": "<div class='item-name'>金剑</div><div class='item-id'>ID：minecraft:golden_sword</div><div class='badge'>工具与武器</div><div class='section-title'>⚔️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>4</div><div class='info-line'>• <b>耐久度：</b>32</div><div class='info-line'>• <b>特殊：</b>挖掘速度最快，但耐久极低</div>"
+        },
+        {
+            "name": "钻石剑",
+            "id": "minecraft:diamond_sword",
+            "detail": "<div class='item-name'>钻石剑</div><div class='item-id'>ID：minecraft:diamond_sword</div><div class='badge'>工具与武器</div><div class='section-title'>⚔️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>7</div><div class='info-line'>• <b>耐久度：</b>1561</div>"
+        },
+        {
+            "name": "下界合金剑",
+            "id": "minecraft:netherite_sword",
+            "detail": "<div class='item-name'>下界合金剑</div><div class='item-id'>ID：minecraft:netherite_sword</div><div class='badge'>工具与武器</div><div class='section-title'>⚔️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>8</div><div class='info-line'>• <b>耐久度：</b>2031</div><div class='info-line'>• <b>特殊：</b>不会被熔岩烧毁，在水中不会下沉</div><div class='info-line'>• <b>加入版本：</b>Java版1.16</div>"
+        },
+        {
+            "name": "木镐",
+            "id": "minecraft:wooden_pickaxe",
+            "detail": "<div class='item-name'>木镐</div><div class='item-id'>ID：minecraft:wooden_pickaxe</div><div class='badge'>工具与武器</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>类型：</b>镐</div><div class='info-line'>• <b>耐久度：</b>59</div><div class='info-line'>• <b>挖掘等级：</b>1（可挖掘石质方块）</div>"
+        },
+        {
+            "name": "石镐",
+            "id": "minecraft:stone_pickaxe",
+            "detail": "<div class='item-name'>石镐</div><div class='item-id'>ID：minecraft:stone_pickaxe</div><div class='badge'>工具与武器</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>耐久度：</b>131</div><div class='info-line'>• <b>挖掘等级：</b>2（可挖掘铁矿石）</div>"
+        },
+        {
+            "name": "铁镐",
+            "id": "minecraft:iron_pickaxe",
+            "detail": "<div class='item-name'>铁镐</div><div class='item-id'>ID：minecraft:iron_pickaxe</div><div class='badge'>工具与武器</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>耐久度：</b>250</div><div class='info-line'>• <b>挖掘等级：</b>3（可挖掘钻石矿石）</div>"
+        },
+        {
+            "name": "金镐",
+            "id": "minecraft:golden_pickaxe",
+            "detail": "<div class='item-name'>金镐</div><div class='item-id'>ID：minecraft:golden_pickaxe</div><div class='badge'>工具与武器</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>耐久度：</b>32</div><div class='info-line'>• <b>挖掘等级：</b>2</div><div class='info-line'>• <b>特殊：</b>挖掘速度最快</div>"
+        },
+        {
+            "name": "钻石镐",
+            "id": "minecraft:diamond_pickaxe",
+            "detail": "<div class='item-name'>钻石镐</div><div class='item-id'>ID：minecraft:diamond_pickaxe</div><div class='badge'>工具与武器</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>耐久度：</b>1561</div><div class='info-line'>• <b>挖掘等级：</b>4（可挖掘黑曜石）</div>"
+        },
+        {
+            "name": "下界合金镐",
+            "id": "minecraft:netherite_pickaxe",
+            "detail": "<div class='item-name'>下界合金镐</div><div class='item-id'>ID：minecraft:netherite_pickaxe</div><div class='badge'>工具与武器</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>耐久度：</b>2031</div><div class='info-line'>• <b>挖掘等级：</b>4</div><div class='info-line'>• <b>特殊：</b>不会被熔岩烧毁</div>"
+        }
+    ],
+    "装备": [
+        {
+            "name": "皮革帽子",
+            "id": "minecraft:leather_helmet",
+            "detail": "<div class='item-name'>皮革帽子</div><div class='item-id'>ID：minecraft:leather_helmet</div><div class='badge'>装备</div><div class='section-title'>📦 装备信息</div><div class='info-line'>• <b>类型：</b>头盔</div><div class='info-line'>• <b>护甲值：</b>+1</div><div class='info-line'>• <b>耐久度：</b>55</div><div class='info-line'>• <b>加入版本：</b>Indev 0.31 20091231-2147</div>"
+        },
+        {
+            "name": "铁头盔",
+            "id": "minecraft:iron_helmet",
+            "detail": "<div class='item-name'>铁头盔</div><div class='item-id'>ID：minecraft:iron_helmet</div><div class='badge'>装备</div><div class='section-title'>📦 装备信息</div><div class='info-line'>• <b>护甲值：</b>+2</div><div class='info-line'>• <b>耐久度：</b>165</div>"
+        },
+        {
+            "name": "钻石头盔",
+            "id": "minecraft:diamond_helmet",
+            "detail": "<div class='item-name'>钻石头盔</div><div class='item-id'>ID：minecraft:diamond_helmet</div><div class='badge'>装备</div><div class='section-title'>📦 装备信息</div><div class='info-line'>• <b>护甲值：</b>+3</div><div class='info-line'>• <b>耐久度：</b>363</div>"
+        }
+    ],
+    "食物": [
+        {
+            "name": "苹果",
+            "id": "minecraft:apple",
+            "detail": "<div class='item-name'>苹果</div><div class='item-id'>ID：minecraft:apple</div><div class='badge'>食物</div><div class='section-title'>🍖 食物信息</div><div class='info-line'>• <b>类型：</b>食物</div><div class='info-line'>• <b>饥饿值恢复：</b>4点（2个鸡腿）</div><div class='info-line'>• <b>饱和度恢复：</b>2.4</div><div class='info-line'>• <b>加入版本：</b>Indev 0.31 20091231-2147</div>"
+        },
+        {
+            "name": "金苹果",
+            "id": "minecraft:golden_apple",
+            "detail": "<div class='item-name'>金苹果</div><div class='item-id'>ID：minecraft:golden_apple</div><div class='badge'>食物</div><div class='section-title'>🍖 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>4点</div><div class='info-line'>• <b>特殊效果：</b>生命恢复II（5秒）、伤害吸收（2分钟）</div>"
+        },
+        {
+            "name": "附魔金苹果",
+            "id": "minecraft:enchanted_golden_apple",
+            "detail": "<div class='item-name'>附魔金苹果</div><div class='item-id'>ID：minecraft:enchanted_golden_apple</div><div class='badge'>食物</div><div class='section-title'>🍖 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>4点</div><div class='info-line'>• <b>特殊效果：</b>生命恢复IV（30秒）、伤害吸收IV（2分钟）、抗火（5分钟）、抗性提升（5分钟）</div><div class='info-line'>• <b>稀有度：</b>无法合成，只能在地牢、遗迹等结构中找到</div>"
+        }
+    ],
+    "原材料": [
+        {
+            "name": "煤炭",
+            "id": "minecraft:coal",
+            "detail": "<div class='item-name'>煤炭</div><div class='item-id'>ID：minecraft:coal</div><div class='badge'>原材料</div><div class='section-title'>⛏️ 物品信息</div><div class='info-line'>• <b>类型：</b>燃料/材料</div><div class='info-line'>• <b>燃烧时间：</b>80秒（可烧炼8个物品）</div><div class='info-line'>• <b>加入版本：</b>Indev 0.31 20100128</div>"
+        },
+        {
+            "name": "木炭",
+            "id": "minecraft:charcoal",
+            "detail": "<div class='item-name'>木炭</div><div class='item-id'>ID：minecraft:charcoal</div><div class='badge'>原材料</div><div class='section-title'>⛏️ 物品信息</div><div class='info-line'>• <b>类型：</b>燃料/材料</div><div class='info-line'>• <b>燃烧时间：</b>80秒</div><div class='info-line'>• <b>获取途径：</b>烧炼木头获得</div>"
+        },
+        {
+            "name": "铁锭",
+            "id": "minecraft:iron_ingot",
+            "detail": "<div class='item-name'>铁锭</div><div class='item-id'>ID：minecraft:iron_ingot</div><div class='badge'>原材料</div><div class='section-title'>⛏️ 物品信息</div><div class='info-line'>• <b>类型：</b>金属锭</div><div class='info-line'>• <b>获取途径：</b>烧炼铁矿石</div>"
+        },
+        {
+            "name": "金锭",
+            "id": "minecraft:gold_ingot",
+            "detail": "<div class='item-name'>金锭</div><div class='item-id'>ID：minecraft:gold_ingot</div><div class='badge'>原材料</div><div class='section-title'>⛏️ 物品信息</div><div class='info-line'>• <b>类型：</b>金属锭</div><div class='info-line'>• <b>获取途径：</b>烧炼金矿石、下界金矿石</div>"
+        },
+        {
+            "name": "钻石",
+            "id": "minecraft:diamond",
+            "detail": "<div class='item-name'>钻石</div><div class='item-id'>ID：minecraft:diamond</div><div class='badge'>原材料</div><div class='section-title'>💎 物品信息</div><div class='info-line'>• <b>类型：</b>宝石</div><div class='info-line'>• <b>获取途径：</b>挖掘钻石矿石</div>"
+        },
+        {
+            "name": "下界合金碎片",
+            "id": "minecraft:netherite_scrap",
+            "detail": "<div class='item-name'>下界合金碎片</div><div class='item-id'>ID：minecraft:netherite_scrap</div><div class='badge'>原材料</div><div class='section-title'>⛏️ 物品信息</div><div class='info-line'>• <b>类型：</b>合金材料</div><div class='info-line'>• <b>获取途径：</b>烧炼远古残骸</div><div class='info-line'>• <b>加入版本：</b>Java版1.16</div>"
+        },
+        {
+            "name": "下界合金锭",
+            "id": "minecraft:netherite_ingot",
+            "detail": "<div class='item-name'>下界合金锭</div><div class='item-id'>ID：minecraft:netherite_ingot</div><div class='badge'>原材料</div><div class='section-title'>⛏️ 物品信息</div><div class='info-line'>• <b>合成：</b>4个下界合金碎片 + 4个金锭</div>"
+        }
+    ],
+    "工具与武器": [
+        {
+            "name": "木斧",
+            "id": "minecraft:wooden_axe",
+            "detail": "<div class='item-name'>木斧</div><div class='item-id'>ID：minecraft:wooden_axe</div><div class='badge'>工具</div><div class='section-title'>⚒️ 工具信息</div><div class='info-line'>• <b>类型：</b>斧</div><div class='info-line'>• <b>攻击伤害：</b>7</div><div class='info-line'>• <b>攻击速度：</b>0.8</div><div class='info-line'>• <b>耐久度：</b>59</div><div class='info-line'>• <b>挖掘速度：</b>2（木头）</div><div class='info-line'>• <b>加入版本：</b>Java版 Indev 0.31 20100128</div><div class='section-title'>🎯 获取途径</div><div class='info-line'>• <b>合成：</b>2个木棍 + 3个橡木木板</div><div class='info-line'>• <b>指令：</b><code>/give @s minecraft:wooden_axe</code></div>"
+        },
+        {
+            "name": "石斧",
+            "id": "minecraft:stone_axe",
+            "detail": "<div class='item-name'>石斧</div><div class='item-id'>ID：minecraft:stone_axe</div><div class='badge'>工具</div><div class='section-title'>⚒️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>9</div><div class='info-line'>• <b>耐久度：</b>131</div>"
+        },
+        {
+            "name": "铁斧",
+            "id": "minecraft:iron_axe",
+            "detail": "<div class='item-name'>铁斧</div><div class='item-id'>ID：minecraft:iron_axe</div><div class='badge'>工具</div><div class='section-title'>⚒️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>9</div><div class='info-line'>• <b>耐久度：</b>250</div>"
+        },
+        {
+            "name": "金斧",
+            "id": "minecraft:golden_axe",
+            "detail": "<div class='item-name'>金斧</div><div class='item-id'>ID：minecraft:golden_axe</div><div class='badge'>工具</div><div class='section-title'>⚒️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>7</div><div class='info-line'>• <b>耐久度：</b>32</div><div class='info-line'>• <b>特殊：</b>挖掘速度最快</div>"
+        },
+        {
+            "name": "钻石斧",
+            "id": "minecraft:diamond_axe",
+            "detail": "<div class='item-name'>钻石斧</div><div class='item-id'>ID：minecraft:diamond_axe</div><div class='badge'>工具</div><div class='section-title'>⚒️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>9</div><div class='info-line'>• <b>耐久度：</b>1561</div>"
+        },
+        {
+            "name": "下界合金斧",
+            "id": "minecraft:netherite_axe",
+            "detail": "<div class='item-name'>下界合金斧</div><div class='item-id'>ID：minecraft:netherite_axe</div><div class='badge'>工具</div><div class='section-title'>⚒️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>10</div><div class='info-line'>• <b>耐久度：</b>2031</div><div class='info-line'>• <b>特殊：</b>不会被熔岩烧毁，攻击速度0.8</div>"
+        },
+        {
+            "name": "木锹",
+            "id": "minecraft:wooden_shovel",
+            "detail": "<div class='item-name'>木锹</div><div class='item-id'>ID：minecraft:wooden_shovel</div><div class='badge'>工具</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>类型：</b>锹</div><div class='info-line'>• <b>攻击伤害：</b>2.5</div><div class='info-line'>• <b>攻击速度：</b>1</div><div class='info-line'>• <b>耐久度：</b>59</div><div class='info-line'>• <b>功能：</b>挖掘泥土、沙子、沙砾、雪等</div>"
+        },
+        {
+            "name": "石锹",
+            "id": "minecraft:stone_shovel",
+            "detail": "<div class='item-name'>石锹</div><div class='item-id'>ID：minecraft:stone_shovel</div><div class='badge'>工具</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>3.5</div><div class='info-line'>• <b>耐久度：</b>131</div>"
+        },
+        {
+            "name": "铁锹",
+            "id": "minecraft:iron_shovel",
+            "detail": "<div class='item-name'>铁锹</div><div class='item-id'>ID：minecraft:iron_shovel</div><div class='badge'>工具</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>4.5</div><div class='info-line'>• <b>耐久度：</b>250</div>"
+        },
+        {
+            "name": "金锹",
+            "id": "minecraft:golden_shovel",
+            "detail": "<div class='item-name'>金锹</div><div class='item-id'>ID：minecraft:golden_shovel</div><div class='badge'>工具</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>2.5</div><div class='info-line'>• <b>耐久度：</b>32</div>"
+        },
+        {
+            "name": "钻石锹",
+            "id": "minecraft:diamond_shovel",
+            "detail": "<div class='item-name'>钻石锹</div><div class='item-id'>ID：minecraft:diamond_shovel</div><div class='badge'>工具</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>5.5</div><div class='info-line'>• <b>耐久度：</b>1561</div>"
+        },
+        {
+            "name": "下界合金锹",
+            "id": "minecraft:netherite_shovel",
+            "detail": "<div class='item-name'>下界合金锹</div><div class='item-id'>ID：minecraft:netherite_shovel</div><div class='badge'>工具</div><div class='section-title'>⛏️ 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>6.5</div><div class='info-line'>• <b>耐久度：</b>2031</div>"
+        },
+        {
+            "name": "木锄",
+            "id": "minecraft:wooden_hoe",
+            "detail": "<div class='item-name'>木锄</div><div class='item-id'>ID：minecraft:wooden_hoe</div><div class='badge'>工具</div><div class='section-title'>🌾 工具信息</div><div class='info-line'>• <b>类型：</b>锄</div><div class='info-line'>• <b>攻击伤害：</b>1</div><div class='info-line'>• <b>攻击速度：</b>2</div><div class='info-line'>• <b>耐久度：</b>59</div><div class='info-line'>• <b>功能：</b>犁地、将草方块变为耕地</div>"
+        },
+        {
+            "name": "石锄",
+            "id": "minecraft:stone_hoe",
+            "detail": "<div class='item-name'>石锄</div><div class='item-id'>ID：minecraft:stone_hoe</div><div class='badge'>工具</div><div class='section-title'>🌾 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>1</div><div class='info-line'>• <b>耐久度：</b>131</div>"
+        },
+        {
+            "name": "铁锄",
+            "id": "minecraft:iron_hoe",
+            "detail": "<div class='item-name'>铁锄</div><div class='item-id'>ID：minecraft:iron_hoe</div><div class='badge'>工具</div><div class='section-title'>🌾 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>1</div><div class='info-line'>• <b>耐久度：</b>250</div>"
+        },
+        {
+            "name": "金锄",
+            "id": "minecraft:golden_hoe",
+            "detail": "<div class='item-name'>金锄</div><div class='item-id'>ID：minecraft:golden_hoe</div><div class='badge'>工具</div><div class='section-title'>🌾 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>1</div><div class='info-line'>• <b>耐久度：</b>32</div>"
+        },
+        {
+            "name": "钻石锄",
+            "id": "minecraft:diamond_hoe",
+            "detail": "<div class='item-name'>钻石锄</div><div class='item-id'>ID：minecraft:diamond_hoe</div><div class='badge'>工具</div><div class='section-title'>🌾 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>1</div><div class='info-line'>• <b>耐久度：</b>1561</div>"
+        },
+        {
+            "name": "下界合金锄",
+            "id": "minecraft:netherite_hoe",
+            "detail": "<div class='item-name'>下界合金锄</div><div class='item-id'>ID：minecraft:netherite_hoe</div><div class='badge'>工具</div><div class='section-title'>🌾 工具信息</div><div class='info-line'>• <b>攻击伤害：</b>1</div><div class='info-line'>• <b>耐久度：</b>2031</div>"
+        },
+        {
+            "name": "弓",
+            "id": "minecraft:bow",
+            "detail": "<div class='item-name'>弓</div><div class='item-id'>ID：minecraft:bow</div><div class='badge'>武器</div><div class='section-title'>🏹 武器信息</div><div class='info-line'>• <b>类型：</b>远程武器</div><div class='info-line'>• <b>攻击伤害：</b>1-10（取决于拉满程度）</div><div class='info-line'>• <b>耐久度：</b>384</div><div class='info-line'>• <b>加入版本：</b>Java版 Indev 0.31 20100122</div>"
+        },
+        {
+            "name": "弩",
+            "id": "minecraft:crossbow",
+            "detail": "<div class='item-name'>弩</div><div class='item-id'>ID：minecraft:crossbow</div><div class='badge'>武器</div><div class='section-title'>🎯 武器信息</div><div class='info-line'>• <b>攻击伤害：</b>6-11</div><div class='info-line'>• <b>耐久度：</b>326</div><div class='info-line'>• <b>加入版本：</b>Java版1.14</div><div class='info-line'>• <b>特殊：</b>可装填烟花火箭，可附魔多重射击</div>"
+        },
+        {
+            "name": "三叉戟",
+            "id": "minecraft:trident",
+            "detail": "<div class='item-name'>三叉戟</div><div class='item-id'>ID：minecraft:trident</div><div class='badge'>武器</div><div class='section-title'>🔱 武器信息</div><div class='info-line'>• <b>攻击伤害：</b>9（近战）、8（投掷）</div><div class='info-line'>• <b>耐久度：</b>250</div><div class='info-line'>• <b>加入版本：</b>Java版1.13</div><div class='info-line'>• <b>获取途径：</b>溺尸稀有掉落</div>"
+        },
+        {
+            "name": "盾牌",
+            "id": "minecraft:shield",
+            "detail": "<div class='item-name'>盾牌</div><div class='item-id'>ID：minecraft:shield</div><div class='badge'>防具</div><div class='section-title'>🛡️ 防具信息</div><div class='info-line'>• <b>耐久度：</b>336</div><div class='info-line'>• <b>加入版本：</b>Java版1.9</div><div class='info-line'>• <b>功能：</b>格挡攻击，可染色</div>"
+        },
+        {
+            "name": "钓鱼竿",
+            "id": "minecraft:fishing_rod",
+            "detail": "<div class='item-name'>钓鱼竿</div><div class='item-id'>ID：minecraft:fishing_rod</div><div class='badge'>工具</div><div class='section-title'>🎣 工具信息</div><div class='info-line'>• <b>耐久度：</b>64</div><div class='info-line'>• <b>加入版本：</b>Alpha v1.1.1</div><div class='info-line'>• <b>功能：</b>钓鱼、钩生物</div>"
+        },
+        {
+            "name": "胡萝卜钓竿",
+            "id": "minecraft:carrot_on_a_stick",
+            "detail": "<div class='item-name'>胡萝卜钓竿</div><div class='item-id'>ID：minecraft:carrot_on_a_stick</div><div class='badge'>工具</div><div class='section-title'>🐖 工具信息</div><div class='info-line'>• <b>耐久度：</b>25</div><div class='info-line'>• <b>加入版本：</b>Java版1.4.2</div><div class='info-line'>• <b>功能：</b>控制骑乘的猪</div>"
+        },
+        {
+            "name": "诡异菌钓竿",
+            "id": "minecraft:warped_fungus_on_a_stick",
+            "detail": "<div class='item-name'>诡异菌钓竿</div><div class='item-id'>ID：minecraft:warped_fungus_on_a_stick</div><div class='badge'>工具</div><div class='section-title'>🐗 工具信息</div><div class='info-line'>• <b>耐久度：</b>100</div><div class='info-line'>• <b>加入版本：</b>Java版1.16</div><div class='info-line'>• <b>功能：</b>控制骑乘的炽足兽</div>"
+        },
+        {
+            "name": "打火石",
+            "id": "minecraft:flint_and_steel",
+            "detail": "<div class='item-name'>打火石</div><div class='item-id'>ID：minecraft:flint_and_steel</div><div class='badge'>工具</div><div class='section-title'>🔥 工具信息</div><div class='info-line'>• <b>耐久度：</b>64</div><div class='info-line'>• <b>加入版本：</b>Indev 0.31 20100110</div><div class='info-line'>• <b>功能：</b>点火、激活下界传送门、引爆TNT</div>"
+        },
+        {
+            "name": "剪刀",
+            "id": "minecraft:shears",
+            "detail": "<div class='item-name'>剪刀</div><div class='item-id'>ID：minecraft:shears</div><div class='badge'>工具</div><div class='section-title'>✂️ 工具信息</div><div class='info-line'>• <b>耐久度：</b>238</div><div class='info-line'>• <b>加入版本：</b>Beta 1.2</div><div class='info-line'>• <b>功能：</b>剪羊毛、采树叶、采蜘蛛网</div>"
+        }
+    ],
+    "装备": [
+        {
+            "name": "皮革外套",
+            "id": "minecraft:leather_chestplate",
+            "detail": "<div class='item-name'>皮革外套</div><div class='item-id'>ID：minecraft:leather_chestplate</div><div class='badge'>装备</div><div class='section-title'>👕 装备信息</div><div class='info-line'>• <b>护甲值：</b>+3</div><div class='info-line'>• <b>耐久度：</b>80</div>"
+        },
+        {
+            "name": "皮革裤子",
+            "id": "minecraft:leather_leggings",
+            "detail": "<div class='item-name'>皮革裤子</div><div class='item-id'>ID：minecraft:leather_leggings</div><div class='badge'>装备</div><div class='section-title'>👖 装备信息</div><div class='info-line'>• <b>护甲值：</b>+2</div><div class='info-line'>• <b>耐久度：</b>75</div>"
+        },
+        {
+            "name": "皮革靴子",
+            "id": "minecraft:leather_boots",
+            "detail": "<div class='item-name'>皮革靴子</div><div class='item-id'>ID：minecraft:leather_boots</div><div class='badge'>装备</div><div class='section-title'>👟 装备信息</div><div class='info-line'>• <b>护甲值：</b>+1</div><div class='info-line'>• <b>耐久度：</b>65</div>"
+        },
+        {
+            "name": "锁链胸甲",
+            "id": "minecraft:chainmail_chestplate",
+            "detail": "<div class='item-name'>锁链胸甲</div><div class='item-id'>ID：minecraft:chainmail_chestplate</div><div class='badge'>装备</div><div class='section-title'>🔗 装备信息</div><div class='info-line'>• <b>护甲值：</b>+4</div><div class='info-line'>• <b>耐久度：</b>240</div><div class='info-line'>• <b>获取途径：</b>村民交易、生物穿戴掉落</div>"
+        },
+        {
+            "name": "锁链护腿",
+            "id": "minecraft:chainmail_leggings",
+            "detail": "<div class='item-name'>锁链护腿</div><div class='item-id'>ID：minecraft:chainmail_leggings</div><div class='badge'>装备</div><div class='section-title'>🔗 装备信息</div><div class='info-line'>• <b>护甲值：</b>+5</div><div class='info-line'>• <b>耐久度：</b>225</div>"
+        },
+        {
+            "name": "锁链靴子",
+            "id": "minecraft:chainmail_boots",
+            "detail": "<div class='item-name'>锁链靴子</div><div class='item-id'>ID：minecraft:chainmail_boots</div><div class='badge'>装备</div><div class='section-title'>🔗 装备信息</div><div class='info-line'>• <b>护甲值：</b>+1</div><div class='info-line'>• <b>耐久度：</b>195</div>"
+        },
+        {
+            "name": "铁胸甲",
+            "id": "minecraft:iron_chestplate",
+            "detail": "<div class='item-name'>铁胸甲</div><div class='item-id'>ID：minecraft:iron_chestplate</div><div class='badge'>装备</div><div class='section-title'>🛡️ 装备信息</div><div class='info-line'>• <b>护甲值：</b>+6</div><div class='info-line'>• <b>耐久度：</b>240</div>"
+        },
+        {
+            "name": "铁护腿",
+            "id": "minecraft:iron_leggings",
+            "detail": "<div class='item-name'>铁护腿</div><div class='item-id'>ID：minecraft:iron_leggings</div><div class='badge'>装备</div><div class='section-title'>🛡️ 装备信息</div><div class='info-line'>• <b>护甲值：</b>+5</div><div class='info-line'>• <b>耐久度：</b>225</div>"
+        },
+        {
+            "name": "铁靴子",
+            "id": "minecraft:iron_boots",
+            "detail": "<div class='item-name'>铁靴子</div><div class='item-id'>ID：minecraft:iron_boots</div><div class='badge'>装备</div><div class='section-title'>🛡️ 装备信息</div><div class='info-line'>• <b>护甲值：</b>+2</div><div class='info-line'>• <b>耐久度：</b>195</div>"
+        },
+        {
+            "name": "金头盔",
+            "id": "minecraft:golden_helmet",
+            "detail": "<div class='item-name'>金头盔</div><div class='item-id'>ID：minecraft:golden_helmet</div><div class='badge'>装备</div><div class='section-title'>🪙 装备信息</div><div class='info-line'>• <b>护甲值：</b>+2</div><div class='info-line'>• <b>耐久度：</b>77</div>"
+        },
+        {
+            "name": "金胸甲",
+            "id": "minecraft:golden_chestplate",
+            "detail": "<div class='item-name'>金胸甲</div><div class='item-id'>ID：minecraft:golden_chestplate</div><div class='badge'>装备</div><div class='section-title'>🪙 装备信息</div><div class='info-line'>• <b>护甲值：</b>+5</div><div class='info-line'>• <b>耐久度：</b>112</div>"
+        },
+        {
+            "name": "金护腿",
+            "id": "minecraft:golden_leggings",
+            "detail": "<div class='item-name'>金护腿</div><div class='item-id'>ID：minecraft:golden_leggings</div><div class='badge'>装备</div><div class='section-title'>🪙 装备信息</div><div class='info-line'>• <b>护甲值：</b>+3</div><div class='info-line'>• <b>耐久度：</b>105</div>"
+        },
+        {
+            "name": "金靴子",
+            "id": "minecraft:golden_boots",
+            "detail": "<div class='item-name'>金靴子</div><div class='item-id'>ID：minecraft:golden_boots</div><div class='badge'>装备</div><div class='section-title'>🪙 装备信息</div><div class='info-line'>• <b>护甲值：</b>+1</div><div class='info-line'>• <b>耐久度：</b>91</div>"
+        },
+        {
+            "name": "钻石胸甲",
+            "id": "minecraft:diamond_chestplate",
+            "detail": "<div class='item-name'>钻石胸甲</div><div class='item-id'>ID：minecraft:diamond_chestplate</div><div class='badge'>装备</div><div class='section-title'>💎 装备信息</div><div class='info-line'>• <b>护甲值：</b>+8</div><div class='info-line'>• <b>耐久度：</b>528</div>"
+        },
+        {
+            "name": "钻石护腿",
+            "id": "minecraft:diamond_leggings",
+            "detail": "<div class='item-name'>钻石护腿</div><div class='item-id'>ID：minecraft:diamond_leggings</div><div class='badge'>装备</div><div class='section-title'>💎 装备信息</div><div class='info-line'>• <b>护甲值：</b>+6</div><div class='info-line'>• <b>耐久度：</b>495</div>"
+        },
+        {
+            "name": "钻石靴子",
+            "id": "minecraft:diamond_boots",
+            "detail": "<div class='item-name'>钻石靴子</div><div class='item-id'>ID：minecraft:diamond_boots</div><div class='badge'>装备</div><div class='section-title'>💎 装备信息</div><div class='info-line'>• <b>护甲值：</b>+3</div><div class='info-line'>• <b>耐久度：</b>429</div>"
+        },
+        {
+            "name": "下界合金头盔",
+            "id": "minecraft:netherite_helmet",
+            "detail": "<div class='item-name'>下界合金头盔</div><div class='item-id'>ID：minecraft:netherite_helmet</div><div class='badge'>装备</div><div class='section-title'>⚫ 装备信息</div><div class='info-line'>• <b>护甲值：</b>+3</div><div class='info-line'>• <b>耐久度：</b>407</div><div class='info-line'>• <b>特殊：</b>不会被熔岩烧毁、击退抗性</div>"
+        },
+        {
+            "name": "下界合金胸甲",
+            "id": "minecraft:netherite_chestplate",
+            "detail": "<div class='item-name'>下界合金胸甲</div><div class='item-id'>ID：minecraft:netherite_chestplate</div><div class='badge'>装备</div><div class='section-title'>⚫ 装备信息</div><div class='info-line'>• <b>护甲值：</b>+8</div><div class='info-line'>• <b>耐久度：</b>592</div>"
+        },
+        {
+            "name": "下界合金护腿",
+            "id": "minecraft:netherite_leggings",
+            "detail": "<div class='item-name'>下界合金护腿</div><div class='item-id'>ID：minecraft:netherite_leggings</div><div class='badge'>装备</div><div class='section-title'>⚫ 装备信息</div><div class='info-line'>• <b>护甲值：</b>+6</div><div class='info-line'>• <b>耐久度：</b>555</div>"
+        },
+        {
+            "name": "下界合金靴子",
+            "id": "minecraft:netherite_boots",
+            "detail": "<div class='item-name'>下界合金靴子</div><div class='item-id'>ID：minecraft:netherite_boots</div><div class='badge'>装备</div><div class='section-title'>⚫ 装备信息</div><div class='info-line'>• <b>护甲值：</b>+3</div><div class='info-line'>• <b>耐久度：</b>481</div>"
+        },
+        {
+            "name": "海龟壳",
+            "id": "minecraft:turtle_helmet",
+            "detail": "<div class='item-name'>海龟壳</div><div class='item-id'>ID：minecraft:turtle_helmet</div><div class='badge'>装备</div><div class='section-title'>🐢 装备信息</div><div class='info-line'>• <b>护甲值：</b>+2</div><div class='info-line'>• <b>耐久度：</b>275</div><div class='info-line'>• <b>特殊：</b>给予30秒水下呼吸效果</div>"
+        }
+    ],
+    "染料": [
+        {
+            "name": "墨囊",
+            "id": "minecraft:ink_sac",
+            "detail": "<div class='item-name'>墨囊</div><div class='item-id'>ID：minecraft:ink_sac</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>黑色</div><div class='info-line'>• <b>获取途径：</b>击杀鱿鱼</div>"
+        },
+        {
+            "name": "红色染料",
+            "id": "minecraft:red_dye",
+            "detail": "<div class='item-name'>红色染料</div><div class='item-id'>ID：minecraft:red_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>红色</div><div class='info-line'>• <b>获取途径：</b>虞美人、红色郁金香、甜菜根等合成</div>"
+        },
+        {
+            "name": "绿色染料",
+            "id": "minecraft:green_dye",
+            "detail": "<div class='item-name'>绿色染料</div><div class='item-id'>ID：minecraft:green_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>绿色</div><div class='info-line'>• <b>获取途径：</b>烧炼仙人掌</div>"
+        },
+        {
+            "name": "棕色染料",
+            "id": "minecraft:brown_dye",
+            "detail": "<div class='item-name'>棕色染料</div><div class='item-id'>ID：minecraft:brown_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>棕色</div><div class='info-line'>• <b>获取途径：</b>可可豆</div>"
+        },
+        {
+            "name": "蓝色染料",
+            "id": "minecraft:blue_dye",
+            "detail": "<div class='item-name'>蓝色染料</div><div class='item-id'>ID：minecraft:blue_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>蓝色</div><div class='info-line'>• <b>获取途径：</b>青金石、矢车菊</div>"
+        },
+        {
+            "name": "紫色染料",
+            "id": "minecraft:purple_dye",
+            "detail": "<div class='item-name'>紫色染料</div><div class='item-id'>ID：minecraft:purple_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>紫色</div><div class='info-line'>• <b>合成：</b>蓝色染料 + 红色染料</div>"
+        },
+        {
+            "name": "青色染料",
+            "id": "minecraft:cyan_dye",
+            "detail": "<div class='item-name'>青色染料</div><div class='item-id'>ID：minecraft:cyan_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>青色</div><div class='info-line'>• <b>合成：</b>蓝色染料 + 绿色染料</div>"
+        },
+        {
+            "name": "淡灰色染料",
+            "id": "minecraft:light_gray_dye",
+            "detail": "<div class='item-name'>淡灰色染料</div><div class='item-id'>ID：minecraft:light_gray_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>淡灰色</div><div class='info-line'>• <b>获取途径：</b>滨菊、白色郁金香、灰化土合成</div>"
+        },
+        {
+            "name": "灰色染料",
+            "id": "minecraft:gray_dye",
+            "detail": "<div class='item-name'>灰色染料</div><div class='item-id'>ID：minecraft:gray_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>灰色</div><div class='info-line'>• <b>合成：</b>黑色染料 + 淡灰色染料</div>"
+        },
+        {
+            "name": "粉红色染料",
+            "id": "minecraft:pink_dye",
+            "detail": "<div class='item-name'>粉红色染料</div><div class='item-id'>ID：minecraft:pink_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>粉红色</div><div class='info-line'>• <b>获取途径：</b>牡丹、粉红色郁金香</div>"
+        },
+        {
+            "name": "淡蓝色染料",
+            "id": "minecraft:light_blue_dye",
+            "detail": "<div class='item-name'>淡蓝色染料</div><div class='item-id'>ID：minecraft:light_blue_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>淡蓝色</div><div class='info-line'>• <b>获取途径：</b>兰花、蓝色染料+骨粉</div>"
+        },
+        {
+            "name": "黄绿色染料",
+            "id": "minecraft:lime_dye",
+            "detail": "<div class='item-name'>黄绿色染料</div><div class='item-id'>ID：minecraft:lime_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>黄绿色</div><div class='info-line'>• <b>合成：</b>绿色染料 + 骨粉</div>"
+        },
+        {
+            "name": "黄色染料",
+            "id": "minecraft:yellow_dye",
+            "detail": "<div class='item-name'>黄色染料</div><div class='item-id'>ID：minecraft:yellow_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>黄色</div><div class='info-line'>• <b>获取途径：</b>蒲公英、向日葵</div>"
+        },
+        {
+            "name": "橙色染料",
+            "id": "minecraft:orange_dye",
+            "detail": "<div class='item-name'>橙色染料</div><div class='item-id'>ID：minecraft:orange_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>橙色</div><div class='info-line'>• <b>获取途径：</b>橙色郁金香、红色染料+黄色染料</div>"
+        },
+        {
+            "name": "品红色染料",
+            "id": "minecraft:magenta_dye",
+            "detail": "<div class='item-name'>品红色染料</div><div class='item-id'>ID：minecraft:magenta_dye</div><div class='badge'>染料</div><div class='section-title'>🎨 染料信息</div><div class='info-line'>• <b>颜色：</b>品红色</div><div class='info-line'>• <b>获取途径：</b>丁香、紫色染料+粉红色染料</div>"
+        },
+        {
+            "name": "骨粉",
+            "id": "minecraft:bone_meal",
+            "detail": "<div class='item-name'>骨粉</div><div class='item-id'>ID：minecraft:bone_meal</div><div class='badge'>染料/肥料</div><div class='section-title'>🌱 物品信息</div><div class='info-line'>• <b>颜色：</b>白色</div><div class='info-line'>• <b>获取途径：</b>骨头合成</div><div class='info-line'>• <b>功能：</b>催熟作物、白色染料</div>"
+        },
+        {
+            "name": "可可豆",
+            "id": "minecraft:cocoa_beans",
+            "detail": "<div class='item-name'>可可豆</div><div class='item-id'>ID：minecraft:cocoa_beans</div><div class='badge'>染料/食物</div><div class='section-title'>🍫 物品信息</div><div class='info-line'>• <b>颜色：</b>棕色</div><div class='info-line'>• <b>获取途径：</b>丛林生物群系、地牢箱子</div><div class='info-line'>• <b>用途：</b>棕色染料、制作曲奇</div>"
+        }
+    ],
+    "食物": [
+        {
+            "name": "生牛肉",
+            "id": "minecraft:beef",
+            "detail": "<div class='item-name'>生牛肉</div><div class='item-id'>ID：minecraft:beef</div><div class='badge'>食物</div><div class='section-title'>🥩 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>3点（1.5个鸡腿）</div><div class='info-line'>• <b>饱和度恢复：</b>1.8</div><div class='info-line'>• <b>获取途径：</b>击杀牛</div>"
+        },
+        {
+            "name": "牛排",
+            "id": "minecraft:cooked_beef",
+            "detail": "<div class='item-name'>牛排</div><div class='item-id'>ID：minecraft:cooked_beef</div><div class='badge'>食物</div><div class='section-title'>🥩 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>8点（4个鸡腿）</div><div class='info-line'>• <b>饱和度恢复：</b>12.8</div>"
+        },
+        {
+            "name": "生猪排",
+            "id": "minecraft:porkchop",
+            "detail": "<div class='item-name'>生猪排</div><div class='item-id'>ID：minecraft:porkchop</div><div class='badge'>食物</div><div class='section-title'>🥩 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>3点</div><div class='info-line'>• <b>获取途径：</b>击杀猪</div>"
+        },
+        {
+            "name": "熟猪排",
+            "id": "minecraft:cooked_porkchop",
+            "detail": "<div class='item-name'>熟猪排</div><div class='item-id'>ID：minecraft:cooked_porkchop</div><div class='badge'>食物</div><div class='section-title'>🥩 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>8点</div><div class='info-line'>• <b>饱和度恢复：</b>12.8</div>"
+        },
+        {
+            "name": "生鸡肉",
+            "id": "minecraft:chicken",
+            "detail": "<div class='item-name'>生鸡肉</div><div class='item-id'>ID：minecraft:chicken</div><div class='badge'>食物</div><div class='section-title'>🍗 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>2点</div><div class='info-line'>• <b>特殊：</b>30%几率食物中毒</div>"
+        },
+        {
+            "name": "熟鸡肉",
+            "id": "minecraft:cooked_chicken",
+            "detail": "<div class='item-name'>熟鸡肉</div><div class='item-id'>ID：minecraft:cooked_chicken</div><div class='badge'>食物</div><div class='section-title'>🍗 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>6点</div><div class='info-line'>• <b>饱和度恢复：</b>7.2</div>"
+        },
+        {
+            "name": "生鳕鱼",
+            "id": "minecraft:cod",
+            "detail": "<div class='item-name'>生鳕鱼</div><div class='item-id'>ID：minecraft:cod</div><div class='badge'>食物</div><div class='section-title'>🐟 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>2点</div>"
+        },
+        {
+            "name": "熟鳕鱼",
+            "id": "minecraft:cooked_cod",
+            "detail": "<div class='item-name'>熟鳕鱼</div><div class='item-id'>ID：minecraft:cooked_cod</div><div class='badge'>食物</div><div class='section-title'>🐟 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>5点</div>"
+        },
+        {
+            "name": "生鲑鱼",
+            "id": "minecraft:salmon",
+            "detail": "<div class='item-name'>生鲑鱼</div><div class='item-id'>ID：minecraft:salmon</div><div class='badge'>食物</div><div class='section-title'>🐟 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>2点</div>"
+        },
+        {
+            "name": "熟鲑鱼",
+            "id": "minecraft:cooked_salmon",
+            "detail": "<div class='item-name'>熟鲑鱼</div><div class='item-id'>ID：minecraft:cooked_salmon</div><div class='badge'>食物</div><div class='section-title'>🐟 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>6点</div>"
+        },
+        {
+            "name": "河豚",
+            "id": "minecraft:pufferfish",
+            "detail": "<div class='item-name'>河豚</div><div class='item-id'>ID：minecraft:pufferfish</div><div class='badge'>食物/药水材料</div><div class='section-title'>🐡 物品信息</div><div class='info-line'>• <b>饥饿值恢复：</b>1点</div><div class='info-line'>• <b>特殊：</b>食用后获得15秒中毒IV、15秒饥饿III、1分钟反胃</div><div class='info-line'>• <b>用途：</b>酿造水肺药水</div>"
+        },
+        {
+            "name": "热带鱼",
+            "id": "minecraft:tropical_fish",
+            "detail": "<div class='item-name'>热带鱼</div><div class='item-id'>ID：minecraft:tropical_fish</div><div class='badge'>食物</div><div class='section-title'>🐠 物品信息</div><div class='info-line'>• <b>饥饿值恢复：</b>1点</div><div class='info-line'>• <b>用途：</b>可驯服豹猫</div>"
+        },
+        {
+            "name": "面包",
+            "id": "minecraft:bread",
+            "detail": "<div class='item-name'>面包</div><div class='item-id'>ID：minecraft:bread</div><div class='badge'>食物</div><div class='section-title'>🍞 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>5点</div><div class='info-line'>• <b>合成：</b>3个小麦</div>"
+        },
+        {
+            "name": "南瓜派",
+            "id": "minecraft:pumpkin_pie",
+            "detail": "<div class='item-name'>南瓜派</div><div class='item-id'>ID：minecraft:pumpkin_pie</div><div class='badge'>食物</div><div class='section-title'>🥧 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>8点</div><div class='info-line'>• <b>合成：</b>南瓜+糖+鸡蛋</div>"
+        },
+        {
+            "name": "蛋糕",
+            "id": "minecraft:cake",
+            "detail": "<div class='item-name'>蛋糕</div><div class='item-id'>ID：minecraft:cake</div><div class='badge'>食物</div><div class='section-title'>🍰 食物信息</div><div class='info-line'>• <b>可食用次数：</b>7片</div><div class='info-line'>• <b>每片恢复：</b>2点饥饿值</div>"
+        },
+        {
+            "name": "曲奇",
+            "id": "minecraft:cookie",
+            "detail": "<div class='item-name'>曲奇</div><div class='item-id'>ID：minecraft:cookie</div><div class='badge'>食物</div><div class='section-title'>🍪 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>2点</div><div class='info-line'>• <b>合成：</b>小麦+可可豆</div>"
+        },
+        {
+            "name": "蘑菇煲",
+            "id": "minecraft:mushroom_stew",
+            "detail": "<div class='item-name'>蘑菇煲</div><div class='item-id'>ID：minecraft:mushroom_stew</div><div class='badge'>食物</div><div class='section-title'>🍲 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>6点</div>"
+        },
+        {
+            "name": "兔肉煲",
+            "id": "minecraft:rabbit_stew",
+            "detail": "<div class='item-name'>兔肉煲</div><div class='item-id'>ID：minecraft:rabbit_stew</div><div class='badge'>食物</div><div class='section-title'>🍲 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>10点</div>"
+        },
+        {
+            "name": "甜菜根",
+            "id": "minecraft:beetroot",
+            "detail": "<div class='item-name'>甜菜根</div><div class='item-id'>ID：minecraft:beetroot</div><div class='badge'>食物</div><div class='section-title'>🌱 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>1点</div>"
+        },
+        {
+            "name": "甜菜汤",
+            "id": "minecraft:beetroot_soup",
+            "detail": "<div class='item-name'>甜菜汤</div><div class='item-id'>ID：minecraft:beetroot_soup</div><div class='badge'>食物</div><div class='section-title'>🍲 食物信息</div><div class='info-line'>• <b>饥饿值恢复：</b>6点</div>"
+        },
+        {
+            "name": "金胡萝卜",
+            "id": "minecraft:golden_carrot",
+            "detail": "<div class='item-name'>金胡萝卜</div><div class='item-id'>ID：minecraft:golden_carrot</div><div class='badge'>食物/药水材料</div><div class='section-title'>🥕 物品信息</div><div class='info-line'>• <b>饥饿值恢复：</b>6点</div><div class='info-line'>• <b>饱和度恢复：</b>14.4</div><div class='info-line'>• <b>用途：</b>酿造夜视药水</div>"
+        },
+        {
+            "name": "闪烁的西瓜片",
+            "id": "minecraft:glistering_melon_slice",
+            "detail": "<div class='item-name'>闪烁的西瓜片</div><div class='item-id'>ID：minecraft:glistering_melon_slice</div><div class='badge'>药水材料</div><div class='section-title'>✨ 物品信息</div><div class='info-line'>• <b>用途：</b>酿造治疗药水</div>"
+        },
+        {
+            "name": "蜘蛛眼",
+            "id": "minecraft:spider_eye",
+            "detail": "<div class='item-name'>蜘蛛眼</div><div class='item-id'>ID：minecraft:spider_eye</div><div class='badge'>食物/药水材料</div><div class='section-title'>👁️ 物品信息</div><div class='info-line'>• <b>食用效果：</b>中毒</div><div class='info-line'>• <b>用途：</b>酿造剧毒药水</div>"
+        },
+        {
+            "name": "发酵蛛眼",
+            "id": "minecraft:fermented_spider_eye",
+            "detail": "<div class='item-name'>发酵蛛眼</div><div class='item-id'>ID：minecraft:fermented_spider_eye</div><div class='badge'>药水材料</div><div class='section-title'>🧪 物品信息</div><div class='info-line'>• <b>合成：</b>蜘蛛眼+棕色蘑菇+糖</div><div class='info-line'>• <b>用途：</b>酿造虚弱药水、衰变药水</div>"
+        },
+        {
+            "name": "糖",
+            "id": "minecraft:sugar",
+            "detail": "<div class='item-name'>糖</div><div class='item-id'>ID：minecraft:sugar</div><div class='badge'>材料</div><div class='section-title'>🧂 物品信息</div><div class='info-line'>• <b>获取途径：</b>甘蔗合成</div><div class='info-line'>• <b>用途：</b>制作蛋糕、南瓜派、药水</div>"
+        }
+    ],
+    "原材料": [
+        {
+            "name": "木棍",
+            "id": "minecraft:stick",
+            "detail": "<div class='item-name'>木棍</div><div class='item-id'>ID：minecraft:stick</div><div class='badge'>原材料</div><div class='section-title'>🥢 物品信息</div><div class='info-line'>• <b>合成：</b>2个木板</div><div class='info-line'>• <b>用途：</b>工具、武器、火把的基本材料</div>"
+        },
+        {
+            "name": "燧石",
+            "id": "minecraft:flint",
+            "detail": "<div class='item-name'>燧石</div><div class='item-id'>ID：minecraft:flint</div><div class='badge'>原材料</div><div class='section-title'>🪨 物品信息</div><div class='info-line'>• <b>获取途径：</b>挖掘沙砾概率掉落</div><div class='info-line'>• <b>用途：</b>制作打火石、箭</div>"
+        },
+        {
+            "name": "羽毛",
+            "id": "minecraft:feather",
+            "detail": "<div class='item-name'>羽毛</div><div class='item-id'>ID：minexraft:feather</div><div class='badge'>原材料</div><div class='section-title'>🪶 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀鸡</div><div class='info-line'>• <b>用途：</b>制作箭、书与笔</div>"
+        },
+        {
+            "name": "线",
+            "id": "minecraft:string",
+            "detail": "<div class='item-name'>线</div><div class='item-id'>ID：minecraft:string</div><div class='badge'>原材料</div><div class='section-title'>🧵 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀蜘蛛、地牢箱子</div><div class='info-line'>• <b>用途：</b>制作弓、钓竿、拴绳</div>"
+        },
+        {
+            "name": "皮革",
+            "id": "minecraft:leather",
+            "detail": "<div class='item-name'>皮革</div><div class='item-id'>ID：minecraft:leather</div><div class='badge'>原材料</div><div class='section-title'>🧶 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀牛、马、羊驼</div><div class='info-line'>• <b>用途：</b>制作皮革盔甲、书</div>"
+        },
+        {
+            "name": "兔子皮",
+            "id": "minecraft:rabbit_hide",
+            "detail": "<div class='item-name'>兔子皮</div><div class='item-id'>ID：minecraft:rabbit_hide</div><div class='badge'>原材料</div><div class='section-title'>🐇 物品信息</div><div class='info-line'>• <b>用途：</b>4个合成1个皮革</div>"
+        },
+        {
+            "name": "兔子脚",
+            "id": "minecraft:rabbit_foot",
+            "detail": "<div class='item-name'>兔子脚</div><div class='item-id'>ID：minecraft:rabbit_foot</div><div class='badge'>药水材料</div><div class='section-title'>🍀 物品信息</div><div class='info-line'>• <b>稀有掉落：</b>击杀兔子约2.5%概率</div><div class='info-line'>• <b>用途：</b>酿造跳跃药水</div>"
+        },
+        {
+            "name": "烈焰棒",
+            "id": "minecraft:blaze_rod",
+            "detail": "<div class='item-name'>烈焰棒</div><div class='item-id'>ID：minecraft:blaze_rod</div><div class='badge'>材料</div><div class='section-title'>🔥 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀烈焰人</div><div class='info-line'>• <b>用途：</b>制作烈焰粉、酿造台、末地烛</div>"
+        },
+        {
+            "name": "烈焰粉",
+            "id": "minecraft:blaze_powder",
+            "detail": "<div class='item-name'>烈焰粉</div><div class='item-id'>ID：minecraft:blaze_powder</div><div class='badge'>材料</div><div class='section-title'>🧪 物品信息</div><div class='info-line'>• <b>合成：</b>烈焰棒分解</div><div class='info-line'>• <b>用途：</b>酿造力量药水、制作末影之眼</div>"
+        },
+        {
+            "name": "末影珍珠",
+            "id": "minecraft:ender_pearl",
+            "detail": "<div class='item-name'>末影珍珠</div><div class='item-id'>ID：minecraft:ender_pearl</div><div class='badge'>材料/道具</div><div class='section-title'>👁️ 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀末影人</div><div class='info-line'>• <b>用途：</b>投掷传送、合成末影之眼</div>"
+        },
+        {
+            "name": "末影之眼",
+            "id": "minecraft:ender_eye",
+            "detail": "<div class='item-name'>末影之眼</div><div class='item-id'>ID：minecraft:ender_eye</div><div class='badge'>材料/道具</div><div class='section-title'>👁️ 物品信息</div><div class='info-line'>• <b>合成：</b>末影珍珠+烈焰粉</div><div class='info-line'>• <b>用途：</b>寻找要塞、激活末地传送门</div>"
+        },
+        {
+            "name": "恶魂之泪",
+            "id": "minecraft:ghast_tear",
+            "detail": "<div class='item-name'>恶魂之泪</div><div class='item-id'>ID：minecraft:ghast_tear</div><div class='badge'>药水材料</div><div class='section-title'>😢 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀恶魂</div><div class='info-line'>• <b>用途：</b>酿造再生药水</div>"
+        },
+        {
+            "name": "岩浆膏",
+            "id": "minecraft:magma_cream",
+            "detail": "<div class='item-name'>岩浆膏</div><div class='item-id'>ID：minecraft:magma_cream</div><div class='badge'>药水材料</div><div class='section-title'>🔥 物品信息</div><div class='info-line'>• <b>合成：</b>岩浆块+烈焰粉（或击杀岩浆怪）</div><div class='info-line'>• <b>用途：</b>酿造抗火药水</div>"
+        },
+        {
+            "name": "粘液球",
+            "id": "minecraft:slime_ball",
+            "detail": "<div class='item-name'>粘液球</div><div class='item-id'>ID：minecraft:slime_ball</div><div class='badge'>材料</div><div class='section-title'>🧪 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀史莱姆、熊猫打喷嚏</div><div class='info-line'>• <b>用途：</b>制作粘性活塞、岩浆膏、拴绳</div>"
+        },
+        {
+            "name": "海晶砂粒",
+            "id": "minecraft:prismarine_shard",
+            "detail": "<div class='item-name'>海晶砂粒</div><div class='item-id'>ID：minecraft:prismarine_shard</div><div class='badge'>材料</div><div class='section-title'>💎 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀守卫者、远古守卫者</div>"
+        },
+        {
+            "name": "海晶碎片",
+            "id": "minecraft:prismarine_crystals",
+            "detail": "<div class='item-name'>海晶碎片</div><div class='item-id'>ID：minecraft:prismarine_crystals</div><div class='badge'>材料</div><div class='section-title'>✨ 物品信息</div><div class='info-line'>• <b>用途：</b>制作海晶灯、潮涌核心</div>"
+        },
+        {
+            "name": "鹦鹉螺壳",
+            "id": "minecraft:nautilus_shell",
+            "detail": "<div class='item-name'>鹦鹉螺壳</div><div class='item-id'>ID：minecraft:nautilus_shell</div><div class='badge'>材料</div><div class='section-title'>🐚 物品信息</div><div class='info-line'>• <b>获取途径：</b>钓鱼宝藏、溺尸掉落</div><div class='info-line'>• <b>用途：</b>制作潮涌核心</div>"
+        },
+        {
+            "name": "海洋之心",
+            "id": "minecraft:heart_of_the_sea",
+            "detail": "<div class='item-name'>海洋之心</div><div class='item-id'>ID：minecraft:heart_of_the_sea</div><div class='badge'>材料</div><div class='section-title'>💙 物品信息</div><div class='info-line'>• <b>获取途径：</b>埋藏的宝藏</div><div class='info-line'>• <b>用途：</b>制作潮涌核心</div>"
+        },
+        {
+            "name": "下界之星",
+            "id": "minecraft:nether_star",
+            "detail": "<div class='item-name'>下界之星</div><div class='item-id'>ID：minecraft:nether_star</div><div class='badge'>材料</div><div class='section-title'>⭐ 物品信息</div><div class='info-line'>• <b>获取途径：</b>击杀凋灵</div><div class='info-line'>• <b>用途：</b>制作信标</div>"
+        },
+        {
+            "name": "龙头",
+            "id": "minecraft:dragon_head",
+            "detail": "<div class='item-name'>龙头</div><div class='item-id'>ID：minecraft:dragon_head</div><div class='badge'>装饰品</div><div class='section-title'>🐉 物品信息</div><div class='info-line'>• <b>获取途径：</b>末地船</div><div class='info-line'>• <b>特殊：</b>收到红石信号会张嘴闭嘴</div>"
+        },
+        {
+            "name": "龙息",
+            "id": "minecraft:dragon_breath",
+            "detail": "<div class='item-name'>龙息</div><div class='item-id'>ID：minecraft:dragon_breath</div><div class='badge'>药水材料</div><div class='section-title'>🐉 物品信息</div><div class='info-line'>• <b>获取途径：</b>用玻璃瓶收集末影龙的龙息攻击</div><div class='info-line'>• <b>用途：</b>制作滞留药水</div>"
+        },
+        {
+            "name": "鞘翅",
+            "id": "minecraft:elytra",
+            "detail": "<div class='item-name'>鞘翅</div><div class='item-id'>ID：minecraft:elytra</div><div class='badge'>装备</div><div class='section-title'>🦋 装备信息</div><div class='info-line'>• <b>耐久度：</b>432</div><div class='info-line'>• <b>获取途径：</b>末地船</div><div class='info-line'>• <b>功能：</b>滑翔飞行</div>"
+        }
+    ],
+    "唱片": [
+        {
+            "name": "唱片 13",
+            "id": "minecraft:music_disc_13",
+            "detail": "<div class='item-name'>唱片 13</div><div class='item-id'>ID：minecraft:music_disc_13</div><div class='badge'>唱片</div><div class='section-title'>💿 唱片信息</div><div class='info-line'>• <b>作者：</b>C418</div><div class='info-line'>• <b>获取途径：</b>地牢、要塞等结构的箱子，骷髅射杀苦力怕</div>"
+        },
+        {
+            "name": "唱片 cat",
+            "id": "minecraft:music_disc_cat",
+            "detail": "<div class='item-name'>唱片 cat</div><div class='item-id'>ID：minecraft:music_disc_cat</div><div class='badge'>唱片</div><div class='section-title'>💿 唱片信息</div><div class='info-line'>• <b>作者：</b>C418</div>"
+        },
+        {
+            "name": "唱片 blocks",
+            "id": "minecraft:music_disc_blocks",
+            "detail": "<div class='item-name'>唱片 blocks</div><div class='item-id'>ID：minecraft:music_disc_blocks</div><div class='badge'>唱片</div><div class='section-title'>💿 唱片信息</div><div class='info-line'>• <b>作者：</b>C418</div>"
+        },
+        {
+            "name": "唱片 chirp",
+            "id": "minecraft:music_disc_chirp",
+            "detail": "<div class='item-name'>唱片 chirp</div><div class='item-id'>ID：minecraft:music_disc_chirp</div><div class='badge'>唱片</div>"
+        },
+        {
+            "name": "唱片 far",
+            "id": "minecraft:music_disc_far",
+            "detail": "<div class='item-name'>唱片 far</div><div class='item-id'>ID：minecraft:music_disc_far</div><div class='badge'>唱片</div>"
+        },
+        {
+            "name": "唱片 mall",
+            "id": "minecraft:music_disc_mall",
+            "detail": "<div class='item-name'>唱片 mall</div><div class='item-id'>ID：minecraft:music_disc_mall</div><div class='badge'>唱片</div>"
+        },
+        {
+            "name": "唱片 mellohi",
+            "id": "minecraft:music_disc_mellohi",
+            "detail": "<div class='item-name'>唱片 mellohi</div><div class='item-id'>ID：minecraft:music_disc_mellohi</div><div class='badge'>唱片</div>"
+        },
+        {
+            "name": "唱片 stal",
+            "id": "minecraft:music_disc_stal",
+            "detail": "<div class='item-name'>唱片 stal</div><div class='item-id'>ID：minecraft:music_disc_stal</div><div class='badge'>唱片</div>"
+        },
+        {
+            "name": "唱片 strad",
+            "id": "minecraft:music_disc_strad",
+            "detail": "<div class='item-name'>唱片 strad</div><div class='item-id'>ID：minecraft:music_disc_strad</div><div class='badge'>唱片</div>"
+        },
+        {
+            "name": "唱片 ward",
+            "id": "minecraft:music_disc_ward",
+            "detail": "<div class='item-name'>唱片 ward</div><div class='item-id'>ID：minecraft:music_disc_ward</div><div class='badge'>唱片</div>"
+        },
+        {
+            "name": "唱片 11",
+            "id": "minecraft:music_disc_11",
+            "detail": "<div class='item-name'>唱片 11</div><div class='item-id'>ID：minecraft:music_disc_11</div><div class='badge'>唱片</div><div class='section-title'>💿 唱片信息</div><div class='info-line'>• <b>特殊：</b>时长1分11秒，包含诡异音效</div>"
+        },
+        {
+            "name": "唱片 wait",
+            "id": "minecraft:music_disc_wait",
+            "detail": "<div class='item-name'>唱片 wait</div><div class='item-id'>ID：minecraft:music_disc_wait</div><div class='badge'>唱片</div>"
+        },
+        {
+            "name": "唱片 Pigstep",
+            "id": "minecraft:music_disc_pigstep",
+            "detail": "<div class='item-name'>唱片 Pigstep</div><div class='item-id'>ID：minecraft:music_disc_pigstep</div><div class='badge'>唱片</div><div class='section-title'>💿 唱片信息</div><div class='info-line'>• <b>作者：</b>Lena Raine</div><div class='info-line'>• <b>获取途径：</b>堡垒遗迹</div>"
+        },
+        {
+            "name": "唱片 otherside",
+            "id": "minecraft:music_disc_otherside",
+            "detail": "<div class='item-name'>唱片 otherside</div><div class='item-id'>ID：minecraft:music_disc_otherside</div><div class='badge'>唱片</div><div class='section-title'>💿 唱片信息</div><div class='info-line'>• <b>作者：</b>Lena Raine</div>"
+        },
+        {
+            "name": "唱片 5",
+            "id": "minecraft:music_disc_5",
+            "detail": "<div class='item-name'>唱片 5</div><div class='item-id'>ID：minecraft:music_disc_5</div><div class='badge'>唱片</div><div class='section-title'>💿 唱片信息</div><div class='info-line'>• <b>作者：</b>Samuel Åberg</div><div class='info-line'>• <b>获取途径：</b>远古城市，9个唱片碎片合成</div>"
+        }
+    ],
+    "旗帜图案": [
+        {
+            "name": "花朵盾徽旗帜图案",
+            "id": "minecraft:flower_banner_pattern",
+            "detail": "<div class='item-name'>花朵盾徽旗帜图案</div><div class='item-id'>ID：minecraft:flower_banner_pattern</div><div class='badge'>旗帜图案</div><div class='section-title'>🎨 物品信息</div><div class='info-line'>• <b>稀有度：</b>常见</div><div class='info-line'>• <b>加入版本：</b>Java版1.14</div><div class='info-line'>• <b>用途：</b>在织布机中为旗帜添加花朵盾徽图案，不会被消耗</div>"
+        },
+        {
+            "name": "苦力怕盾徽旗帜图案",
+            "id": "minecraft:creeper_banner_pattern",
+            "detail": "<div class='item-name'>苦力怕盾徽旗帜图案</div><div class='item-id'>ID：minecraft:creeper_banner_pattern</div><div class='badge'>旗帜图案</div><div class='section-title'>🎨 物品信息</div><div class='info-line'>• <b>稀有度：</b>少见</div>"
+        },
+        {
+            "name": "头颅盾徽旗帜图案",
+            "id": "minecraft:skull_banner_pattern",
+            "detail": "<div class='item-name'>头颅盾徽旗帜图案</div><div class='item-id'>ID：minecraft:skull_banner_pattern</div><div class='badge'>旗帜图案</div><div class='section-title'>🎨 物品信息</div><div class='info-line'>• <b>稀有度：</b>稀有</div>"
+        },
+        {
+            "name": "Mojang徽标旗帜图案",
+            "id": "minecraft:mojang_banner_pattern",
+            "detail": "<div class='item-name'>Mojang徽标旗帜图案</div><div class='item-id'>ID：minecraft:mojang_banner_pattern</div><div class='badge'>旗帜图案</div><div class='section-title'>🎨 物品信息</div><div class='info-line'>• <b>稀有度：</b>稀有</div>"
+        },
+        {
+            "name": "地球旗帜图案",
+            "id": "minecraft:globe_banner_pattern",
+            "detail": "<div class='item-name'>地球旗帜图案</div><div class='item-id'>ID：minecraft:globe_banner_pattern</div><div class='badge'>旗帜图案</div><div class='section-title'>🎨 物品信息</div><div class='info-line'>• <b>获取途径：</b>与大师级制图师村民交易</div>"
+        },
+        {
+            "name": "猪鼻旗帜图案",
+            "id": "minecraft:piglin_banner_pattern",
+            "detail": "<div class='item-name'>猪鼻旗帜图案</div><div class='item-id'>ID：minecraft:piglin_banner_pattern</div><div class='badge'>旗帜图案</div><div class='section-title'>🎨 物品信息</div><div class='info-line'>• <b>稀有度：</b>少见</div><div class='info-line'>• <b>获取途径：</b>堡垒遗迹</div>"
+        },
+        {
+            "name": "涡流旗帜图案",
+            "id": "minecraft:flow_banner_pattern",
+            "detail": "<div class='item-name'>涡流旗帜图案</div><div class='item-id'>ID：minecraft:flow_banner_pattern</div><div class='badge'>旗帜图案</div><div class='section-title'>🎨 物品信息</div><div class='info-line'>• <b>稀有度：</b>稀有</div><div class='info-line'>• <b>加入版本：</b>Java版1.20.5</div>"
+        },
+        {
+            "name": "旋风旗帜图案",
+            "id": "minecraft:guster_banner_pattern",
+            "detail": "<div class='item-name'>旋风旗帜图案</div><div class='item-id'>ID：minecraft:guster_banner_pattern</div><div class='badge'>旗帜图案</div><div class='section-title'>🎨 物品信息</div><div class='info-line'>• <b>稀有度：</b>稀有</div>"
+        }
+    ],
+    "陶片": [
+        {
+            "name": "垂钓陶片",
+            "id": "minecraft:angler_pottery_sherd",
+            "detail": "<div class='item-name'>垂钓陶片</div><div class='badge'>陶片</div><div class='section-title'>🏺 物品信息</div><div class='info-line'>• <b>加入版本：</b>Java版1.20</div><div class='info-line'>• <b>用途：</b>与砖块合成饰纹陶罐，展示特定图案</div>"
+        },
+        {
+            "name": "弓箭陶片",
+            "id": "minecraft:archer_pottery_sherd",
+            "detail": "<div class='item-name'>弓箭陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "举臂陶片",
+            "id": "minecraft:arms_up_pottery_sherd",
+            "detail": "<div class='item-name'>举臂陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": " blades_陶片",
+            "id": "minecraft:blade_pottery_sherd",
+            "detail": "<div class='item-name'> blades_陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "酿造陶片",
+            "id": "minecraft:brewer_pottery_sherd",
+            "detail": "<div class='item-name'>酿造陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "烈焰陶片",
+            "id": "minecraft:burn_pottery_sherd",
+            "detail": "<div class='item-name'>烈焰陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "危险陶片",
+            "id": "minecraft:explorer_pottery_sherd",
+            "detail": "<div class='item-name'>危险陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "朋友陶片",
+            "id": "minecraft:friend_pottery_sherd",
+            "detail": "<div class='item-name'>朋友陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "爱心陶片",
+            "id": "minecraft:heart_pottery_sherd",
+            "detail": "<div class='item-name'>爱心陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "心碎陶片",
+            "id": "minecraft:heartbreak_pottery_sherd",
+            "detail": "<div class='item-name'>心碎陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "号角陶片",
+            "id": "minecraft:howl_pottery_sherd",
+            "detail": "<div class='item-name'>号角陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "采矿陶片",
+            "id": "minecraft:miner_pottery_sherd",
+            "detail": "<div class='item-name'>采矿陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "悲恸陶片",
+            "id": "minecraft:mourner_pottery_sherd",
+            "detail": "<div class='item-name'>悲恸陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "富饶陶片",
+            "id": "minecraft:plenty_pottery_sherd",
+            "detail": "<div class='item-name'>富饶陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "珍宝陶片",
+            "id": "minecraft:prize_pottery_sherd",
+            "detail": "<div class='item-name'>珍宝陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "麦捆陶片",
+            "id": "minecraft:sheaf_pottery_sherd",
+            "detail": "<div class='item-name'>麦捆陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "沉船陶片",
+            "id": "minecraft:shelter_pottery_sherd",
+            "detail": "<div class='item-name'>沉船陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "头颅陶片",
+            "id": "minecraft:skull_pottery_sherd",
+            "detail": "<div class='item-name'>头颅陶片</div><div class='badge'>陶片</div>"
+        },
+        {
+            "name": "嗅探陶片",
+            "id": "minecraft:snort_pottery_sherd",
+            "detail": "<div class='item-name'>嗅探陶片</div><div class='badge'>陶片</div>"
+        }
+    ],
+    "杂项": [
+        {
+            "name": "马鞍",
+            "id": "minecraft:saddle",
+            "detail": "<div class='item-name'>马鞍</div><div class='item-id'>ID：minecraft:saddle</div><div class='badge'>杂项</div><div class='section-title'>🐎 物品信息</div><div class='info-line'>• <b>用途：</b>骑乘马、猪、炽足兽</div><div class='info-line'>• <b>获取途径：</b>地牢、下界要塞等结构的箱子、钓鱼、村民交易</div>"
+        },
+        {
+            "name": "铁马铠",
+            "id": "minecraft:iron_horse_armor",
+            "detail": "<div class='item-name'>铁马铠</div><div class='item-id'>ID：minecraft:iron_horse_armor</div><div class='badge'>马铠</div><div class='section-title'>🐎 物品信息</div><div class='info-line'>• <b>护甲值：</b>+5</div>"
+        },
+        {
+            "name": "金马铠",
+            "id": "minecraft:golden_horse_armor",
+            "detail": "<div class='item-name'>金马铠</div><div class='item-id'>ID：minecraft:golden_horse_armor</div><div class='badge'>马铠</div><div class='section-title'>🐎 物品信息</div><div class='info-line'>• <b>护甲值：</b>+7</div>"
+        },
+        {
+            "name": "钻石马铠",
+            "id": "minecraft:diamond_horse_armor",
+            "detail": "<div class='item-name'>钻石马铠</div><div class='item-id'>ID：minecraft:diamond_horse_armor</div><div class='badge'>马铠</div><div class='section-title'>🐎 物品信息</div><div class='info-line'>• <b>护甲值：</b>+11</div>"
+        },
+        {
+            "name": "拴绳",
+            "id": "minecraft:lead",
+            "detail": "<div class='item-name'>拴绳</div><div class='item-id'>ID：minecraft:lead</div><div class='badge'>杂项</div><div class='section-title'>🪢 物品信息</div><div class='info-line'>• <b>用途：</b>拴住生物并牵引</div>"
+        },
+        {
+            "name": "命名牌",
+            "id": "minecraft:name_tag",
+            "detail": "<div class='item-name'>命名牌</div><div class='item-id'>ID：minecraft:name_tag</div><div class='badge'>杂项</div><div class='section-title'>🏷️ 物品信息</div><div class='info-line'>• <b>用途：</b>在铁砧上改名后给生物命名</div>"
+        },
+        {
+            "name": "钟",
+            "id": "minecraft:clock",
+            "detail": "<div class='item-name'>钟</div><div class='item-id'>ID：minecraft:clock</div><div class='badge'>杂项</div><div class='section-title'>⏰ 物品信息</div><div class='info-line'>• <b>用途：</b>显示当前游戏时间</div>"
+        },
+        {
+            "name": "指南针",
+            "id": "minecraft:compass",
+            "detail": "<div class='item-name'>指南针</div><div class='item-id'>ID：minecraft:compass</div><div class='badge'>杂项</div><div class='section-title'>🧭 物品信息</div><div class='info-line'>• <b>用途：</b>指向世界出生点</div>"
+        },
+        {
+            "name": "追溯指针",
+            "id": "minecraft:recovery_compass",
+            "detail": "<div class='item-name'>追溯指针</div><div class='item-id'>ID：minecraft:recovery_compass</div><div class='badge'>杂项</div><div class='section-title'>🧭 物品信息</div><div class='info-line'>• <b>用途：</b>指向玩家上次死亡的位置</div>"
+        },
+        {
+            "name": "地图",
+            "id": "minecraft:map",
+            "detail": "<div class='item-name'>地图</div><div class='item-id'>ID：minecraft:map</div><div class='badge'>杂项</div><div class='section-title'>🗺️ 物品信息</div><div class='info-line'>• <b>用途：</b>记录探索的地形</div>"
+        },
+        {
+            "name": "空地图",
+            "id": "minecraft:filled_map",
+            "detail": "<div class='item-name'>空地图</div><div class='item-id'>ID：minecraft:filled_map</div><div class='badge'>杂项</div>"
+        },
+        {
+            "name": "探险家地图",
+            "id": "minecraft:explorer_map",
+            "detail": "<div class='item-name'>探险家地图</div><div class='badge'>杂项</div><div class='section-title'>🗺️ 物品信息</div><div class='info-line'>• <b>用途：</b>指向林地府邸或海洋 monument</div>"
+        },
+        {
+            "name": "书",
+            "id": "minecraft:book",
+            "detail": "<div class='item-name'>书</div><div class='item-id'>ID：minecraft:book</div><div class='badge'>杂项</div><div class='section-title'>📚 物品信息</div><div class='info-line'>• <b>用途：</b>制作书架、书与笔、附魔台</div>"
+        },
+        {
+            "name": "书与笔",
+            "id": "minecraft:writable_book",
+            "detail": "<div class='item-name'>书与笔</div><div class='item-id'>ID：minecraft:writable_book</div><div class='badge'>杂项</div><div class='section-title'>📝 物品信息</div><div class='info-line'>• <b>用途：</b>书写文字并签名</div>"
+        },
+        {
+            "name": "成书",
+            "id": "minecraft:written_book",
+            "detail": "<div class='item-name'>成书</div><div class='item-id'>ID：minecraft:written_book</div><div class='badge'>杂项</div>"
+        },
+        {
+            "name": "纸",
+            "id": "minecraft:paper",
+            "detail": "<div class='item-name'>纸</div><div class='item-id'>ID：minecraft:paper</div><div class='badge'>杂项</div><div class='section-title'>📄 物品信息</div><div class='info-line'>• <b>合成：</b>甘蔗</div>"
+        },
+        {
+            "name": "望远镜",
+            "id": "minecraft:spyglass",
+            "detail": "<div class='item-name'>望远镜</div><div class='item-id'>ID：minecraft:spyglass</div><div class='badge'>杂项</div><div class='section-title'>🔭 物品信息</div><div class='info-line'>• <b>加入版本：</b>Java版1.17</div><div class='info-line'>• <b>用途：</b>放大视野</div>"
+        },
+        {
+            "name": "烟火之星",
+            "id": "minecraft:firework_star",
+            "detail": "<div class='item-name'>烟火之星</div><div class='item-id'>ID：minecraft:firework_star</div><div class='badge'>杂项</div><div class='section-title'>🎆 物品信息</div><div class='info-line'>• <b>用途：</b>决定烟花的颜色和效果</div>"
+        },
+        {
+            "name": "烟花火箭",
+            "id": "minecraft:firework_rocket",
+            "detail": "<div class='item-name'>烟花火箭</div><div class='item-id'>ID：minecraft:firework_rocket</div><div class='badge'>杂项</div><div class='section-title'>🎆 物品信息</div><div class='info-line'>• <b>用途：</b>燃放烟花、使用鞘翅时推进飞行</div>"
+        }
+    ]
+}

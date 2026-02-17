@@ -1,0 +1,566 @@
+[
+    {
+        "command": "/gamemode",
+        "description": "切换游戏模式",
+        "usage": "模板：/gamemode <模式> [玩家]\n\n【参数说明】\n• 模式：可以填 survival（生存）、creative（创造）、adventure（冒险）、spectator（旁观）\n• 玩家：要切换模式的玩家（不填就是自己）\n\n【新手必看】\n• 生存模式：正常玩游戏，要吃东西、掉血会死\n• 创造模式：无限方块，能飞，无敌\n• 冒险模式：不能破坏方块，适合玩别人的地图\n• 旁观模式：可以穿墙、看别人视角\n\n【使用示例】\n• /gamemode creative —— 把自己变成创造模式\n• /gamemode survival @p —— 把最近的玩家变成生存模式\n• /gamemode spectator Steve —— 把Steve变成旁观模式",
+        "category": "常用"
+    },
+    {
+        "command": "/give",
+        "description": "给予玩家物品",
+        "usage": "模板：/give <目标> <物品ID> [数量] [数据值] [NBT标签]\n\n【参数说明】\n• 目标：谁得到物品（@p最近的玩家 @a所有玩家 @s自己）\n• 物品ID：物品的英文名字，比如 diamond（钻石）、apple（苹果）\n• 数量：给多少个（默认64）\n• 数据值：特殊版本，比如不同颜色的羊毛（默认0）\n\n【新手必看】\n不知道物品ID怎么办？可以在游戏里按T然后打 /give 空格，然后按Tab键，游戏会自动提示你！\n\n【使用示例】\n• /give @p diamond 1 —— 给最近的玩家1个钻石\n• /give Steve apple 64 —— 给Steve一箱苹果（64个）\n• /give @a iron_ingot 5 —— 给所有人5个铁锭",
+        "category": "常用"
+    },
+    {
+        "command": "/tp",
+        "description": "传送实体",
+        "usage": "模板：/tp [目标] <坐标> 或 /tp <目标> <目的地>\n\n【参数说明】\n• 目标：要传送的玩家或实体（不填就是自己）\n• 坐标：要传送到哪里，格式是 x y z（三个数字）\n• 目的地：要传送到哪个玩家身边\n\n【新手必看】\n坐标怎么看？按F3（笔记本按Fn+F3）打开调试屏幕，就能看到当前坐标！\n~ 符号表示当前位置，比如 ~ ~ ~ 就是原地不动\n\n【使用示例】\n• /tp 100 64 200 —— 把自己传送到(100,64,200)\n• /tp @p Steve —— 把最近的玩家传送到Steve身边\n• /tp Steve ~ ~5 ~ —— 把Steve传送到自己头顶上方5格\n• /tp @a 0 100 0 —— 把所有玩家传送到高空100米处",
+        "category": "常用"
+    },
+    {
+        "command": "/time",
+        "description": "调整游戏时间",
+        "usage": "模板：/time set <时间值> 或 /time add <时间值>\n\n【参数说明】\n• set：设置时间为某个值\n• add：增加或减少时间\n\n【新手必看】\n时间值可以用数字，也可以用单词：\n• day —— 白天（相当于 1000）\n• night —— 晚上（相当于 13000）\n• noon —— 正午（相当于 6000）\n• midnight —— 午夜（相当于 18000）\n\n【使用示例】\n• /time set day —— 立刻变成白天\n• /time set night —— 立刻变成晚上\n• /time add 1000 —— 时间向前走1000（大概天亮了一些）",
+        "category": "常用"
+    },
+    {
+        "command": "/weather",
+        "description": "改变天气",
+        "usage": "模板：/weather <天气类型> [持续时间]\n\n【参数说明】\n• 天气类型：clear（晴天）、rain（下雨）、thunder（雷雨）\n• 持续时间：这个天气持续多少秒（不填就随机）\n\n【新手必看】\n下雨天可以睡觉跳过，但雷雨天会打雷，可能劈中生物！\n\n【使用示例】\n• /weather clear —— 马上晴天\n• /weather rain 30 —— 下雨30秒\n• /weather thunder —— 开始打雷下雨",
+        "category": "常用"
+    },
+    {
+        "command": "/kill",
+        "description": "杀死实体",
+        "usage": "模板：/kill [目标]\n\n【参数说明】\n• 目标：要杀死的玩家或生物（不填就杀死自己）\n\n【新手必看】\n• 杀自己可以用来快速回城（如果床被挖了）\n• 杀怪物可以用来清怪\n\n【使用示例】\n• /kill —— 自杀，重生\n• /kill @e[type=creeper] —— 杀死所有苦力怕\n• /kill Steve —— 杀死Steve（如果他同意的话...）",
+        "category": "常用"
+    },
+    {
+        "command": "/difficulty",
+        "description": "设置游戏难度",
+        "usage": "模板：/difficulty <难度>\n\n【参数说明】\n• peaceful（和平）：怪物不生成，生命自动回复\n• easy（简单）：怪物伤害低\n• normal（普通）：正常游戏\n• hard（困难）：怪物伤害高，僵尸能破门\n\n【新手必看】\n和平模式下，所有怪物都会消失，掉落的物品也会消失！\n\n【使用示例】\n• /difficulty peaceful —— 变成和平模式（怪物全消失）\n• /difficulty hard —— 挑战困难模式",
+        "category": "世界"
+    },
+    {
+        "command": "/gamerule",
+        "description": "修改游戏规则",
+        "usage": "模板：/gamerule <规则名称> <true/false> 或 /gamerule <规则名称> <数值>\n\n【新手必看】\n常用规则说明：\n• keepInventory true —— 死亡不掉落物品（新手最爱！）\n• doDaylightCycle false —— 时间停止，永远是现在这个时间\n• doMobSpawning false —— 不再生成新怪物（已有的还在）\n• doWeatherCycle false —— 天气不再变化\n• pvp true/false —— 玩家之间能否互相伤害\n\n【使用示例】\n• /gamerule keepInventory true —— 开启死亡不掉落\n• /gamerule doDaylightCycle false —— 停止时间\n• /gamerule pvp false —— 关闭玩家互相伤害",
+        "category": "世界"
+    },
+    {
+        "command": "/seed",
+        "description": "查看世界种子",
+        "usage": "模板：/seed\n\n【新手必看】\n种子就是这个世界的“身份证号”。如果你喜欢这个世界的地形，可以把种子记下来，新建世界时输入同样的种子，就能生成差不多一样的地形！\n\n【使用示例】\n• /seed —— 显示一串数字，复制下来分享给朋友",
+        "category": "世界"
+    },
+    {
+        "command": "/setworldspawn",
+        "description": "设置世界出生点",
+        "usage": "模板：/setworldspawn [坐标]\n\n【参数说明】\n• 坐标：要设为出生点的位置（不填就是当前位置）\n\n【新手必看】\n世界出生点是所有新玩家第一次进入世界的地方，也是没有床的人重生后可能会去的地方。\n\n【使用示例】\n• /setworldspawn —— 把当前位置设为世界出生点\n• /setworldspawn 0 64 0 —— 把(0,64,0)设为世界出生点",
+        "category": "世界"
+    },
+    {
+        "command": "/spawnpoint",
+        "description": "设置玩家个人出生点",
+        "usage": "模板：/spawnpoint [目标] [坐标]\n\n【参数说明】\n• 目标：为谁设置出生点（不填就是自己）\n• 坐标：在哪里重生（不填就是当前位置）\n\n【新手必看】\n相当于给自己或别人“绑定”一个床，即使没有床，死后也会在这里重生！\n\n【使用示例】\n• /spawnpoint —— 把当前位置设为自己的重生点\n• /spawnpoint Steve 100 64 100 —— 把Steve的重生点设在(100,64,100)",
+        "category": "世界"
+    },
+    {
+        "command": "/locate",
+        "description": "查找附近的结构",
+        "usage": "模板：/locate <结构名称>\n\n【参数说明】\n• 结构名称：比如 village（村庄）、temple（神庙）、mansion（林地府邸）等\n\n【新手必看】\n找村庄、找神殿、找末地城，这个指令超级实用！\n\n【使用示例】\n• /locate village —— 告诉你最近村庄的坐标\n• /locate temple —— 找沙漠神殿或丛林神庙\n• /locate endcity —— 找末地城（末地船）",
+        "category": "世界"
+    },
+    {
+        "command": "/fill",
+        "description": "填充方块",
+        "usage": "模板：/fill <起点坐标> <终点坐标> <方块ID> [数据值] [处理模式]\n\n【参数说明】\n• 起点坐标：要填充区域的第一个角（x y z）\n• 终点坐标：要填充区域的第二个角（x y z）\n• 方块ID：比如 stone（石头）、air（空气）\n• 处理模式：replace（替换）、destroy（破坏原有方块）、hollow（只填充边框）、outline（只填充边缘）\n\n【新手必看】\n空气 air 就是“清除”，可以用来挖大坑！\n\n【使用示例】\n• /fill ~-5 ~ ~-5 ~5 ~5 ~5 stone —— 在自己周围造一个11x11x11的石头房子\n• /fill 0 0 0 10 10 10 air —— 把(0,0,0)到(10,10,10)的区域全清空（相当于挖了个大坑）\n• /fill ~-10 ~-1 ~-10 ~10 ~-1 ~10 glass —— 在自己脚下造一个21x21的玻璃地板",
+        "category": "建筑"
+    },
+    {
+        "command": "/clone",
+        "description": "复制/克隆方块区域",
+        "usage": "模板：/clone <源起点> <源终点> <目标位置>\n\n【参数说明】\n• 源起点：要复制的区域第一个角\n• 源终点：要复制的区域第二个角\n• 目标位置：粘贴到哪里（这个位置的方块会被覆盖）\n\n【新手必看】\n想复制一栋房子？先选好两个对角，然后指定要粘贴的位置！\n\n【使用示例】\n• /clone 100 64 100 110 74 110 200 64 200 —— 把坐标区域(100-110,64-74,100-110)复制到(200,64,200)开始的地方",
+        "category": "建筑"
+    },
+    {
+        "command": "/setblock",
+        "description": "放置单个方块",
+        "usage": "模板：/setblock <坐标> <方块ID> [数据值] [处理模式]\n\n【参数说明】\n• 坐标：要放置方块的位置（x y z）\n• 方块ID：比如 diamond_block（钻石块）\n• 处理模式：replace（替换原有方块）、keep（只放空气的地方）\n\n【使用示例】\n• /setblock ~ ~1 ~ diamond_block —— 在自己头顶放一个钻石块\n• /setblock 0 64 0 bedrock keep —— 如果(0,64,0)是空气，就放基岩",
+        "category": "建筑"
+    },
+    {
+        "command": "/summon",
+        "description": "召唤生物或实体",
+        "usage": "模板：/summon <实体ID> [坐标] [NBT标签]\n\n【参数说明】\n• 实体ID：比如 creeper（苦力怕）、zombie（僵尸）、ender_dragon（末影龙）\n• 坐标：在哪里召唤（不填就在你身边）\n\n【新手必看】\n小心！末影龙会在你身边召唤，可能直接把你顶飞！\n\n【使用示例】\n• /summon creeper —— 在身边召唤一只苦力怕\n• /summon sheep ~ ~ ~ {Color:6} —— 召唤一只粉色羊（Color:6是粉色）\n• /summon zombie ~ ~ ~ {IsBaby:1} —— 召唤一只小僵尸",
+        "category": "生物"
+    },
+    {
+        "command": "/effect",
+        "description": "添加或移除状态效果",
+        "usage": "模板：/effect give <目标> <效果> [秒数] [倍数] [隐藏粒子]\n       /effect clear <目标> [效果]\n\n【参数说明】\n• 效果：speed（速度）、jump_boost（跳跃提升）、strength（力量）、invisibility（隐身）等\n• 秒数：持续多久（默认30秒）\n• 倍数：效果强度（0是1级，1是2级，以此类推）\n• 隐藏粒子：true为不显示效果粒子\n\n【新手必看】\n隐身时穿盔甲会暴露！脱下盔甲才能真隐身。\n\n【使用示例】\n• /effect give @p speed 60 2 —— 给最近的玩家60秒速度III\n• /effect give @s invisibility 120 —— 让自己隐身2分钟\n• /effect clear @p —— 移除最近的玩家身上所有效果",
+        "category": "玩家"
+    },
+    {
+        "command": "/enchant",
+        "description": "附魔玩家手中的物品",
+        "usage": "模板：/enchant <目标> <魔咒ID> [等级]\n\n【参数说明】\n• 目标：谁手中的物品要附魔\n• 魔咒ID：sharpness（锋利）、protection（保护）、unbreaking（耐久）等\n• 等级：魔咒等级（默认1）\n\n【新手必看】\n附魔需要物品本身支持该魔咒，比如剑不能附魔保护！\n\n【使用示例】\n• /enchant @p sharpness 5 —— 给最近玩家的剑附魔锋利V\n• /enchant Steve unbreaking 3 —— 给Steve手中的工具附魔耐久III",
+        "category": "玩家"
+    },
+    {
+        "command": "/xp",
+        "description": "给予或扣除经验",
+        "usage": "模板：/xp <数量> [目标] 或 /xp <数量>L [目标]\n\n【参数说明】\n• 数量：直接加多少经验值\n• 数量L：加多少经验等级\n• 目标：谁获得经验（不填就是自己）\n\n【使用示例】\n• /xp 100L —— 给自己100级\n• /xp 50 @p —— 给最近的玩家50点经验值\n• /xp -10L Steve —— 扣除Steve10级",
+        "category": "玩家"
+    },
+    {
+        "command": "/clear",
+        "description": "清空玩家物品栏",
+        "usage": "模板：/clear [目标] [物品] [最大数量]\n\n【参数说明】\n• 目标：清空谁的物品栏（不填就是自己）\n• 物品：只清空特定物品\n• 最大数量：最多清空多少个\n\n【使用示例】\n• /clear —— 清空自己的物品栏\n• /clear Steve diamond —— 清空Steve身上所有钻石\n• /clear @a dirt 10 —— 清空所有人身上最多10个泥土",
+        "category": "玩家"
+    },
+    {
+        "command": "/say",
+        "description": "以服务器身份发送消息",
+        "usage": "模板：/say <消息>\n\n【新手必看】\n所有人都会看到你的消息，而且显示为 [服务器] 你的消息，酷吧？\n\n【使用示例】\n• /say 大家好，欢迎来到服务器！\n• /say 现在开始活动，所有人到集合点！",
+        "category": "管理员"
+    },
+    {
+        "command": "/tell",
+        "description": "私聊某位玩家",
+        "usage": "模板：/tell <目标> <消息>\n\n【新手必看】\n只有你们两个人能看到聊天内容！\n\n【使用示例】\n• /tell Steve 你藏在哪里？\n• /tell @p 恭喜你成为幸运玩家！",
+        "category": "玩家"
+    },
+    {
+        "command": "/op",
+        "description": "给予玩家管理员权限",
+        "usage": "模板：/op <玩家>\n\n【新手必看】\n管理员可以用所有指令，包括封禁别人，要小心给权限！\n\n【使用示例】\n• /op Steve —— 让Steve成为管理员",
+        "category": "管理员"
+    },
+    {
+        "command": "/deop",
+        "description": "撤销管理员权限",
+        "usage": "模板：/deop <玩家>\n\n【使用示例】\n• /deop Steve —— 收回Steve的管理员权限",
+        "category": "管理员"
+    },
+    {
+        "command": "/ban",
+        "description": "封禁玩家",
+        "usage": "模板：/ban <玩家> [原因]\n\n【使用示例】\n• /ban Steve —— 封禁Steve\n• /ban Steve 作弊 —— 封禁Steve，原因是作弊",
+        "category": "管理员"
+    },
+    {
+        "command": "/kick",
+        "description": "踢出玩家",
+        "usage": "模板：/kick <玩家> [原因]\n\n【新手必看】\n踢出后玩家可以重新进，和封禁不同。\n\n【使用示例】\n• /kick Steve 请遵守规则 —— 把Steve踢出服务器",
+        "category": "管理员"
+    },
+    {
+        "command": "/pardon",
+        "description": "解封玩家",
+        "usage": "模板：/pardon <玩家>\n\n【使用示例】\n• /pardon Steve —— 把Steve从黑名单移除",
+        "category": "管理员"
+    },
+    {
+        "command": "/whitelist",
+        "description": "管理白名单",
+        "usage": "模板：/whitelist <on|off|list|add|remove|reload>\n\n【新手必看】\n白名单开启后，只有名单上的人能进服务器，适合朋友服！\n\n【使用示例】\n• /whitelist on —— 开启白名单\n• /whitelist add Steve —— 把Steve加入白名单\n• /whitelist list —— 查看白名单列表",
+        "category": "管理员"
+    },
+    {
+        "command": "/save-all",
+        "description": "保存世界",
+        "usage": "模板：/save-all\n\n【使用示例】\n• /save-all —— 立刻保存所有游戏数据",
+        "category": "管理员"
+    },
+    {
+        "command": "/stop",
+        "description": "关闭服务器",
+        "usage": "模板：/stop\n\n【使用示例】\n• /stop —— 安全关闭服务器（会先保存）",
+        "category": "管理员"
+    },
+    {
+        "command": "/list",
+        "description": "查看在线玩家",
+        "usage": "模板：/list\n\n【使用示例】\n• /list —— 显示当前所有在线的玩家",
+        "category": "管理员"
+    },
+    {
+        "command": "/playsound",
+        "description": "播放音效",
+        "usage": "模板：/playsound <音效> <来源> [玩家] [坐标] [音量] [音调] [最小音量]\n\n【使用示例】\n• /playsound minecraft:entity.player.levelup master @p —— 给最近的玩家播放升级音效",
+        "category": "高级"
+    },
+    {
+        "command": "/particle",
+        "description": "生成粒子效果",
+        "usage": "模板：/particle <粒子> [坐标] [扩散范围] [速度] [数量] [玩家]\n\n【使用示例】\n• /particle minecraft:heart ~ ~2 ~ 0.5 0.5 0.5 0.1 50 —— 在身边生成爱心粒子",
+        "category": "高级"
+    },
+    {
+        "command": "/title",
+        "description": "显示屏幕标题",
+        "usage": "模板：/title <目标> <类型> <文字>\n\n【参数说明】\n• 类型：title（大标题）、subtitle（副标题）、actionbar（物品栏上方）\n\n【使用示例】\n• /title @p title 欢迎！ —— 在屏幕中央显示大标题“欢迎！”\n• /title @a subtitle 服务器即将重启 —— 给所有人显示副标题",
+        "category": "高级"
+    },
+    {
+        "command": "/bossbar",
+        "description": "管理Boss血条",
+        "usage": "模板：/bossbar add <ID> <名称> —— 创建血条\n       /bossbar set <ID> players <目标> —— 设置哪些玩家能看到\n       /bossbar set <ID> value <数值> —— 设置当前值\n       /bossbar set <ID> max <数值> —— 设置最大值\n\n【使用示例】\n• /bossbar add mybar {\"text\":\"活动倒计时\"} —— 创建血条\n• /bossbar set mybar players @a —— 让所有玩家看到\n• /bossbar set mybar max 100 —— 设置血条最大值100\n• /bossbar set mybar value 50 —— 设置血条当前值50",
+        "category": "高级"
+    },
+    {
+        "command": "/execute",
+        "description": "以其他实体身份执行指令",
+        "usage": "模板：/execute as <实体> at <实体> run <指令>\n\n【新手必看】\n这是最强大的指令！可以理解为“假装我是别人去做某事”\n\n【使用示例】\n• /execute as @e[type=creeper] at @s run kill @s —— 杀死所有苦力怕\n• /execute at Steve run summon creeper —— 在Steve的位置召唤苦力怕\n• /execute as @a at @s run say 我是每个人！ —— 所有玩家都说这句话（每人说一次）",
+        "category": "高级"
+    },
+    {
+        "command": "/data",
+        "description": "获取或修改数据",
+        "usage": "模板：/data get entity <目标> [标签路径] —— 获取实体数据\n       /data merge entity <目标> <数据> —— 合并数据\n\n【使用示例】\n• /data get entity @s —— 查看自己的所有NBT数据\n• /data merge entity @e[type=cow,limit=1] {Age:-24000} —— 让一只牛变成小牛",
+        "category": "高级"
+    },
+    {
+        "command": "/tag",
+        "description": "管理实体的标签",
+        "usage": "模板：/tag <目标> add <标签> —— 添加标签\n       /tag <目标> remove <标签> —— 移除标签\n       /tag <目标> list —— 列出标签\n\n【新手必看】\n标签就像给实体贴小纸条，可以用来区分不同的实体！\n\n【使用示例】\n• /tag @p add VIP —— 给最近的玩家贴上VIP标签\n• /tag @e[type=zombie] add boss —— 给所有僵尸贴上boss标签\n• /kill @e[tag=boss] —— 杀死所有有boss标签的实体",
+        "category": "高级"
+    },
+    {
+        "command": "/scoreboard",
+        "description": "管理计分板",
+        "usage": "模板：/scoreboard objectives add <计分项> <准则> [显示名称] —— 创建计分项\n       /scoreboard players set <玩家> <计分项> <数值> —— 设置分数\n       /scoreboard players add <玩家> <计分项> <数值> —— 增加分数\n\n【新手必看】\n计分板可以用来做小游戏计分、任务系统等！\n\n【使用示例】\n• /scoreboard objectives add kills totalKillCount 杀敌数 —— 创建杀敌数计分板\n• /scoreboard players set @p kills 10 —— 把最近的玩家杀敌数设为10\n• /scoreboard objectives setdisplay sidebar kills —— 在右侧边栏显示杀敌数排行榜",
+        "category": "高级"
+    },
+    {
+        "command": "/advancement",
+        "description": "添加、移除或查询玩家的进度",
+        "usage": "模板：/advancement (grant|revoke) <目标> only <进度> [条件]\n\n【参数说明】\n• grant/revoke：给予或移除进度\n• 目标：玩家选择器（@p, @a, @s等）\n• 进度：进度ID，如 \"minecraft:story/iron_tools\"\n\n【使用示例】\n• /advancement grant @p only minecraft:story/iron_tools —— 给最近的玩家铁器时代进度\n• /advancement revoke @a everything —— 移除所有玩家所有进度",
+        "category": "高级"
+    },
+    {
+        "command": "/attribute",
+        "description": "修改或查询玩家和生物的属性",
+        "usage": "模板：/attribute <目标> <属性> (get|set|base) [值]\n\n【参数说明】\n• 属性：如 generic.max_health（最大生命值）、generic.movement_speed（移动速度）\n\n【使用示例】\n• /attribute @p minecraft:generic.max_health base set 40 —— 将血量上限设为40\n• /attribute @e[type=zombie,limit=1] minecraft:generic.movement_speed get —— 查看僵尸移动速度",
+        "category": "高级"
+    },
+    {
+        "command": "/bossbar",
+        "description": "修改或查询Boss栏",
+        "usage": "模板：/bossbar add <ID> <名称> —— 创建血条\n       /bossbar set <ID> players <目标> —— 设置哪些玩家能看到\n       /bossbar set <ID> value <数值> —— 设置当前值\n       /bossbar set <ID> max <数值> —— 设置最大值\n\n【使用示例】\n• /bossbar add mybar {\"text\":\"活动倒计时\"} —— 创建血条\n• /bossbar set mybar players @a —— 让所有玩家看到\n• /bossbar set mybar max 100 —— 设置血条最大值100\n• /bossbar set mybar value 50 —— 设置血条当前值50",
+        "category": "高级"
+    },
+    {
+        "command": "/camerashake",
+        "description": "启用镜头抖动效果[仅BE]",
+        "usage": "模板：/camerashake add <玩家> [强度] [类型] [持续时间]\n\n【使用示例】\n• /camerashake add @a 0.5 positional 5 —— 让所有玩家镜头抖动5秒",
+        "category": "高级"
+    },
+    {
+        "command": "/damage",
+        "description": "对指定实体造成伤害",
+        "usage": "模板：/damage <目标> <伤害量> <伤害类型>\n\n【参数说明】\n• 伤害类型：magic（魔法）、mob_attack（生物攻击）、fall（摔落）等\n\n【使用示例】\n• /damage @p 10 magic —— 对最近的玩家造成10点魔法伤害",
+        "category": "战斗"
+    },
+    {
+        "command": "/data",
+        "description": "获取、合并或移除实体或方块的NBT标签",
+        "usage": "模板：/data get entity <目标> [标签路径]\n       /data merge entity <目标> <数据>\n\n【使用示例】\n• /data get entity @s —— 查看自己的NBT数据\n• /data merge entity @e[type=cow,limit=1] {Age:-24000} —— 让一只牛变成小牛",
+        "category": "高级"
+    },
+    {
+        "command": "/datapack",
+        "description": "控制加载的数据包",
+        "usage": "模板：/datapack (enable|disable|list) [名称]\n\n【使用示例】\n• /datapack list —— 列出所有数据包\n• /datapack enable \"vanilla\" —— 启用原版数据包",
+        "category": "管理员"
+    },
+    {
+        "command": "/defaultgamemode",
+        "description": "更改默认的游戏模式",
+        "usage": "模板：/defaultgamemode <模式>\n\n【参数说明】\n• 模式：survival（生存）、creative（创造）、adventure（冒险）、spectator（旁观）\n\n【使用示例】\n• /defaultgamemode survival —— 设置新玩家默认为生存模式",
+        "category": "管理员"
+    },
+    {
+        "command": "/dialogue",
+        "description": "打开一个玩家的NPC对话[仅BE]",
+        "usage": "模板：/dialogue open <NPC实体> <玩家> [场景名称]\n\n【使用示例】\n• /dialogue open @e[type=npc,limit=1] @p —— 打开NPC对话",
+        "category": "高级"
+    },
+    {
+        "command": "/event",
+        "description": "触发一个实体的事件[仅BE]",
+        "usage": "模板：/event entity <目标> <事件名称>\n\n【使用示例】\n• /event entity @e[type=sheep] minecraft:entity_sheep_turn_black —— 把羊变成黑色",
+        "category": "生物"
+    },
+    {
+        "command": "/experience",
+        "description": "给予玩家经验（/xp的替代）",
+        "usage": "模板：/experience add <玩家> <数量> [点|级]\n\n【使用示例】\n• /experience add @p 100 points —— 给最近的玩家100经验值\n• /experience add @p 5 levels —— 给最近的玩家5级经验",
+        "category": "玩家"
+    },
+    {
+        "command": "/fog",
+        "description": "添加或移除迷雾设置[仅BE]",
+        "usage": "模板：/fog <玩家> push <雾ID> <用户提供ID>\n\n【使用示例】\n• /fog @p push bedrock:fog_nether nether_fog —— 给玩家添加下界迷雾",
+        "category": "高级"
+    },
+    {
+        "command": "/forceload",
+        "description": "强制不断加载区块[仅JE]",
+        "usage": "模板：/forceload add <从> <到>\n       /forceload remove <从> <到>\n\n【使用示例】\n• /forceload add 0 0 15 15 —— 强制加载坐标区域的区块",
+        "category": "管理员"
+    },
+    {
+        "command": "/function",
+        "description": "运行一个函数",
+        "usage": "模板：/function <命名空间:函数路径>\n\n【使用示例】\n• /function minecraft:test/hello_world —— 运行test文件夹下的hello_world函数",
+        "category": "高级"
+    },
+    {
+        "command": "/help",
+        "description": "提供命令使用帮助",
+        "usage": "模板：/help [命令名]\n\n【使用示例】\n• /help —— 显示所有命令\n• /help give —— 显示give命令的帮助",
+        "category": "常用"
+    },
+    {
+        "command": "/hud",
+        "description": "显示或隐藏界面元素[仅BE]",
+        "usage": "模板：/hud <目标> <可见|不可见> <HUD元素>\n\n【使用示例】\n• /hud @a hide paperdoll —— 隐藏所有玩家的纸娃娃",
+        "category": "高级"
+    },
+    {
+        "command": "/inputpermission",
+        "description": "控制玩家输入权限[仅BE]",
+        "usage": "模板：/inputpermission set <目标> <权限> <启用|禁用>\n\n【使用示例】\n• /inputpermission set @a movement disabled —— 禁止所有玩家移动",
+        "category": "管理员"
+    },
+    {
+        "command": "/item",
+        "description": "修改方块或实体的物品栏[仅JE]",
+        "usage": "模板：/item <目标> <槽位> <物品>\n\n【使用示例】\n• /item entity @p weapon.mainhand minecraft:diamond_sword —— 把玩家主手物品改为钻石剑",
+        "category": "物品"
+    },
+    {
+        "command": "/jfr",
+        "description": "开始或结束JFR分析[仅JE]",
+        "usage": "模板：/jfr start|stop\n\n【使用示例】\n• /jfr start —— 开始Java飞行记录器分析",
+        "category": "管理员"
+    },
+    {
+        "command": "/kick",
+        "description": "将玩家踢出服务器",
+        "usage": "模板：/kick <玩家> [原因]\n\n【使用示例】\n• /kick Steve 请遵守规则 —— 把Steve踢出服务器",
+        "category": "管理员"
+    },
+    {
+        "command": "/list",
+        "description": "列出服务器中的玩家",
+        "usage": "模板：/list\n\n【使用示例】\n• /list —— 显示当前在线玩家",
+        "category": "管理员"
+    },
+    {
+        "command": "/loot",
+        "description": "将指定的战利品放入物品栏或世界",
+        "usage": "模板：/loot give <玩家> loot <战利品表>\n       /loot spawn <位置> loot <战利品表>\n\n【使用示例】\n• /loot give @p loot minecraft:chests/simple_dungeon —— 给玩家地牢战利品",
+        "category": "物品"
+    },
+    {
+        "command": "/me",
+        "description": "显示一条关于自己的信息",
+        "usage": "模板：/me <动作>\n\n【使用示例】\n• /me 正在挖矿 —— 显示 \"* Steve 正在挖矿\"",
+        "category": "玩家"
+    },
+    {
+        "command": "/mobevent",
+        "description": "控制允许运行的生物事件[仅BE]",
+        "usage": "模板：/mobevent <事件> <true|false>\n\n【使用示例】\n• /mobevent pillager_patrols_event false —— 关闭掠夺者巡逻队生成",
+        "category": "生物"
+    },
+    {
+        "command": "/msg",
+        "description": "/tell的替代命令，私聊玩家",
+        "usage": "模板：/msg <玩家> <消息>\n\n【使用示例】\n• /msg Steve 你好！",
+        "category": "玩家"
+    },
+    {
+        "command": "/music",
+        "description": "播放或停止音乐[仅BE]",
+        "usage": "模板：/music play <音轨> [音量] [淡入时间]\n\n【使用示例】\n• /music play record.cat —— 播放cat唱片",
+        "category": "高级"
+    },
+    {
+        "command": "/pardon",
+        "description": "从封禁列表中移除玩家",
+        "usage": "模板：/pardon <玩家>\n\n【使用示例】\n• /pardon Steve —— 解封Steve",
+        "category": "管理员"
+    },
+    {
+        "command": "/particle",
+        "description": "生成粒子效果",
+        "usage": "模板：/particle <粒子> [坐标] [扩散范围] [速度] [数量] [玩家]\n\n【使用示例】\n• /particle minecraft:heart ~ ~2 ~ 0.5 0.5 0.5 0.1 50 —— 在身边生成爱心粒子",
+        "category": "高级"
+    },
+    {
+        "command": "/playsound",
+        "description": "播放音效",
+        "usage": "模板：/playsound <音效> <来源> [玩家] [坐标] [音量] [音调] [最小音量]\n\n【使用示例】\n• /playsound minecraft:entity.player.levelup master @p —— 给最近的玩家播放升级音效",
+        "category": "高级"
+    },
+    {
+        "command": "/reload",
+        "description": "重新加载数据包或函数",
+        "usage": "模板：/reload\n\n【使用示例】\n• /reload —— 重新加载所有函数和数据包",
+        "category": "管理员"
+    },
+    {
+        "command": "/ride",
+        "description": "控制实体骑乘[仅BE]",
+        "usage": "模板：/ride <目标> start_riding <坐骑>\n       /ride <目标> stop_riding\n\n【使用示例】\n• /ride @p start_riding @e[type=horse,limit=1] —— 让玩家骑上马",
+        "category": "生物"
+    },
+    {
+        "command": "/save-all",
+        "description": "将服务器保存至硬盘",
+        "usage": "模板：/save-all\n\n【使用示例】\n• /save-all —— 保存世界",
+        "category": "管理员"
+    },
+    {
+        "command": "/save-off",
+        "description": "停用服务器自动保存",
+        "usage": "模板：/save-off\n\n【使用示例】\n• /save-off —— 关闭自动保存",
+        "category": "管理员"
+    },
+    {
+        "command": "/save-on",
+        "description": "开启服务器自动保存",
+        "usage": "模板：/save-on\n\n【使用示例】\n• /save-on —— 开启自动保存",
+        "category": "管理员"
+    },
+    {
+        "command": "/schedule",
+        "description": "计划在指定时间后执行函数",
+        "usage": "模板：/schedule function <函数> <时间> [append|replace]\n\n【使用示例】\n• /schedule function minecraft:test/hello 5s —— 5秒后执行函数",
+        "category": "高级"
+    },
+    {
+        "command": "/scoreboard",
+        "description": "管理计分板",
+        "usage": "模板：/scoreboard objectives add <计分项> <准则> [显示名称]\n       /scoreboard players set <玩家> <计分项> <数值>\n\n【使用示例】\n• /scoreboard objectives add kills totalKillCount 杀敌数\n• /scoreboard players set @p kills 10",
+        "category": "高级"
+    },
+    {
+        "command": "/setidletimeout",
+        "description": "设置自动踢出挂机玩家的时间",
+        "usage": "模板：/setidletimeout <分钟>\n\n【使用示例】\n• /setidletimeout 15 —— 15分钟无操作踢出",
+        "category": "管理员"
+    },
+    {
+        "command": "/setmaxplayers",
+        "description": "设置游戏会话的最大玩家数量[仅BE]",
+        "usage": "模板：/setmaxplayers <数量>\n\n【使用示例】\n• /setmaxplayers 10 —— 设置最大玩家数为10",
+        "category": "管理员"
+    },
+    {
+        "command": "/spreadplayers",
+        "description": "将实体传送到随机位置",
+        "usage": "模板：/spreadplayers <x> <z> <最小距离> <最大距离> <目标>\n\n【使用示例】\n• /spreadplayers 0 0 100 500 @a —— 把所有玩家分散在(0,0)周围100-500格区域内",
+        "category": "玩家"
+    },
+    {
+        "command": "/stop",
+        "description": "停止服务器运行",
+        "usage": "模板：/stop\n\n【使用示例】\n• /stop —— 关闭服务器",
+        "category": "管理员"
+    },
+    {
+        "command": "/stopsound",
+        "description": "停止播放音效",
+        "usage": "模板：/stopsound <玩家> [来源] [音效]\n\n【使用示例】\n• /stopsound @a —— 停止所有玩家的所有音效",
+        "category": "高级"
+    },
+    {
+        "command": "/structure",
+        "description": "保存或加载结构",
+        "usage": "模板：/structure save <名称> <从> <到> [保存模式]\n       /structure load <名称> <位置> [旋转] [镜像]\n\n【使用示例】\n• /structure save myhouse 100 64 100 110 74 110 —— 保存房子结构\n• /structure load myhouse 200 64 200 0_degrees none —— 加载房子",
+        "category": "建筑"
+    },
+    {
+        "command": "/tag",
+        "description": "管理实体标签",
+        "usage": "模板：/tag <目标> add <标签>\n       /tag <目标> remove <标签>\n\n【使用示例】\n• /tag @p add VIP —— 给最近的玩家添加VIP标签\n• /kill @e[tag=boss] —— 杀死所有有boss标签的实体",
+        "category": "高级"
+    },
+    {
+        "command": "/team",
+        "description": "管理队伍[仅JE]",
+        "usage": "模板：/team add <队伍名> [显示名称]\n       /team join <队伍> <玩家>\n\n【使用示例】\n• /team add red 红队\n• /team join red @p —— 把最近的玩家加入红队",
+        "category": "高级"
+    },
+    {
+        "command": "/tell",
+        "description": "私聊玩家",
+        "usage": "模板：/tell <玩家> <消息>\n\n【使用示例】\n• /tell Steve 你好！",
+        "category": "玩家"
+    },
+    {
+        "command": "/tellraw",
+        "description": "向玩家发送JSON消息",
+        "usage": "模板：/tellraw <玩家> <JSON消息>\n\n【使用示例】\n• /tellraw @a {\"text\":\"欢迎！\",\"color\":\"red\"} —— 显示红色欢迎文字",
+        "category": "高级"
+    },
+    {
+        "command": "/testfor",
+        "description": "检测特定条件的实体",
+        "usage": "模板：/testfor <目标> [数据标签]\n\n【使用示例】\n• /testfor @p —— 检测最近的玩家是否存在",
+        "category": "高级"
+    },
+    {
+        "command": "/testforblock",
+        "description": "检测指定位置的方块",
+        "usage": "模板：/testforblock <坐标> <方块ID> [数据值]\n\n【使用示例】\n• /testforblock 100 64 100 minecraft:diamond_block —— 检测(100,64,100)是否为钻石块",
+        "category": "建筑"
+    },
+    {
+        "command": "/testforblocks",
+        "description": "检测两个区域的方块是否匹配",
+        "usage": "模板：/testforblocks <起点> <终点> <目标起点>\n\n【使用示例】\n• /testforblocks 100 64 100 110 74 110 200 64 200 —— 检测两个区域方块是否相同",
+        "category": "建筑"
+    },
+    {
+        "command": "/tickingarea",
+        "description": "管理常加载区域[仅BE]",
+        "usage": "模板：/tickingarea add <起点> <终点> [名称]\n       /tickingarea remove <名称>\n\n【使用示例】\n• /tickingarea add 0 0 0 100 255 100 \"spawn\" —— 常加载出生点区域",
+        "category": "管理员"
+    },
+    {
+        "command": "/title",
+        "description": "显示屏幕标题",
+        "usage": "模板：/title <目标> <类型> <文字>\n\n【使用示例】\n• /title @p title 欢迎！ —— 显示大标题\n• /title @a subtitle 服务器重启中 —— 显示副标题",
+        "category": "高级"
+    },
+    {
+        "command": "/toggledownfall",
+        "description": "切换天气[仅JE]",
+        "usage": "模板：/toggledownfall\n\n【使用示例】\n• /toggledownfall —— 晴天/雨天切换",
+        "category": "世界"
+    },
+    {
+        "command": "/trigger",
+        "description": "触发自定义计分板目标",
+        "usage": "模板：/trigger <目标> [add|set] <值>\n\n【使用示例】\n• /trigger quest_complete add 1 —— 触发任务完成",
+        "category": "高级"
+    },
+    {
+        "command": "/w",
+        "description": "/tell的替代，私聊玩家",
+        "usage": "模板：/w <玩家> <消息>\n\n【使用示例】\n• /w Steve 悄悄话",
+        "category": "玩家"
+    },
+    {
+        "command": "/worldborder",
+        "description": "管理世界边界",
+        "usage": "模板：/worldborder set <大小> [时间]\n       /worldborder add <增量> [时间]\n\n【使用示例】\n• /worldborder set 1000 60 —— 60秒内将边界缩小到1000格\n• /worldborder get —— 查看当前边界大小",
+        "category": "世界"
+    }
+]
