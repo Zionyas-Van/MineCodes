@@ -9,21 +9,21 @@ MineCodes是一个给Minecraft玩家的辅助工具
 MineCodes是一个基于electron构建的项目，它的主程序位于`index.html`文件，您可以在克隆仓库后任意修改他们。
 
 ## 介绍
-![输入图片说明](/imgs/2026-05-01/EU4hpPXieKK8j2XM.png)
+![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/stackedit-app-data/master/imgs/2026-05-01/bkLneyk79MKLjpiY.png)
 
 MineCodes采用了 Google 的质感设计。主界面可以查阅 Minecraft 的指令，并详细了解每一个指令的作用和用法。
 例如，当您查阅`/gamemode`指令时，您会详细指导他的作用是：
 >模式：creative（创造模式，资源无限可飞行）、survival（生存模式，有血量和饥饿条）、adventure（冒险模式，不可破坏方块）、spectator（旁观模式，穿墙飞行但无法互动）。小技巧：也可以用数字简写替代，0=生存，1=创造，2=冒险，3=旁观。后面加上玩家名可以单独帮别人切换，如 /gamemode creative Steve。
 ---
 如果你觉得某个指令很实用，但又非常难记住，你可以收藏它：
-![输入图片说明](/imgs/2026-05-01/6aHBPb06jyGBW4hi.png)
+![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/stackedit-app-data/master/imgs/2026-05-01/8gajfHUZhf76POrS.png)
 
 收藏成功后，单击导航栏的爱心可以找到它们：
-![输入图片说明](/imgs/2026-05-01/jh8FXRYMroqQor1f.png)
+![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/stackedit-app-data/master/imgs/2026-05-01/xJp2ndKi58ZuRPUh.png)
 
 ---
 当然，考虑到`/give`这类指令还需要获取物品ID，我们也提供了物品ID的查询：
-![输入图片说明](/imgs/2026-05-01/xxzAomoRaayrOdWP.png)
+![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/stackedit-app-data/master/imgs/2026-05-01/BXJbEnNiAC6Wjjml.png)
 
 ---
 MineCodes 还会拥有更多功能来服务、辅助玩家，让对指令不太熟悉的玩家也能拥有较好的体验，如果你在使用该软件遇到问题时，你可以直接联系开发者来反馈问题，开发者会一一回复。
