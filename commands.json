@@ -1,0 +1,868 @@
+[
+  {
+    "id": "gamemode",
+    "name": "/gamemode",
+    "kind": "玩家",
+    "desc": "切换游戏模式（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/gamemode creative",
+    "params": "模式：creative（创造模式，资源无限可飞行）、survival（生存模式，有血量和饥饿条）、adventure（冒险模式，不可破坏方块）、spectator（旁观模式，穿墙飞行但无法互动）。小技巧：也可以用数字简写替代，0=生存，1=创造，2=冒险，3=旁观。后面加上玩家名可以单独帮别人切换，如 /gamemode creative Steve。"
+  },
+  {
+    "id": "give",
+    "name": "/give",
+    "kind": "物体",
+    "desc": "给予玩家物品（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/give @p diamond 64",
+    "params": "玩家：@p（最近的玩家）、@a（所有玩家）、@r（随机玩家）、@s（你自己，适合命令方块）或直接写玩家名字。物品：填物品英文ID，比如 diamond（钻石）、stone（石头）、oak_log（橡木原木）。数量：不填默认给1个，最多可以塞满一整组。小技巧：物品ID按 Tab 可以自动补全，不确定叫什么可以输入物品所在分类的英文+下划线，比如 minecraft: 开头搜一圈。"
+  },
+  {
+    "id": "tp",
+    "name": "/tp",
+    "kind": "实体",
+    "desc": "传送实体（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/tp PlayerName ~ ~100 ~",
+    "params": "目标玩家：被传送的人（可以是玩家名或选择器）。目的地：可以是另一个玩家（传送过去找他），也可以是 x y z 坐标。坐标支持 ~ 代表相对位置，比如 ~ ~100 ~ 就是把你原地升高100格，非常方便。还可以在末尾加上旋转角度，比如 ~10 ~ 让视角右转10度。如果想以命令方块为基准传送，同版本的 /teleport 指令更好用。"
+  },
+  {
+    "id": "time",
+    "name": "/time",
+    "kind": "环境",
+    "desc": "查询或修改世界时间（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/time set day 或 /time add 1000",
+    "params": "add：让当前时间往后前进，单位是游戏刻（1秒=20刻，一天有24000刻）。query：显示当前时间数字，可选参数 daytime（当天日出后经过的时间）、gametime（世界总运行时间）、day（已过天数）。set：直接设置时间，支持数字（0-24000）或预设名称，不区分大小写。day 是白天（1000），night 是黑夜（13000），noon 是正午（6000，太阳最高），midnight 是午夜（18000，黑得最彻底）。"
+  },
+  {
+    "id": "weather",
+    "name": "/weather",
+    "kind": "环境",
+    "desc": "改变天气（Java版1.4.2+、基岩版1.0+）",
+    "usage": "/weather clear 600",
+    "params": "类型：clear（晴天，瞬间放晴）、rain（下雨，在寒冷生物群系会变成下雪）、thunder（雷暴，伴随闪电，能把村民变成女巫、猪变成僵尸猪灵）。持续时间：秒数，不填默认维持一阵子，填大数字比如 999999 就几乎永不下雨了。小技巧：想让天气循环彻底停掉，配合游戏规则 /gamerule doWeatherCycle false 锁定当前天气。"
+  },
+  {
+    "id": "clear",
+    "name": "/clear",
+    "kind": "物体",
+    "desc": "清除玩家背包物品（Java版1.4.2+、基岩版1.0+）",
+    "usage": "/clear @p stone 64",
+    "params": "玩家：目标选择器或玩家名，不写默认清你自己。物品ID：指定清除哪种物品，不填直接清空整个背包。最大数量：最多清除多少个数，比如 stone 64 只会拿走64个石头，留下多余的。小技巧：地图制作中可以在商店箱子里用 /clear 消耗玩家的货币物品，再用 /give 给予其他物品实现交易。"
+  },
+  {
+    "id": "kill",
+    "name": "/kill",
+    "kind": "实体",
+    "desc": "杀死实体（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/kill @e[type=creeper]",
+    "params": "目标：玩家名或选择器。如果不加参数直接打 /kill，队伍是自己，瞬间去世。配合 @e 可清掉所有实体（包括掉落物和画），小心谨慎使用。避免搞崩存档，建议用 @e[type=!player] 排除玩家自身。"
+  },
+  {
+    "id": "difficulty",
+    "name": "/difficulty",
+    "kind": "环境",
+    "desc": "设置游戏难度（Java版1.4.2+、基岩版1.0+）",
+    "usage": "/difficulty hard",
+    "params": "难度：peaceful（和平，没有怪物，血量自动回复）、easy（简单，怪物伤害低）、normal（普通，标准体验）、hard（困难，僵尸能拆门，伤害高）。也可用数字简写，0=和平，1=简单，2=普通，3=困难。随时切换，想挑战刺激就切 hard，想安心建造就切 peaceful。"
+  },
+  {
+    "id": "spawnpoint",
+    "name": "/spawnpoint",
+    "kind": "玩家",
+    "desc": "设置玩家重生点（Java版1.4.2+、基岩版1.0+）",
+    "usage": "/spawnpoint @p ~ ~ ~",
+    "params": "玩家：目标选择器或名字。坐标：x y z，支持 ~ 相对坐标，不填默认使用玩家当前所在位置。设置后，玩家死亡就会复活在这个点。可配合床使用，也可以强制覆盖床的复活点。"
+  },
+  {
+    "id": "effect",
+    "name": "/effect",
+    "kind": "实体",
+    "desc": "给予或清除实体状态效果（Java版1.5+、基岩版1.0+）",
+    "usage": "/effect give @p speed 30 1",
+    "params": "give 或 clear。目标：玩家名或选择器。效果：英文ID，如 speed（速度）、strength（力量）、night_vision（夜视）、regeneration（生命恢复）。持续时间：秒，支持999999近乎永久。等级：0=1级效果，1=2级效果，依此类推。hideParticles(true/false)：是否隐藏粒子特效，默认 false。小技巧：想清除所有效果，只需 /effect clear @p。"
+  },
+  {
+    "id": "gamerule",
+    "name": "/gamerule",
+    "kind": "环境",
+    "desc": "设置或查询游戏规则（Java版1.4.2+、基岩版1.0+）",
+    "usage": "/gamerule keepInventory true",
+    "params": "规则名称：如 keepInventory（死亡不掉落）、doDaylightCycle（日夜循环）、doWeatherCycle（天气变化）、doFireTick（火焰蔓延）、mobGriefing（苦力怕爆炸破坏方块）、doMobSpawning（生物自然生成）、doTileDrops（方块是否掉落）、showDeathMessages（显示死亡信息）。值：true（开启）或 false（关闭）。只打规则名不加值可查询当前状态。"
+  },
+  {
+    "id": "summon",
+    "name": "/summon",
+    "kind": "实体",
+    "desc": "召唤实体（Java版1.4.2+、基岩版1.0+）",
+    "usage": "/summon creeper ~ ~2 ~",
+    "params": "实体ID：要生成的生物英文名，比如 creeper（苦力怕）、skeleton（骷髅）、lightning_bolt（闪电）。坐标：x y z，支持 ~ 相对，不填默认为执行者脚下。可附加NBT数据标签做出自定义怪物和物品、特效。小技巧：/summon lightning_bolt 可召唤闪电，劈中苦力怕会变成高压苦力怕。"
+  },
+  {
+    "id": "enchant",
+    "name": "/enchant",
+    "kind": "物体",
+    "desc": "给物品附魔（Java版1.4.4+、基岩版1.0+）",
+    "usage": "/enchant @p sharpness 5",
+    "params": "目标：玩家名或选择器，必须手上拿着要附魔的物品。魔咒ID：英文名，如 sharpness（锋利）、efficiency（效率）、fortune（时运）、silk_touch（精准采集）、unbreaking（耐久）。等级：附魔等级数值，不可超过该魔咒的正常上限。注意目标物品必须能接受该魔咒，冲突魔咒共存也会失败。"
+  },
+  {
+    "id": "xp",
+    "name": "/xp",
+    "kind": "玩家",
+    "desc": "管理玩家经验（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/xp add @p 100 levels",
+    "params": "add 或 set 操作。目标：玩家名或选择器。数量：要给予的经验值或等级数量。levels：以等级为单位（更直观），不加 levels 默认为以经验点为单位（1级需要的经验点数累积会增加）。小技巧：/xp set @p 0 levels 可重置等级为0。"
+  },
+  {
+    "id": "kick",
+    "name": "/kick",
+    "kind": "管理",
+    "desc": "踢出玩家（Java版1.0+、基岩版1.0+）",
+    "usage": "/kick PlayerName 理由",
+    "params": "玩家：对方准确的名字。理由：可选，踢出时显示给对方的信息。仅限服务器或局域网联机时管理员可用，单人世界用不到。"
+  },
+  {
+    "id": "ban",
+    "name": "/ban",
+    "kind": "管理",
+    "desc": "封禁玩家（Java版1.0+，基岩版需插件支持）",
+    "usage": "/ban PlayerName 原因",
+    "params": "玩家：对方名字。原因：可选，填了对方尝试进入服务器时会看到。被ban 的玩家无法重新进入服务器，配合 /ban-ip 封IP、/banlist 查看封禁列表、/pardon 解封使用。"
+  },
+  {
+    "id": "op",
+    "name": "/op",
+    "kind": "管理",
+    "desc": "给予玩家管理员权限（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/op PlayerName",
+    "params": "玩家：对方名字。给予 op 后对方就能使用命令方块、修改游戏规则等高权限指令。解除权限用 /deop PlayerName。谨慎给陌生人 op，拥有最高权限极易被人破坏世界。"
+  },
+  {
+    "id": "whitelist",
+    "name": "/whitelist",
+    "kind": "管理",
+    "desc": "管理服务器白名单（Java版1.0+、基岩版1.0+）",
+    "usage": "/whitelist add PlayerName",
+    "params": "操作：add（添加玩家）、remove（移除玩家）、list（查看白名单列表）、on（开启白名单，不在列表中的所有玩家均无法进入）、off（关闭白名单）。reload：重载白名单文件。"
+  },
+  {
+    "id": "msg",
+    "name": "/msg",
+    "kind": "玩家",
+    "desc": "发送私密消息（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/msg PlayerName 悄悄话内容",
+    "params": "玩家：对方名字。消息：要发送的文字内容。只有对方和自己能看到，其他人看不到。别名 /tell 和 /w 效果相同，都可以用。"
+  },
+  {
+    "id": "seed",
+    "name": "/seed",
+    "kind": "服务器",
+    "desc": "查看世界种子（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/seed",
+    "params": "无需参数。执行后显示当前世界的种子数字，可用于分享给朋友或备份世界生成参数，方便在其他地方创建同款地形。"
+  },
+  {
+    "id": "setworldspawn",
+    "name": "/setworldspawn",
+    "kind": "世界与方块",
+    "desc": "设置世界出生点（Java版1.7.2+、基岩版1.0+）",
+    "usage": "/setworldspawn 100 64 -200",
+    "params": "坐标：x y z，支持 ~ 相对，不填默认使用命令执行位置。请注意该指令设置的是世界的全局重生点，不是个人复活点，个人重生请用 /spawnpoint。"
+  },
+  {
+    "id": "save-all",
+    "name": "/save-all",
+    "kind": "服务器",
+    "desc": "强制保存世界数据（Java版1.3.1+服务器专用，基岩版1.0+）",
+    "usage": "/save-all flush",
+    "params": "flush：可选，会将内存中所有未写入的数据立即写入硬盘，防止突然断电或崩溃导致回档。适合在备份地图或关服前使用。普通 /save-all 也会保存，但 flush 更彻底一些。"
+  },
+  {
+    "id": "locate",
+    "name": "/locate",
+    "kind": "世界与方块",
+    "desc": "定位最近的建筑或生物群系（Java版1.11+、基岩版1.0+）",
+    "usage": "/locate structure village_plains",
+    "params": "Java版1.19 之后合并为两个子命令：structure 和 biome。structure 后加结构名称，比如 village_plains（平原村庄）、ancient_city（远古城市）、stronghold（要塞）、bastion_remnant（堡垒遗迹）。biome 后加生物群系名称，比如 desert（沙漠）、flower_forest（繁花森林）。小技巧：返回坐标可以直接点击自动生成传送指令，方便快速赶路。"
+  },
+  {
+    "id": "clone",
+    "name": "/clone",
+    "kind": "世界与方块",
+    "desc": "复制方块区域（Java版1.8+、基岩版1.0+）",
+    "usage": "/clone 0 64 0 10 70 10 20 64 20",
+    "params": "起始坐标和终止坐标：构成要复制的长方体区域。目标坐标：粘贴区域的最低点。可附加参数 filtered（只复制某类方块）或 replace/masked（替换模式）。建造大型建筑复制粘贴对称结构或搬运箱子非常实用。"
+  },
+  {
+    "id": "fill",
+    "name": "/fill",
+    "kind": "世界与方块",
+    "desc": "用方块填充区域（Java版1.8+、基岩版1.0+）",
+    "usage": "/fill 0 64 0 10 64 10 stone",
+    "params": "起始坐标和终止坐标：构成要填充的长方体范围。方块ID：要填充的方块，比如 stone（石头）、air（空气，相当于清理区域）。可加 replace 只替换特定方块，或 hollow/outline/destroy 等模式(hollow即空心、outline三面围上、destroy会摧毁区域内原有方块并掉落物品)。"
+  },
+  {
+    "id": "setblock",
+    "name": "/setblock",
+    "kind": "世界与方块",
+    "desc": "在指定坐标放置方块（Java版1.7.2+、基岩版1.0+）",
+    "usage": "/setblock ~ ~1 ~ diamond_block",
+    "params": "坐标：x y z，支持 ~ 相对。方块ID：要放置的方块英文名。后面可接地选 destroy(破坏原方块并掉落)/keep(只在是空气时才放置)/replace(直接替换不掉落)。单点放置专用，适合制作机关或快速修改某个方块。"
+  },
+  {
+    "id": "advancement",
+    "name": "/advancement",
+    "kind": "数据",
+    "desc": "管理玩家进度（Java版1.12+专属）",
+    "usage": "/advancement grant @p only minecraft:story/mine_stone",
+    "params": "grant/revoke/reward。目标：玩家选择器。only/from/through：分别指单独、从某进度起、一路完成。进度ID：游戏成就的内部 ID，例如 minecraft:story/mine_stone（获得石头）。适合做地图任务系统时授予玩家进度。"
+  },
+  {
+    "id": "bossbar",
+    "name": "/bossbar",
+    "kind": "数据",
+    "desc": "创建并控制Boss血条（Java版1.13+专属）",
+    "usage": "/bossbar add mybar \"Boss名字\"",
+    "params": "add（新建血条）、remove（删除）、list（列出所有血条）、set（设置属性，如颜色、样式、值、可见玩家等）。可做出自定义boss血量条，用作计时器、进度提示器等UI效果。"
+  },
+  {
+    "id": "data",
+    "name": "/data",
+    "kind": "数据",
+    "desc": "查看或修改方块或实体的NBT数据（Java版1.13+专属）",
+    "usage": "/data get entity @s",
+    "params": "get（查看）或 merge（修改）或 modify（精确修改）。目标：entity（实体）或 block（方块坐标）。NBT数据以JSON格式表示，适合高级玩家制作复杂自定义功能。操作不当可能导致游戏崩溃，做好备份。"
+  },
+  {
+    "id": "datapack",
+    "name": "/datapack",
+    "kind": "数据",
+    "desc": "管理数据包（Java版1.13+专属）",
+    "usage": "/datapack enable 数据包名",
+    "params": "enable/disable（启用/禁用）。list（列出所有数据包，分 available 已放置和 enabled已启用）。适用于安装或管理数据包资源，修改世界规则、合成配方、进度体系等都要用这条指令。"
+  },
+  {
+    "id": "forceload",
+    "name": "/forceload",
+    "kind": "世界与方块",
+    "desc": "强制常加载区块（Java版1.13.1+专属）",
+    "usage": "/forceload add 0 0",
+    "params": "add（添加常加载）、remove（移除）、query（查询当前常加载区块）。加载的区块不受玩家距离影响，始终运行红石和命令方块，适合核心装置区。建议显示常加载边界需要客户端安装MiniHUD模组。"
+  },
+  {
+    "id": "function",
+    "name": "/function",
+    "kind": "数据",
+    "desc": "执行数据包中的函数或标签（Java版1.12+、基岩版1.8+）",
+    "usage": "/function mypack:main",
+    "params": "函数路径：数据包中的 .mcfunction 文件。支持带 # 号的标签一次性执行复杂多步指令集合，比串联命令方块更干净高效。"
+  },
+  {
+    "id": "title",
+    "name": "/title",
+    "kind": "玩家",
+    "desc": "在玩家屏幕上显示标题文字（Java版1.8+、基岩版1.0+）",
+    "usage": "/title @a title \"欢迎\"",
+    "params": "目标：玩家名或选择器。操作：title（大标题）、subtitle（副标题，需配合 title）、actionbar（快捷栏上方小字）。可额外设置淡入、停留、淡出时间（单位：游戏刻）。做地图剧情对话或提示系统非常常用。"
+  },
+  {
+    "id": "scoreboard",
+    "name": "/scoreboard",
+    "kind": "数据",
+    "desc": "管理记分板系统（Java版1.5+、基岩版1.0+）",
+    "usage": "/scoreboard objectives add money dummy \"金币\"",
+    "params": "objectives（目标/计分项）为主，涵盖加、删、列等。players（玩家）管理分数。objectives 的显示位置 list/sidebar/belowname 分别代表列表、侧栏、名字下方。配合 /execute 可做货币系统、击杀统计等。通用准则：dummy (只能由命令修改)、deathCount (死亡计数)、health (血量同步)。"
+  },
+  {
+    "id": "execute",
+    "name": "/execute",
+    "kind": "数据",
+    "desc": "万能指令执行器，改变命令上下文并执行（Java版1.8+重写、基岩版1.19.50+对齐）",
+    "usage": "/execute as @a at @s run say 你好",
+    "params": "基础用法是 /execute ... run <实际指令>。修饰子命令：as（以…身份执行）、at（在…位置执行）、positioned（指定坐标）、align（对齐坐标）、facing（朝向）、rotated（旋转视角）、in（切换维度）。条件子命令：if/unless 加 block（检测方块）、entity（检测实体）、score（匹配分数）等。逻辑：从左到右逐步修改执行环境，最后用 run 接上目的指令。能做出区域检测、自动触发装置等功能。"
+  },
+  {
+    "id": "particle",
+    "name": "/particle",
+    "kind": "环境",
+    "desc": "创建粒子特效（Java版1.8+、基岩版1.0+）",
+    "usage": "/particle flame ~ ~1 ~ 1 1 1 0.1 100",
+    "params": "粒子名称：英文ID，比如 flame（火焰）、heart（爱心）、dragon_breath（龙息）。位置，扩散范围，速度，数量。可指定 visible 决定哪些玩家能看到粒子。做战斗特效、魔法阵、环境美化十分好用。"
+  },
+  {
+    "id": "playsound",
+    "name": "/playsound",
+    "kind": "环境",
+    "desc": "播放游戏音效（Java版1.6+、基岩版1.0+）",
+    "usage": "/playsound minecraft:entity.creeper.primed ambient @a",
+    "params": "音效：命名空间ID，如 entity.creeper.primed（苦力怕点燃声）。来源：ambient/block/player等，决定音效衰减方式。目标：能听到音效的玩家。坐标（可选）。音量和音调也可。做地图剧情配音、警报声专属铃声非常实用。"
+  },
+  {
+    "id": "stopsound",
+    "name": "/stopsound",
+    "kind": "环境",
+    "desc": "停止正在播放的音效（Java版1.9.2+、基岩版1.0+）",
+    "usage": "/stopsound @a * minecraft:entity.creeper.primed",
+    "params": "目标：要停止音效的玩家。来源：可填 * 代表全部来源。音效：要停掉的具体音效或 * 停掉一切声音。紧急打断长音效很实用。"
+  },
+  {
+    "id": "spreadplayers",
+    "name": "/spreadplayers",
+    "kind": "实体",
+    "desc": "随机分散玩家位置（Java版1.6+、基岩版1.0+）",
+    "usage": "/spreadplayers 0 0 50 100 @a",
+    "params": "中心坐标，分散半径范围，两两之间的最小距离，目标选择器。适合开局让小游戏玩家散开到不同位置，避免叠在一块。"
+  },
+  {
+    "id": "list",
+    "name": "/list",
+    "kind": "服务器",
+    "desc": "列出当前在线玩家（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/list uuids",
+    "params": "uuids：可选参数，加上后显示每个玩家的UUID。不加只显示名字列表和在线人数。"
+  },
+  {
+    "id": "me",
+    "name": "/me",
+    "kind": "玩家",
+    "desc": "以你的名义发出动作描述（Java版1.3.1+、基岩版1.0+）",
+    "usage": "/me 正在挖矿",
+    "params": "后接任意文字。聊天框会显示 *名字 正在挖矿，适合角色扮演服务器。"
+  },
+  {
+    "id": "teammsg",
+    "name": "/teammsg",
+    "kind": "玩家",
+    "desc": "发送队伍消息（Java版1.13+，基岩版1.14+）",
+    "usage": "/teammsg 队友们出发咯",
+    "params": "消息：要发送的文字内容。只有同队成员能看到，别名简写 /tm。适合联机冒险时内部沟通。"
+  },
+  {
+    "id": "random",
+    "name": "/random",
+    "kind": "数据",
+    "desc": "生成随机数或随机选择（Java版1.20.3+专属）",
+    "usage": "/random value 1..100",
+    "params": "value（生成随机整数）、roll（根据权重在多个候选项中随机选一个）、draw（从池中随机抽一个）、reset（重置随机序列）。可配合 /execute 用来做抽奖机、随机传送等趣味功能。"
+  },
+
+  {
+    "id": "石头",
+    "name": "stone",
+    "kind": "物品",
+    "desc": "石头（Stone）是在主世界中大量存在的方块。（2009年加入游戏）",
+    "usage": "/give @s stone 64",
+    "params": "石头（硬度1.5，爆炸抗性6）必须使用镐，用空手、剑、锹等其他任何工具挖掘不仅速度极慢，而且完全不会掉落任何物品；即使是木镐或金镐也能有效破坏石头（但金镐耐久低，不推荐）。在绝大多数情况下，用镐直接开采石头并不会掉落石头本身，而是会掉落一个圆石——这是游戏中获取圆石的主要方式。若想直接获得完整的石头方块，则需要使用附有 “精准采集” 魔咒的镐。此外，普通石头可以在熔炉中烧制成平滑石头，也可以通过“丝触”镐开采不同变种（如花岗岩、安山岩等）获得原块。总的来说：想挖石头，永远只认“镐”这一种工具，并且记得根据是否需要原版石头来选择是否附魔精准采集"
+  },
+  {
+    "id": "草方块",
+    "name": "grass_block",
+    "kind": "物品",
+    "desc": "草方块（Grass Block）是主世界地表最常见的自然方块，也是玩家最先接触的方块之一。",
+    "usage": "/give @s grass_block 64",
+    "params": "草方块（硬度0.6，爆炸抗性0.6）在绝大多数情况下，哪怕是空手破坏也会掉落（但会掉落为普通的泥土，而非草方块本身）。若想直接获得草方块本身，必须使用附有“精准采集”魔咒的工具（不限镐，任何工具均可），否则只会掉落泥土。草方块会自然蔓延到附近的泥土方块上，但前提是该泥土方块上方有足够的亮度（通常至少需要9级光照）。用锄头右键点击草方块可将其转化为耕地。"
+  },
+  {
+    "id": "泥土",
+    "name": "dirt",
+    "kind": "物品",
+    "desc": "泥土（Dirt）是一种覆盖在主世界地表的丰富方块，供应量巨大。",
+    "usage": "/give @s dirt 64",
+    "params": "泥土（硬度0.5，爆炸抗性0.5）可以用任何工具（包括空手）轻松挖掘并掉落自身，它是进行地面铺设、填补坑洞以及新手第一天建造简易庇护所最便捷的材料。尽管其抗爆性极低，容易被苦力怕炸毁，但胜在获取无门槛。"
+  },
+  {
+    "id": "橡木原木",
+    "name": "oak_log",
+    "kind": "物品",
+    "desc": "橡木原木（Oak Log）是从橡树树干上获取的一种基础资源方块，是Minecraft合成系统的基石。",
+    "usage": "/give @s oak_log 64",
+    "params": "橡木原木（硬度2，爆炸抗性2）即使使用空手，破坏它也会掉落自身。注意区分去皮和不去皮的变种。它的核心用法并非直接放置，而是通过背包合成栏分解为4个“橡木木板”，再由木板合成为工具、工作台、箱子等绝大多数初级物品，因此它是游戏生存初期的绝对核心。"
+  },
+  {
+    "id": "工作台",
+    "name": "crafting_table",
+    "kind": "物品",
+    "desc": "工作台（Crafting Table）是将玩家随身携带的2x2合成栏扩展为3x3的核心功能性方块。",
+    "usage": "/give @s crafting_table 64",
+    "params": "工作台（硬度2.5，爆炸抗性2.5）拿在手上右键点击地面即可放置，再次右键点击它即可打开3x3合成界面。空手即可极为快速地破坏并回收，斧头能进一步加速挖掘。建议玩家在搭建临时住所后第一时间放置，它是制作绝大部分工具、武器、盔甲和复杂装置的起点。"
+  },
+  {
+    "id": "箱子",
+    "name": "chest",
+    "kind": "物品",
+    "desc": "箱子（Chest）是Minecraft里最基础的存储方块，拥有27格内部空间。",
+    "usage": "/give @s chest 64",
+    "params": "箱子（硬度2.5，爆炸抗性2.5）可以放置在地面供玩家存取物品，推荐使用斧头破坏可极快掉落。将两个箱子并排（水平方向相邻）放置，会自动组合为一个拥有54格空间的大型箱子。箱子无法被活塞推动，且上方若被非透明方块遮挡将无法打开。"
+  },
+  {
+    "id": "火把",
+    "name": "torch",
+    "kind": "物品",
+    "desc": "火把（Torch）是一种自发光（亮度14级）的非固体方块，主要用于驱散黑暗和防止怪物生成。",
+    "usage": "/give @s torch 64",
+    "params": "火把（无碰撞箱，空手可瞬间破坏）。它可以附着在不透明方块的侧面或顶面，提供14级光照。在矿道探险时，建议在左侧或右侧墙壁间隔放置，保证亮度始终高于7级以阻止怪物生成。火把还能融化2格范围内的积雪和冰块。"
+  },
+  {
+    "id": "圆石",
+    "name": "cobblestone",
+    "kind": "物品",
+    "desc": "圆石（Cobblestone）是开采石头时最常掉落的方块，也是最古老的Minecraft方块之一。",
+    "usage": "/give @s cobblestone 64",
+    "params": "圆石（硬度2，爆炸抗性6）必须使用镐挖掘才会掉落，用空手或其他工具破坏不仅缓慢，而且什么也不会掉落。它是制作石质工具、熔炉、酿造台、发射器和投掷器等物品的基础材料，也是游戏中期建筑墙体和地板的经济实惠之选。"
+  },
+  {
+    "id": "熔炉",
+    "name": "furnace",
+    "kind": "物品",
+    "desc": "熔炉（Furnace）用于烧制食物、冶炼矿物和加热其他材料的核心功能性方块。",
+    "usage": "/give @s furnace 64",
+    "params": "熔炉（硬度3.5，爆炸抗性3.5）建议使用镐挖掘来掉落，否则挖掘速度极慢且不会掉落。在它的界面中，上方为被烧炼物，下方为燃料（如煤炭、木炭、木板、岩浆桶等），成品会出现在右侧格子。烧开后会自动消耗燃料直至产出完成或燃料用光。"
+  },
+  {
+    "id": "钻石剑",
+    "name": "diamond_sword",
+    "kind": "物品",
+    "desc": "钻石剑（Diamond Sword）是游戏中最经典的高阶近战武器之一，拥有极高的伤害和耐久度。",
+    "usage": "/give @s diamond_sword 1",
+    "params": "钻石剑（不可堆叠，基础伤害+7（Java版1.8+为+7，总伤害8；基岩版基础伤害8））。其耐久度高达1562点，仅次于下界合金剑。推荐附魔：锋利/亡灵杀手/节肢杀手、耐久、火焰附加、横扫之刃、抢夺。可使用钻石在附魔台或铁砧上修复。"
+  },
+  
+  {
+    "id": "圆石",
+    "name": "cobblestone",
+    "kind": "物品",
+    "desc": "圆石（Cobblestone）是开采石头时最常见的掉落物，也是最古老的Minecraft方块之一。",
+    "usage": "/give @s cobblestone 64",
+    "params": "圆石（硬度2，爆炸抗性6）必须使用镐挖掘才会掉落。它是制作石质工具、熔炉、投掷器、发射器和酿造台的基础原料，也是建造廉价建筑的常用材料。"
+  },
+  {
+    "id": "沙子",
+    "name": "sand",
+    "kind": "物品",
+    "desc": "沙子（Sand）是一种受重力影响的自然方块，常见于沙漠和海滩群系。",
+    "usage": "/give @s sand 64",
+    "params": "沙子（硬度0.5，爆炸抗性0.5）空手即可快速挖掘并掉落自身。沙子会自然下落，下方没有支撑时会变成掉落中的方块，砸到生物会造成窒息伤害。可在熔炉中烧制成玻璃，或用苦力怕爆炸等方式转化为灵魂沙的下位替代材料。"
+  },
+  {
+    "id": "沙砾",
+    "name": "gravel",
+    "kind": "物品",
+    "desc": "沙砾（Gravel）是一种受重力影响的自然方块，常见于地下矿道、山脉和海底。",
+    "usage": "/give @s gravel 64",
+    "params": "沙砾（硬度0.6，爆炸抗性0.6）空手即可挖掘，但有几率不掉落自身而是掉落燧石（10%概率）。使用精准采集附魔的工具可以100%获得沙砾本身。同样受重力影响而下落。"
+  },
+  {
+    "id": "木头",
+    "name": "oak_planks",
+    "kind": "物品",
+    "desc": "橡木木板（Oak Planks）是Minecraft中最基础、最重要的合成材料之一。",
+    "usage": "/give @s oak_planks 64",
+    "params": "橡木木板（硬度2，爆炸抗性2）由橡木原木分解而成，44格合成栏即可制作。它是制作工作台、木棍、木镐、木剑、木门、箱子、床等绝大多数新手必备物品的核心材料。空手即可快速回收。"
+  },
+  {
+    "id": "木棍",
+    "name": "stick",
+    "kind": "物品",
+    "desc": "木棍（Stick）是制作工具、武器和很多道具的把柄原料。",
+    "usage": "/give @s stick 64",
+    "params": "木棍无法直接放置，是纯合成材料。用2个木板竖排合成可获得4根木棍。它是制作镐、斧、锹、锄、剑、钓鱼竿、箭、火把、栅栏、梯子等大量物品的必要原料。"
+  },
+  {
+    "id": "煤炭",
+    "name": "coal",
+    "kind": "物品",
+    "desc": "煤炭（Coal）是Minecraft中最常用的燃料，由煤矿石掉落。",
+    "usage": "/give @s coal 64",
+    "params": "煤炭（物品，不可放置）由煤矿石（必须用镐开采）掉落。每个煤炭可作为熔炉的燃料，燃烧时间为80秒（可烧8个物品）。9个煤炭可合成1个煤炭块。"
+  },
+  {
+    "id": "木炭",
+    "name": "charcoal",
+    "kind": "物品",
+    "desc": "木炭（Charcoal）是煤炭的替代品，通过烧制原木获得。",
+    "usage": "/give @s charcoal 64",
+    "params": "木炭（物品）功能与煤炭完全相同，燃烧时间也是80秒。将橡木原木（注意不是木板）放入熔炉，用任意燃料烧制即可获得。在找不到煤矿的情况下是生存初期的燃料救星。"
+  },
+  {
+    "id": "铁锭",
+    "name": "iron_ingot",
+    "kind": "物品",
+    "desc": "铁锭（Iron Ingot）是Minecraft中用途最广泛的金属材料。",
+    "usage": "/give @s iron_ingot 64",
+    "params": "铁锭（物品）通过将铁矿石放入熔炉烧制获得。用于制作铁镐、铁剑、铁斧、铁锹、铁锄、铁盔甲、铁门、剪刀、打火石、指南针、铁轨、铁桶等大量物品，是游戏中后期的基础金属。"
+  },
+  {
+    "id": "金锭",
+    "name": "gold_ingot",
+    "kind": "物品",
+    "desc": "金锭（Gold Ingot）是一种贵重但耐久较低的金属材料。",
+    "usage": "/give @s gold_ingot 64",
+    "params": "金锭（物品）由金矿石烧制而成。用于制作金剑、金镐、金斧、金盔甲等工具（耐久极低但附魔属性好），以及充能铁轨、金苹果等特殊物品。"
+  },
+  {
+    "id": "钻石",
+    "name": "diamond",
+    "kind": "物品",
+    "desc": "钻石（Diamond）是游戏中最重要的宝石资源。",
+    "usage": "/give @s diamond 64",
+    "params": "钻石（物品）必须用铁镐或以上品质的镐开采钻石矿石掉落。用于制作钻石镐、钻石剑、钻石盔甲等顶级装备（耐久1562），拥有极高的耐久度和速度。也是合成附魔台、唱片机的必要材料。"
+  },
+  {
+    "id": "绿宝石",
+    "name": "emerald",
+    "kind": "物品",
+    "desc": "绿宝石（Emerald）是村民交易的通用货币。",
+    "usage": "/give @s emerald 64",
+    "params": "绿宝石（物品）主要通过和村民交易获得，也可在峭壁群系开采绿宝石矿石掉落。不与工具或装备，专用于与村民进行以物易物。"
+  },
+  {
+    "id": "下界合金锭",
+    "name": "netherite_ingot",
+    "kind": "物品",
+    "desc": "下界合金锭（Netherite Ingot）是游戏中最顶级的材料。",
+    "usage": "/give @s netherite_ingot 64",
+    "params": "下界合金锭（物品）由4个下界合金碎片和4个金锭合成。用于在锻造台上将钻石装备升级为下界合金装备，拥有极高的耐久、击退抗性和在岩浆中漂浮不毁的特性。"
+  },
+  {
+    "id": "苹果",
+    "name": "apple",
+    "kind": "物品",
+    "desc": "苹果（Apple）是一种基础食物。",
+    "usage": "/give @s apple 64",
+    "params": "苹果（食物）恢复4点饥饿值。可通过破坏橡树叶小概率掉落，也能在村庄和地牢的箱子中找到。8个金锭和1个苹果可合成金苹果。"
+  },
+  {
+    "id": "面包",
+    "name": "bread",
+    "kind": "物品",
+    "desc": "面包（Bread）是一种高性价比的基础食物。",
+    "usage": "/give @s bread 64",
+    "params": "面包恢复5点饥饿值。由3个小麦在工作台横向合成。小麦通过种植种子获得，是生存初期最稳定的食物来源。"
+  },
+  {
+    "id": "牛排",
+    "name": "cooked_beef",
+    "kind": "物品",
+    "desc": "牛排（Cooked Beef）是游戏中恢复饥饿值最高的食物之一。",
+    "usage": "/give @s cooked_beef 64",
+    "params": "牛排恢复8点饥饿值。将生牛肉放入熔炉烧制获得，生牛肉击杀牛掉落。在生存中后期是极为优质的食物来源。"
+  },
+  {
+    "id": "金苹果",
+    "name": "golden_apple",
+    "kind": "物品",
+    "desc": "金苹果（Golden Apple）是一种拥有强大增益效果的特殊食物。",
+    "usage": "/give @s golden_apple 64",
+    "params": "金苹果恢复4点饥饿值，并附加2分钟的伤害吸收效果和5秒的生命恢复效果。由1个苹果和8个金锭合成。附魔金苹果（需要8个金块）更加稀有，提供更强的恢复和抗性效果。"
+  },
+  {
+    "id": "弓",
+    "name": "bow",
+    "kind": "物品",
+    "desc": "弓（Bow）是Minecraft中最主要的远程武器。",
+    "usage": "/give @s bow 1",
+    "params": "弓（不可堆叠，耐久384）需要箭作为弹药，拉满可造成极高伤害（暴击可达9点以上甚至更高）。由3根木棍和3根线合成。推荐附魔：力量、无限、火矢、冲击、耐久。"
+  },
+  {
+    "id": "箭",
+    "name": "arrow",
+    "kind": "物品",
+    "desc": "箭（Arrow）是弓、弩和发射器的弹药。",
+    "usage": "/give @s arrow 64",
+    "params": "箭由1个燧石、1根木棍和1根羽毛合成，每次合成获得4支。击杀骷髅也会掉落。箭可以附上药水效果变为药箭，击中目标后施加对应状态效果。"
+  },
+  {
+    "id": "铁剑",
+    "name": "iron_sword",
+    "kind": "物品",
+    "desc": "铁剑（Iron Sword）是中期的可靠近战武器。",
+    "usage": "/give @s iron_sword 1",
+    "params": "铁剑（不可堆叠，基础伤害+6，总伤害7，耐久250）。前期最容易获得的非木石武器，攻击速度和伤害均衡。"
+  },
+  {
+    "id": "铁镐",
+    "name": "iron_pickaxe",
+    "kind": "物品",
+    "desc": "铁镐（Iron Pickaxe）是能够采集大多数矿石的关键工具。",
+    "usage": "/give @s iron_pickaxe 1",
+    "params": "铁镐（不可堆叠，耐久250）。能够开采金矿、红石矿、钻石矿等中高阶矿石（但无法挖黑曜石）。是进入钻石时代前的标准工具。"
+  },
+  {
+    "id": "钻石镐",
+    "name": "diamond_pickaxe",
+    "kind": "物品",
+    "desc": "钻石镐（Diamond Pickaxe）是能够开采所有矿石（除下界合金）的高阶工具。",
+    "usage": "/give @s diamond_pickaxe 1",
+    "params": "钻石镐（耐久1562）。可开采黑曜石并用于进入下界。也是高效率挖掘的基础工具。推荐附魔：效率、时运/精准采集、耐久。"
+  },
+  {
+    "id": "下界合金镐",
+    "name": "netherite_pickaxe",
+    "kind": "物品",
+    "desc": "下界合金镐（Netherite Pickaxe）是游戏中最顶级的镐。",
+    "usage": "/give @s netherite_pickaxe 1",
+    "params": "下界合金镐（耐久2031）。速度、耐久和附魔能力均优于钻石镐，且掉入岩浆不毁。在锻造台由钻石镐+下界合金锭升级获得。"
+  },
+  {
+    "id": "斧头",
+    "name": "iron_axe",
+    "kind": "物品",
+    "desc": "铁斧（Iron Axe）是用于砍伐木质方块和战斗的通用工具。",
+    "usage": "/give @s iron_axe 1",
+    "params": "铁斧（耐久250）。砍伐树木、工作台、箱子等木质方块速度极快。Java版中伤害较高（+9），可以当作重击武器使用。"
+  },
+  {
+    "id": "鞘翅",
+    "name": "elytra",
+    "kind": "物品",
+    "desc": "鞘翅（Elytra）可以让你在空中滑翔。",
+    "usage": "/give @s elytra 1",
+    "params": "鞘翅（耐久432）。装备在胸甲栏后，下落时按跳跃键可展开翅膀滑翔。配合烟花火箭可以实现在空中的持续飞行。只能在末地船上找到。"
+  },
+  {
+    "id": "盾牌",
+    "name": "shield",
+    "kind": "物品",
+    "desc": "盾牌（Shield）用于格挡攻击。",
+    "usage": "/give @s shield 1",
+    "params": "盾牌（耐久336）。装备后按住右键即可举盾，格挡正面的近战、投射物和部分爆炸伤害。被斧头攻击后会进入5秒的冷却状态无法举盾。"
+  },
+  {
+    "id": "钓鱼竿",
+    "name": "fishing_rod",
+    "kind": "物品",
+    "desc": "钓鱼竿（Fishing Rod）可以用来钓鱼或者拖拽生物。",
+    "usage": "/give @s fishing_rod 1",
+    "params": "钓鱼竿（耐久64）。对着水右键抛出浮标，等待鱼上钩后再次右键收杆可钓上鱼、宝藏或垃圾。也可以对着生物右键将其拉近。"
+  },
+  {
+    "id": "打火石",
+    "name": "flint_and_steel",
+    "kind": "物品",
+    "desc": "打火石（Flint and Steel）用于点燃方块或引爆TNT。",
+    "usage": "/give @s flint_and_steel 1",
+    "params": "打火石（耐久64）。右键点击方块会点燃该面，产生火焰。右键点击TNT会引爆。右键点击下界传送门可以激活。由1个铁锭和1个燧石合成。"
+  },
+  {
+    "id": "剪刀",
+    "name": "shears",
+    "kind": "物品",
+    "desc": "剪刀（Shears）主要用于剪羊毛和采集树叶。",
+    "usage": "/give @s shears 1",
+    "params": "剪刀（耐久238）。对羊右键可剪下1~3个羊毛且不杀死羊。可以快速破坏树叶、草、藤蔓等方块并掉落自身，是装饰获取利器。"
+  },
+  {
+    "id": "水桶",
+    "name": "water_bucket",
+    "kind": "物品",
+    "desc": "水桶（Water Bucket）是可以装运水源的实用工具。",
+    "usage": "/give @s water_bucket 1",
+    "params": "水桶（不可堆叠）。对着水源右键即可装填，再次右键倒出可放置水源方块。常用于灭火、防摔伤（落地前在脚下放水）、建造下界通道（遇岩浆形成黑曜石）等。"
+  },
+  {
+    "id": "岩浆桶",
+    "name": "lava_bucket",
+    "kind": "物品",
+    "desc": "岩浆桶（Lava Bucket）装满了可放置的高温液体。",
+    "usage": "/give @s lava_bucket 1",
+    "params": "岩浆桶（不可堆叠）。右键放出岩浆源，可作为熔炉的顶级燃料（燃烧1000秒）。要小心放置在可燃方块附近引发火灾。"
+  },
+  {
+    "id": "床",
+    "name": "red_bed",
+    "kind": "物品",
+    "desc": "床（Bed）可以在夜间跳过时间并重置重生点。",
+    "usage": "/give @s red_bed 1",
+    "params": "床（不可堆叠）。由3个任意羊毛和3个任意木板合成。夜间右键点击可睡觉将时间快进到白天，并设置复活点。注意在下界和末地右键会爆炸。有不同的颜色变种。"
+  },
+  {
+    "id": "营火",
+    "name": "campfire",
+    "kind": "物品",
+    "desc": "营火（Campfire）是一种可烹饪食物并提供光源的装饰方块。",
+    "usage": "/give @s campfire 64",
+    "params": "营火（硬度2，亮度15）。放置后无需燃料即可烹饪最多4块生肉（烹饪时间30秒，自动弹出熟肉）。踩在上面会受到火焰伤害但不会烧毁物品。用锹右键可以熄灭，用打火石右键重新点燃。"
+  },
+  {
+    "id": "附魔台",
+    "name": "enchanting_table",
+    "kind": "物品",
+    "desc": "附魔台（Enchanting Table）让玩家用经验值为装备附加随机魔咒。",
+    "usage": "/give @s enchanting_table 64",
+    "params": "附魔台（硬度5，爆炸抗性1200，必须用镐挖掘方可掉落）。右键打开界面，放入可附魔物品和青金石，消耗玩家等级即可随机选择魔咒。周围书架越多（最多15个），可出现的附魔等级越高。"
+  },
+  {
+    "id": "铁砧",
+    "name": "anvil",
+    "kind": "物品",
+    "desc": "铁砧（Anvil）用于修复、重命名物品，以及组合附魔书。",
+    "usage": "/give @s anvil 64",
+    "params": "铁砧（硬度5，爆炸抗性1200，必须用镐挖掘方可掉落）。放入目标物品和对应材料（如铁锭修铁剑）或附魔书来修复和升级。每次操作消耗经验，随使用次数增加而逐渐受损，最终变为破损的铁砧。受重力影响会下落。"
+  },
+  {
+    "id": "红石粉",
+    "name": "redstone",
+    "kind": "物品",
+    "desc": "红石粉（Redstone Dust）是组成所有红石电路的基本元素。",
+    "usage": "/give @s redstone 64",
+    "params": "红石粉（物品）由红石矿石掉落，可右键铺在地上形成红石导线，传递红石信号。最大信号强度15，每格衰减1。可合成为红石火把、红石中继器、活塞、发射器等几乎所有红石元件。"
+  },
+  {
+    "id": "红石火把",
+    "name": "redstone_torch",
+    "kind": "物品",
+    "desc": "红石火把（Redstone Torch）是红石电路中提供持续信号或用作反向器的基础原件。",
+    "usage": "/give @s redstone_torch 64",
+    "params": "红石火把（亮度7级）。正常状态下输出最大红石信号，当它附着的方块被充能时就会熄灭并停止输出信号。可用于制作简单开关、反向器和红石中继器的侧向输入端逻辑控制。"
+  },
+  {
+    "id": "活塞",
+    "name": "piston",
+    "kind": "物品",
+    "desc": "活塞（Piston）是能够推动多数方块的基础机械元件。",
+    "usage": "/give @s piston 64",
+    "params": "活塞由3个木板、4个圆石、1个铁锭和1个红石粉合成。接收到红石信号时，活塞臂推出，将前方最多12个方块推动一格。它不能推动黑曜石、基岩、箱子、熔炉以及带NBT的方块等。"
+  },
+  {
+    "id": "粘性活塞",
+    "name": "sticky_piston",
+    "kind": "物品",
+    "desc": "粘性活塞（Sticky Piston）除了能推方块，还能在失去信号时拉回紧贴的方块。",
+    "usage": "/give @s sticky_piston 64",
+    "params": "粘性活塞由1个普通活塞和1个粘液球合成。红石信号激活时推出方块，信号消失后活塞头会缩回并粘回紧贴的被推方块。短脉冲信号（1tick）可以让它只做出推出但不收回方块的抛射动作。"
+  },
+  {
+    "id": "粘液块",
+    "name": "slime_block",
+    "kind": "物品",
+    "desc": "粘液块（Slime Block）是一种富有弹性的半透明方块，是组成飞行器的重要材料。",
+    "usage": "/give @s slime_block 64",
+    "params": "粘液块由9个粘液球合成。被活塞推动或拉动时，会连带相邻的其它方块一起移动（最多12个方块）。同时生物落在上面会弹跳。是制造各种红石飞行器、弹跳装置的核心。"
+  },
+  {
+    "id": "侦测器",
+    "name": "observer",
+    "kind": "物品",
+    "desc": "侦测器（Observer）是检测方块更新的红石元件。",
+    "usage": "/give @s observer 64",
+    "params": "侦测器由6个圆石、2个红石粉和1个下界石英合成。它的脸孔面朝向被检测区，当对面方块发生状态更新（如放置、破坏、生长、开关等），它会输出一个1tick的短脉冲，用于自动化红石装置。"
+  },
+  {
+    "id": "发射器",
+    "name": "dispenser",
+    "kind": "物品",
+    "desc": "发射器（Dispenser）是一种能够自动投掷物品或使用工具的红石机械。",
+    "usage": "/give @s dispenser 64",
+    "params": "发射器由7个圆石、1个弓和1个红石粉合成。被红石信号激活时，会将内部存储的物品发射出去（箭、喷溅药水等），还能使用打火石点燃TNT、用水桶倒水、装备盔甲等。"
+  },
+  {
+    "id": "投掷器",
+    "name": "dropper",
+    "kind": "物品",
+    "desc": "投掷器（Dropper）是将物品以掉落形式弹出至相邻容器的红石元件。",
+    "usage": "/give @s dropper 64",
+    "params": "投掷器由7个圆石和1个红石粉合成。被激活时将物品弹出。和发射器的区别在于：它无法使用工具的特殊效果（如箭的射击），只会原样吐出物品，适合传递物品链。"
+  },
+  {
+    "id": "漏斗",
+    "name": "hopper",
+    "kind": "物品",
+    "desc": "漏斗（Hopper）是自动运输物品的容器。",
+    "usage": "/give @s hopper 64",
+    "params": "漏斗由5个铁锭和1个箱子合成。可从上方吸入掉落物，从前后左右上五个方向输入物品，并将物品输出到下方或指向的容器。是几乎所有物品自动化归类、熔炉自动供料系统的核心。"
+  },
+  {
+    "id": "音符盒",
+    "name": "note_block",
+    "kind": "物品",
+    "desc": "音符盒（Note Block）是能够发出乐器音效的红石元件。",
+    "usage": "/give @s note_block 64",
+    "params": "音符盒由8个木板和1个红石粉合成。右键调整音高（共25个半音），下方方块材质决定乐器类型（如木头→弦乐器，泥土→钢琴等）。收到红石信号时发出当前音高音符声音。"
+  },
+  {
+    "id": "命令方块",
+    "name": "command_block",
+    "kind": "物品",
+    "desc": "命令方块（Command Block）是执行命令的特殊方块，仅在创造模式或管理员指令下获得。",
+    "usage": "/give @s command_block 1",
+    "params": "命令方块（硬度-1，无法以生存模式破坏，爆炸抗性极高）。内部输入命令后，由红石信号激活即可运行。是制作各类高级地图、小游戏和复杂系统的核心工具，无法在生存模式获得。"
+  },
+  {
+    "id": "命名牌",
+    "name": "name_tag",
+    "kind": "物品",
+    "desc": "命名牌（Name Tag）用于给生物命名或阻止其自然消失。",
+    "usage": "/give @s name_tag 1",
+    "params": "命名牌（不可堆叠）。在铁砧中改名后，对生物右键使用即可为它命名。被命名的生物不会自然消失（敌对生物也不会消失）。稀有来源：钓鱼、村庄箱子和交易。"
+  },
+  {
+    "id": "鞍",
+    "name": "saddle",
+    "kind": "物品",
+    "desc": "鞍（Saddle）是用来骑乘马、猪、炽足兽等生物的用品。",
+    "usage": "/give @s saddle 1",
+    "params": "鞍（不可堆叠）。右键装备到可骑乘生物上，骑上去后按潜行键下坐骑。无法合成，只能在村庄箱子、地牢、钓鱼等途径找到。"
+  },
+  {
+    "id": "拴绳",
+    "name": "lead",
+    "kind": "物品",
+    "desc": "拴绳（Lead）可以牵引和拴住生物。",
+    "usage": "/give @s lead 1",
+    "params": "拴绳（可堆叠）。由4根线和1个粘液球合成。右键绑住生物即可牵走，右键栅栏可将生物拴在上面，范围较广。旅行商人的羊驼会掉落拴绳。"
+  },
+  {
+    "id": "画",
+    "name": "painting",
+    "kind": "物品",
+    "desc": "画（Painting）是墙面装饰方块。",
+    "usage": "/give @s painting 64",
+    "params": "画由8根木棍和1个任意羊毛合成。右键墙面即可放置，根据周围可用空间随机选择图案。放置后可通过右键更换图案或打掉重放来刷新样式。"
+  },
+  {
+    "id": "物品展示框",
+    "name": "item_frame",
+    "kind": "物品",
+    "desc": "物品展示框（Item Frame）用来在墙上或箱子上展示物品。",
+    "usage": "/give @s item_frame 64",
+    "params": "物品展示框由8根木棍和1个皮革合成。右键墙面放置，再右键将手中物品放入。展示框内的物品也可以旋转（不同角度右键）。使用红石比较器可读取物品的朝向并输出对应信号。"
+  },
+  {
+    "id": "末影珍珠",
+    "name": "ender_pearl",
+    "kind": "物品",
+    "desc": "末影珍珠（Ender Pearl）投掷后可瞬移到落点。",
+    "usage": "/give @s ender_pearl 16",
+    "params": "末影珍珠（可堆叠至16）。右键投掷，落地或击中目标后会将玩家传送到珍珠落点并造成5点坠落伤害。是探索末地外岛和快速移动的重要工具。击杀末影人掉落，也能和烈焰粉合成末影之眼。"
+  },
+  {
+    "id": "末影之眼",
+    "name": "ender_eye",
+    "kind": "物品",
+    "desc": "末影之眼（Eye of Ender）是定位和激活末地传送门的核心道具。",
+    "usage": "/give @s ender_eye 64",
+    "params": "末影之眼由1个末影珍珠和1个烈焰粉合成。右键投掷会飞向最近的末地要塞方向并最终掉落，用来寻找要塞。要塞内部的末地传送门框架需要放入12个末影之眼来激活。"
+  },
+  {
+    "id": "附魔书",
+    "name": "enchanted_book",
+    "kind": "物品",
+    "desc": "附魔书（Enchanted Book）是储存魔咒的载体，用于在铁砧上为物品赋魔。",
+    "usage": "/give @s enchanted_book 1",
+    "params": "附魔书自身无实际使用效果，需在铁砧上和工具/武器/盔甲结合，消耗经验来转移其上的魔咒。获得途径包括：附魔台随机产出、钓鱼宝藏、村民交易和地牢宝箱。"
+  },
+  {
+    "id": "经验瓶",
+    "name": "experience_bottle",
+    "kind": "物品",
+    "desc": "经验瓶（Bottle o‘ Enchanting）砸碎后掉落经验球。",
+    "usage": "/give @s experience_bottle 64",
+    "params": "经验瓶投掷后碎裂，随机掉落共计3~11点的经验球。无法合成，只能通过村民交易或地牢箱子获得。是快速获取经验的好方式。"
+  },
+  {
+    "id": "末地烛",
+    "name": "end_rod",
+    "kind": "物品",
+    "desc": "末地烛（End Rod）是一种发出白色粒子光芒的纯净光源。",
+    "usage": "/give @s end_rod 64",
+    "params": "末地烛（亮度14，硬度用镐开采）。由1个烈焰棒和1个爆裂紫颂果合成。可放置于任意方块的六个面上，适合用于现代建筑照明和装饰。"
+  }
+]

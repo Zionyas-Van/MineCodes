@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>指令详情</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: var(--md-sys-typescale-body-medium, 'Microsoft YaHei', sans-serif);
+      overflow: hidden;
+    }
+    .detail-container {
+      background: var(--md-sys-color-surface, #fff);
+      border-radius: 24px;
+      padding: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      color: var(--md-sys-color-on-surface, #1f1f1f);
+      -webkit-app-region: drag;
+    }
+    .detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      -webkit-app-region: drag;
+    }
+    .headline-small {
+      font-family: var(--md-sys-typescale-headline-small);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 0;
+      -webkit-app-region: no-drag;
+    }
+    .window-controls {
+      display: flex;
+      gap: 8px;
+      -webkit-app-region: no-drag;
+    }
+    .icon-button {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--md-sys-shape-corner-large);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--md-sys-color-on-surface-variant);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-app-region: no-drag;
+    }
+    .icon-button:hover { background: rgba(0,0,0,0.08); }
+    .detail-content {
+      flex: 1;
+      -webkit-app-region: no-drag;
+    }
+    .usage-code {
+      background: var(--md-sys-color-surface-variant, #f1f3f4);
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-family: monospace;
+    }
+    .favorite-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--md-sys-color-primary);  /* 默认蓝色 */
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      margin-top: 12px;
+      -webkit-app-region: no-drag;
+      transition: color 0.2s;
+    }
+    /* 新增：收藏状态下的红色样式 */
+    .favorite-btn.red {
+      color: #D32F2F;   /* 红色实心爱心时的字体颜色 */
+    }
+  </style>
+</head>
+<body>
+  <div class="detail-container">
+    <div class="detail-header">
+      <h2 class="headline-small" id="commandName">/command</h2>
+      <div class="window-controls">
+        <button class="icon-button" id="close-btn">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+    </div>
+    <div class="detail-content">
+      <p class="body-medium" id="commandDesc"></p >
+      <div class="usage-code" id="commandUsage"></div>
+      <p class="body-medium" id="commandParams"></p >
+    </div>
+    <button class="favorite-btn" id="favoriteBtn">
+      <span class="material-symbols-outlined" id="favoriteIcon">favorite_border</span>
+      <span>收藏</span>
+    </button>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    // 窗口控制
+    document.getElementById('close-btn').onclick = () => ipcRenderer.send('window-close');
+
+    // 解析指令数据
+    const params = new URLSearchParams(window.location.search);
+    const commandData = {};
+    for (const [key, value] of params.entries()) {
+      commandData[key] = value;
+    }
+
+    document.getElementById('commandName').textContent = commandData.name || '/command';
+    document.getElementById('commandDesc').textContent = commandData.desc || '';
+    document.getElementById('commandUsage').textContent = commandData.usage || '';
+    document.getElementById('commandParams').textContent = '——' + (commandData.params || '');
+
+    const commandId = commandData.id;
+    const favoriteIcon = document.getElementById('favoriteIcon');
+    const favoriteBtn = document.getElementById('favoriteBtn');
+
+    // 初始获取收藏状态
+    async function initFavoriteUI() {
+      const favs = await ipcRenderer.invoke('get-favorites');
+      const isFav = favs.includes(commandId);
+      updateFavoriteUI(isFav);
+    }
+
+    function updateFavoriteUI(isFav) {
+      if (isFav) {
+        favoriteIcon.textContent = 'favorite';
+        favoriteIcon.style.fontVariationSettings = "'FILL' 1";
+        favoriteBtn.classList.add('red');           // 变为红色
+      } else {
+        favoriteIcon.textContent = 'favorite_border';
+        favoriteIcon.style.fontVariationSettings = "'FILL' 0";
+        favoriteBtn.classList.remove('red');        // 恢复蓝色
+      }
+    }
+
+    // 收藏按钮点击
+    document.getElementById('favoriteBtn').addEventListener('click', async () => {
+      const result = await ipcRenderer.invoke('toggle-favorite', commandId);
+      if (result.success) {
+        updateFavoriteUI(result.isFav);
+      }
+    });
+
+    initFavoriteUI();
+  </script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>MineCodes</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container" id="app">
+
+    <!-- 导航轨道 -->
+    <nav class="navigation-rail" id="navRail">
+      <div class="rail-items">
+        <button class="rail-item active" data-view="home">
+          <span class="material-symbols-outlined">home</span>
+        </button>
+        <button class="rail-item" data-view="favorite">
+          <span class="material-symbols-outlined">favorite</span>
+        </button>
+        <button class="rail-item" data-view="settings">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 右侧内容区 -->
+    <div class="content-area">
+
+      <!-- 顶部应用栏 -->
+      <header class="top-app-bar">
+        <h1 class="headline-large">MineCodes</h1>
+        <div class="window-controls">
+          <button class="icon-button win-btn" id="min-btn">
+            <span class="material-symbols-outlined">minimize</span>
+          </button>
+          <button class="icon-button win-btn" id="max-btn">
+            <span class="material-symbols-outlined">crop_square</span>
+          </button>
+          <button class="icon-button win-btn" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <!-- 首页视图 -->
+        <div class="view active" id="view-home">
+          <div class="search-area">
+            <div class="search-bar">
+              <span class="material-symbols-outlined search-icon">search</span>
+              <input type="text" placeholder="搜索MC指令..." class="body-large" id="searchInput">
+            </div>
+          </div>
+          <!-- 分类栏 -->
+          <div class="categories-bar" id="categoriesBar">
+            <!-- 动态生成分类按钮 -->
+          </div>
+          <div class="cards-grid" id="commandsContainer">
+            <!-- 动态生成卡片 -->
+          </div>
+        </div>
+
+        <!-- 收藏视图 -->
+        <div class="view" id="view-favorite">
+          <div class="cards-grid" id="favoritesContainer">
+            <!-- 动态生成收藏卡片 -->
+          </div>
+        </div>
+
+        <!-- 设置视图 -->
+        <div class="view" id="view-settings">
+          <div class="settings-container">
+            <!-- 外观分组 -->
+            <div class="settings-group">
+              <h3 class="headline-small settings-group-title">外观</h3>
+              <div class="md3-card filled-card settings-item">
+                <div class="settings-item-row">
+                  <div class="settings-item-text">
+                    <span class="body-large">深色模式</span>
+                    <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">切换界面明暗主题</span>
+                  </div>
+                  <label class="m3-switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="m3-switch-slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+<!-- 关于分组 -->
+            <div class="settings-group">
+              <h3 class="headline-small settings-group-title">关于</h3>
+              <div class="md3-card filled-card settings-item">
+                <div class="settings-item-col">
+                  <span class="body-large">MineCodes</span>
+                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">版本 0.1 测试版</span>
+                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant); margin-top: 8px;">策划：ZionyasVan（DXL）</span>
+                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">开发：ZionyasVan & YasVnite</span>
+                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">联系我们：2223857511@qq.com</span>
+                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant); margin-top: 8px;">MineCodes与Minecrosft、Mojang无任何从属关系。</span>
+                </div>
+              </div>
+            </div>>
+
+            <!-- 日志分组 -->
+            <div class="settings-group">
+              <h3 class="headline-small settings-group-title">日志</h3>
+              <div class="md3-card filled-card settings-item">
+                <div class="settings-item-col">
+                  <button class="text-button label-large" id="viewLogBtn" style="align-self: flex-start;">查看日志</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- FAB -->
+      <button class="fab">
+        <span class="material-symbols-outlined">add</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Snackbar 提示 -->
+  <div class="snackbar" id="snackbar">
+    <span class="snackbar-text">提示信息</span>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+    const path = require('path');
+    const fs = require('fs');
+
+    // ========== 点击音效 ==========
+    const clickSoundPath = path.join(__dirname, 'res', 'data', 'ui', 'click.ogg');
+    const clickSoundUrl = 'file:///' + clickSoundPath.replace(/\\/g, '/');   // 兼容 Windows
+    function playClickSound() {
+      const audio = new Audio(clickSoundUrl);
+      audio.play().catch(() => {});   // 忽略可能的自动播放错误
+    }
+
+    // 事件委托：监听所有按钮点击（包括动态生成的）
+    document.addEventListener('click', (e) => {
+      // 寻找最近的 button 元素
+      const btn = e.target.closest('button');
+      if (btn) {
+        // 排除一些特殊按钮（例如 input[type=checkbox] 被label包裹，但不是button）
+        playClickSound();
+      }
+    });
+
+    // ========== 窗口控制 ==========
+    document.getElementById('min-btn').addEventListener('click', () => {
+      ipcRenderer.send('window-minimize');
+    });
+    document.getElementById('max-btn').addEventListener('click', () => {
+      ipcRenderer.send('window-maximize');
+    });
+    document.getElementById('close-btn').addEventListener('click', () => {
+      ipcRenderer.send('window-close');
+    });
+
+    // ========== 导航轨道视图切换 ==========
+    const railItems = document.querySelectorAll('.rail-item');
+    const views = document.querySelectorAll('.view');
+
+    railItems.forEach(item => {
+      item.addEventListener('click', () => {
+        railItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const targetView = item.getAttribute('data-view');
+        views.forEach(view => {
+          view.classList.remove('active');
+          if (view.id === 'view-' + targetView) {
+            view.classList.add('active');
+          }
+        });
+        // 当切换到收藏视图时，自动加载收藏列表
+        if (targetView === 'favorite') {
+          loadFavorites();
+        }
+      });
+    });
+
+    // ========== 从主进程获取指令数据 ==========
+    let commands = [];
+    const commandsContainer = document.getElementById('commandsContainer');
+    const categoriesBar = document.getElementById('categoriesBar');
+    let currentCategory = '全部';
+
+    async function loadCommands() {
+      try {
+        commands = await ipcRenderer.invoke('get-commands');
+        buildCategories();
+        renderCommands();
+      } catch (err) {
+        commandsContainer.innerHTML = `<p class="body-medium">指令加载失败：${err.message}</p >`;
+      }
+    }
+
+    // ========== 构建分类栏 ==========
+    function buildCategories() {
+      const kinds = new Set(['全部']);
+      commands.forEach(cmd => {
+        if (cmd.kind) kinds.add(cmd.kind);
+      });
+      const kindList = Array.from(kinds);
+      categoriesBar.innerHTML = '';
+      kindList.forEach(kind => {
+        const btn = document.createElement('button');
+        btn.className = 'category-tab';
+        if (kind === currentCategory) btn.classList.add('active');
+        btn.textContent = kind;
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.category-tab').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = kind;
+          renderCommands(searchInput.value);
+        });
+        categoriesBar.appendChild(btn);
+      });
+    }
+
+    // ========== 渲染指令卡片（带分类与搜索） ==========
+    function renderCommands(filter = '') {
+      commandsContainer.innerHTML = '';
+      const lowerFilter = filter.toLowerCase();
+      let filtered = commands.filter(cmd =>
+        cmd.name.toLowerCase().includes(lowerFilter) ||
+        cmd.desc.toLowerCase().includes(lowerFilter)
+      );
+      if (currentCategory !== '全部') {
+        filtered = filtered.filter(cmd => cmd.kind === currentCategory);
+      }
+
+      filtered.forEach(cmd => {
+        const card = document.createElement('div');
+        card.className = 'md3-card filled-card';
+        card.innerHTML = `
+          <div class="card-content">
+            <h3 class="headline-small">${cmd.name}</h3>
+            <p class="body-medium">${cmd.desc}</p >
+          </div>
+          <div class="card-actions">
+            <button class="text-button label-large copy-btn" data-usage="${cmd.usage.replace(/"/g, '&quot;')}">复制指令</button>
+            <button class="text-button label-large detail-btn" data-id="${cmd.id}">查看详情</button>
+          </div>
+        `;
+        commandsContainer.appendChild(card);
+      });
+
+      // 绑定复制按钮事件
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const usage = e.currentTarget.getAttribute('data-usage');
+          navigator.clipboard.writeText(usage).then(() => {
+            showSnackbar('指令已复制到剪贴板');
+          }).catch(() => {
+            showSnackbar('复制失败，请手动复制');
+          });
+        });
+      });
+
+      // 绑定详情按钮事件
+      document.querySelectorAll('.detail-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = e.currentTarget.getAttribute('data-id');
+          const cmd = commands.find(c => c.id === id);
+          if (cmd) {
+            ipcRenderer.send('open-detail', cmd);
+          }
+        });
+      });
+    }
+
+    // ========== 收藏视图渲染 ==========
+    const favoritesContainer = document.getElementById('favoritesContainer');
+
+    async function loadFavorites() {
+      try {
+        if (commands.length === 0) {
+          commands = await ipcRenderer.invoke('get-commands');
+        }
+        const favIds = await ipcRenderer.invoke('get-favorites');
+        const favCommands = commands.filter(cmd => favIds.includes(cmd.id));
+
+        favoritesContainer.innerHTML = '';
+
+        if (favCommands.length === 0) {
+          favoritesContainer.innerHTML = `<div class="placeholder-view">
+            <span class="material-symbols-outlined" style="font-size:48px;color:var(--md-sys-color-primary);">favorite_border</span>
+            <h2 class="headline-small">暂无收藏</h2>
+            <p class="body-medium">在指令详情中点击收藏按钮添加到这里。</p >
+          </div>`;
+          return;
+        }
+
+        favCommands.forEach(cmd => {
+          const card = document.createElement('div');
+          card.className = 'md3-card filled-card';
+          card.innerHTML = `
+            <div class="card-content">
+              <h3 class="headline-small">${cmd.name}</h3>
+              <p class="body-medium">${cmd.desc}</p >
+            </div>
+            <div class="card-actions">
+              <button class="text-button label-large unfav-btn" data-id="${cmd.id}">取消收藏</button>
+              <button class="text-button label-large copy-btn" data-usage="${cmd.usage.replace(/"/g, '&quot;')}">复制指令</button>
+              <button class="text-button label-large detail-btn" data-id="${cmd.id}">查看详情</button>
+            </div>
+          `;
+          favoritesContainer.appendChild(card);
+        });
+
+        document.querySelectorAll('.unfav-btn').forEach(btn => {
+          btn.addEventListener('click', async (e) => {
+            const cmdId = e.currentTarget.getAttribute('data-id');
+            await ipcRenderer.invoke('toggle-favorite', cmdId);
+            loadFavorites();
+          });
+        });
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const usage = e.currentTarget.getAttribute('data-usage');
+            navigator.clipboard.writeText(usage).then(() => {
+              showSnackbar('指令已复制到剪贴板');
+            }).catch(() => {
+              showSnackbar('复制失败，请手动复制');
+            });
+          });
+        });
+
+        document.querySelectorAll('.detail-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = e.currentTarget.getAttribute('data-id');
+            const cmd = commands.find(c => c.id === id);
+            if (cmd) {
+              ipcRenderer.send('open-detail', cmd);
+            }
+          });
+        });
+      } catch (err) {
+        favoritesContainer.innerHTML = `<p class="body-medium">收藏加载失败：${err.message}</p >`;
+      }
+    }
+
+    // ========== 搜索过滤 ==========
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+      renderCommands(e.target.value);
+    });
+
+    // ========== Snackbar 逻辑 ==========
+    function showSnackbar(message) {
+      const snackbar = document.getElementById('snackbar');
+      snackbar.querySelector('.snackbar-text').textContent = message;
+      snackbar.classList.add('show');
+      clearTimeout(snackbar.hideTimer);
+      snackbar.hideTimer = setTimeout(() => {
+        snackbar.classList.remove('show');
+      }, 3000);
+    }
+
+    // 查看日志按钮
+    const viewLogBtn = document.getElementById('viewLogBtn');
+    if (viewLogBtn) {
+      viewLogBtn.addEventListener('click', () => {
+        const logPath = path.join(__dirname, 'app.log');
+        if (fs.existsSync(logPath)) {
+          const content = fs.readFileSync(logPath, 'utf-8');
+          alert('日志内容：\n\n' + content);
+        } else {
+          alert('暂无日志文件。');
+        }
+      });
+    }
+
+    // 页面加载完成后拉取数据
+    loadCommands();
+
+    // 点击标题文字返回列表顶部
+    document.querySelector('.headline-large').addEventListener('click', () => {
+      const mainEl = document.querySelector('main');
+      if (mainEl) {
+        mainEl.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>

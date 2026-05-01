@@ -1,0 +1,14 @@
+{
+  "name": "minecodes",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^28.0.0"
+  },
+  "dependencies": {
+    "@material/web": "^2.0.0"
+  }
+}
