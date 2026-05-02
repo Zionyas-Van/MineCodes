@@ -1,4 +1,5 @@
 
+
 ![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/TuChuang/main/imgs/2026-02-17/4ZGcbpJsWmJ45A3h.png)
 
 # MineCodes
@@ -7,6 +8,13 @@ MineCodes是一个给Minecraft玩家的辅助工具
 
 ## 概述
 MineCodes是一个基于electron构建的项目，它的主程序位于`index.html`文件，您可以在克隆仓库后任意修改他们。
+
+## 最近更新
+
+> 更新了深色模式：
+> ![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/stackedit-app-data/master/imgs/2026-05-02/e5PT8pEvgszg7S5E.png)
+> 更新了瀑布流（支持直流式列表和瀑布式列表来回切换）：
+> ![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/stackedit-app-data/master/imgs/2026-05-02/mdsdNYJMCDuT66Ni.png)
 
 ## 介绍
 ![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/stackedit-app-data/master/imgs/2026-05-01/bkLneyk79MKLjpiY.png)
