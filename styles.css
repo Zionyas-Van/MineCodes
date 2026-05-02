@@ -62,14 +62,15 @@ body {
 
 .app-container {
   display: flex;
-  flex-direction: row;          /* 改为横向，容纳导航轨道与内容区 */
+  flex-direction: row;
   height: 100vh;
   background-color: var(--md-sys-color-background);
   color: var(--md-sys-color-on-background);
   border-radius: 24px;
-  overflow: hidden
   box-sizing: border-box;
-  -webkit-app-region: no-drag;  /* 只有标题栏可拖动 */
+  -webkit-app-region: no-drag;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);  
 }
 
 /* ===== 3. 导航轨道 (Navigation Rail) ===== */
@@ -281,13 +282,33 @@ body {
   user-select: none;
 }
 
-/* ----- 卡片网格 (Card Grid) ----- */
+/* ===== 卡片网格基础 ===== */
 .cards-grid {
+  margin: 0 0 80px 0;
+  -webkit-app-region: no-drag;
+}
+
+/* ----- 瀑布流模式（默认） ----- */
+body.layout-waterfall .cards-grid {
+  columns: 280px;
+  column-gap: 16px;
+}
+
+body.layout-waterfall .cards-grid .md3-card {
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+/* ----- 列表模式 ----- */
+body.layout-list .cards-grid {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin: 0 16px 80px 16px;
-  -webkit-app-region: no-drag;
+}
+
+/* 确保在列表模式下卡片之间有间距 */
+body.layout-list .cards-grid .md3-card {
+  margin-bottom: 0;
 }
 
 /* ----- Material Design 3 卡片 (Card) ----- */
@@ -444,10 +465,29 @@ main {
   line-height: 1.25rem;
 }
 
-/* ===== 隐藏滚动条 ===== */
+/* ===== M3 风格滚动条 ===== */
 main::-webkit-scrollbar {
-  width: 0;
-  display: none;
+  width: 6px;                    /* 细窄滚动条 */
+}
+
+main::-webkit-scrollbar-track {
+  background: transparent;       /* 轨道透明 */
+  border-radius: 3px;
+  margin: 8px 0;                /* 上下留一点间距，更精致 */
+}
+
+main::-webkit-scrollbar-thumb {
+  background: rgba(128, 134, 139, 0.4);   /* 与 M3 outline 相近，半透明 */
+  border-radius: 3px;
+  min-height: 40px;             /* 防止滑块过小 */
+}
+
+main::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 134, 139, 0.7);   /* 悬浮时加深 */
+}
+
+main::-webkit-scrollbar-thumb:active {
+  background: rgba(128, 134, 139, 0.9);   /* 点击时更深 */
 }
 
 /* ===== 设置界面布局 ===== */
@@ -542,7 +582,10 @@ main::-webkit-scrollbar {
   padding: 0 16px;
   height: 48px;
   align-items: center;
-  background: var(--md-sys-color-surface);
+  background: var(--md-sys-color-background);
+  position: sticky;          /* 新增：粘性定位 */
+  top: 0;                    /* 新增：吸附在 main 容器顶部 */
+  z-index: 10;               /* 新增：确保在卡片上方，不被遮挡 */
   border-bottom: 1px solid var(--md-sys-color-outline-variant);
   -webkit-app-region: no-drag;
   scrollbar-width: none;
@@ -589,4 +632,41 @@ main::-webkit-scrollbar {
 
 .category-tab.active::after {
   transform: translateX(-50%) scaleX(1);
+}
+
+/* ======================================== 深色主题 ================================================================ */
+body.dark-theme {
+  --md-sys-color-primary: #8AB4F8;
+  --md-sys-color-on-primary: #001D35;
+  --md-sys-color-primary-container: #004A77;
+  --md-sys-color-on-primary-container: #D3E3FD;
+  
+  --md-sys-color-secondary: #C4C7D2;
+  --md-sys-color-on-secondary: #2D3142;
+  --md-sys-color-secondary-container: #434759;
+  --md-sys-color-on-secondary-container: #DFE1ED;
+  
+  --md-sys-color-tertiary: #A0D2A2;
+  --md-sys-color-on-tertiary: #003A1A;
+  --md-sys-color-tertiary-container: #1E522B;
+  --md-sys-color-on-tertiary-container: #CEEAD6;
+  
+  --md-sys-color-error: #F28B82;
+  --md-sys-color-on-error: #601410;
+  --md-sys-color-error-container: #8C1D18;
+  --md-sys-color-on-error-container: #F9DEDC;
+  
+  --md-sys-color-background: #1B1B1F;
+  --md-sys-color-on-background: #E4E1E6;
+  --md-sys-color-surface: #1B1B1F;
+  --md-sys-color-on-surface: #E4E1E6;
+  --md-sys-color-surface-variant: #45464F;
+  --md-sys-color-on-surface-variant: #C6C5D0;
+  --md-sys-color-outline: #90909A;
+  --md-sys-color-outline-variant: #45464F;
+  
+  /* 阴影在深色背景下需要更微弱，稍作调整 */
+  .app-container {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
 }

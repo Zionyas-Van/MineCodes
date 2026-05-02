@@ -6,19 +6,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="layout-waterfall">
   <div class="app-container" id="app">
 
     <!-- 导航轨道 -->
     <nav class="navigation-rail" id="navRail">
       <div class="rail-items">
-        <button class="rail-item active" data-view="home">
+        <button class="rail-item active" data-view="home" title="首页">
           <span class="material-symbols-outlined">home</span>
         </button>
-        <button class="rail-item" data-view="favorite">
+        <button class="rail-item" data-view="favorite" title="收藏">
           <span class="material-symbols-outlined">favorite</span>
         </button>
-        <button class="rail-item" data-view="settings">
+        <button class="rail-item" data-view="settings" title="设置">
           <span class="material-symbols-outlined">settings</span>
         </button>
       </div>
@@ -86,29 +86,48 @@
                   </label>
                 </div>
               </div>
+              <div class="md3-card filled-card settings-item" style="margin-top: 12px;">
+                <div class="settings-item-row">
+                  <div class="settings-item-text">
+                    <span class="body-large">瀑布流布局</span>
+                    <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">指令卡片以瀑布流形式排列</span>
+                  </div>
+                  <label class="m3-switch">
+                    <input type="checkbox" id="layoutToggle" checked>
+                    <span class="m3-switch-slider"></span>
+                  </label>
+                </div>
+              </div>
             </div>
 
-<!-- 关于分组 -->
+            <!-- 关于分组 -->
             <div class="settings-group">
               <h3 class="headline-small settings-group-title">关于</h3>
               <div class="md3-card filled-card settings-item">
                 <div class="settings-item-col">
                   <span class="body-large">MineCodes</span>
-                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">版本 0.1 测试版</span>
+                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">版本 0.2.3 测试版</span>
                   <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant); margin-top: 8px;">策划：ZionyasVan（DXL）</span>
                   <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">开发：ZionyasVan & YasVnite</span>
                   <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">联系我们：2223857511@qq.com</span>
                   <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant); margin-top: 8px;">MineCodes与Minecrosft、Mojang无任何从属关系。</span>
                 </div>
               </div>
-            </div>>
+            </div>
 
             <!-- 日志分组 -->
             <div class="settings-group">
               <h3 class="headline-small settings-group-title">日志</h3>
               <div class="md3-card filled-card settings-item">
                 <div class="settings-item-col">
-                  <button class="text-button label-large" id="viewLogBtn" style="align-self: flex-start;">查看日志</button>
+                  <button class="text-button label-large" id="viewLogBtn" style="align-self: flex-start;">查看运行日志</button>
+                </div>
+              </div>
+              <!-- 更新日志区域 -->
+              <div class="settings-item" style="margin-top: 12px;">
+                <h3 class="headline-small" style="margin: 0 0 12px 0;">更新日志</h3>
+                <div id="changelogContainer">
+                  <!-- 动态填充 -->
                 </div>
               </div>
             </div>
@@ -135,20 +154,14 @@
 
     // ========== 点击音效 ==========
     const clickSoundPath = path.join(__dirname, 'res', 'data', 'ui', 'click.ogg');
-    const clickSoundUrl = 'file:///' + clickSoundPath.replace(/\\/g, '/');   // 兼容 Windows
+    const clickSoundUrl = 'file:///' + clickSoundPath.replace(/\\/g, '/');
     function playClickSound() {
       const audio = new Audio(clickSoundUrl);
-      audio.play().catch(() => {});   // 忽略可能的自动播放错误
+      audio.play().catch(() => {});
     }
-
-    // 事件委托：监听所有按钮点击（包括动态生成的）
     document.addEventListener('click', (e) => {
-      // 寻找最近的 button 元素
       const btn = e.target.closest('button');
-      if (btn) {
-        // 排除一些特殊按钮（例如 input[type=checkbox] 被label包裹，但不是button）
-        playClickSound();
-      }
+      if (btn) playClickSound();
     });
 
     // ========== 窗口控制 ==========
@@ -161,6 +174,24 @@
     document.getElementById('close-btn').addEventListener('click', () => {
       ipcRenderer.send('window-close');
     });
+
+    // 监听窗口状态变化，更新最大化图标
+    ipcRenderer.on('window-state-change', (event, state) => {
+      const maxBtnIcon = document.querySelector('#max-btn .material-symbols-outlined');
+      if (!maxBtnIcon) return;
+      if (state === 'maximized') {
+        maxBtnIcon.textContent = 'filter_none';
+      } else {
+        maxBtnIcon.textContent = 'crop_square';
+      }
+    });
+
+    // ========== 视图标题映射 ==========
+    const viewTitles = {
+      home: 'MineCodes',
+      favorite: '收藏',
+      settings: '设置'
+    };
 
     // ========== 导航轨道视图切换 ==========
     const railItems = document.querySelectorAll('.rail-item');
@@ -177,12 +208,50 @@
             view.classList.add('active');
           }
         });
-        // 当切换到收藏视图时，自动加载收藏列表
+
+        // 更新标题文字
+        document.querySelector('.headline-large').textContent = viewTitles[targetView] || 'MineCodes';
+
+        // 切换到收藏视图时自动加载收藏列表
         if (targetView === 'favorite') {
           loadFavorites();
         }
+        // 切换到设置视图时，加载更新日志
+        if (targetView === 'settings') {
+          loadChangelog();
+        }
       });
     });
+
+    // 创建“回到顶部”按钮
+    const railNav = document.querySelector('.rail-items');
+    if (railNav) {
+      const backToTopBtn = document.createElement('button');
+      backToTopBtn.className = 'rail-item';
+      backToTopBtn.title = '回到顶部';
+      backToTopBtn.style.display = 'none';
+      const iconSpan = document.createElement('span');
+      iconSpan.className = 'material-symbols-outlined';
+      iconSpan.textContent = 'arrow_upward';
+      backToTopBtn.appendChild(iconSpan);
+      railNav.appendChild(backToTopBtn);
+
+      backToTopBtn.addEventListener('click', () => {
+        const mainEl = document.querySelector('main');
+        if (mainEl) mainEl.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      const mainEl = document.querySelector('main');
+      if (mainEl) {
+        mainEl.addEventListener('scroll', () => {
+          if (mainEl.scrollTop > 20) {
+            backToTopBtn.style.display = '';
+          } else {
+            backToTopBtn.style.display = 'none';
+          }
+        });
+      }
+    }
 
     // ========== 从主进程获取指令数据 ==========
     let commands = [];
@@ -196,11 +265,10 @@
         buildCategories();
         renderCommands();
       } catch (err) {
-        commandsContainer.innerHTML = `<p class="body-medium">指令加载失败：${err.message}</p >`;
+        commandsContainer.innerHTML = `<p class="body-medium">指令加载失败：${err.message}</p>`;
       }
     }
 
-    // ========== 构建分类栏 ==========
     function buildCategories() {
       const kinds = new Set(['全部']);
       commands.forEach(cmd => {
@@ -223,7 +291,6 @@
       });
     }
 
-    // ========== 渲染指令卡片（带分类与搜索） ==========
     function renderCommands(filter = '') {
       commandsContainer.innerHTML = '';
       const lowerFilter = filter.toLowerCase();
@@ -241,7 +308,7 @@
         card.innerHTML = `
           <div class="card-content">
             <h3 class="headline-small">${cmd.name}</h3>
-            <p class="body-medium">${cmd.desc}</p >
+            <p class="body-medium">${cmd.desc}</p>
           </div>
           <div class="card-actions">
             <button class="text-button label-large copy-btn" data-usage="${cmd.usage.replace(/"/g, '&quot;')}">复制指令</button>
@@ -251,7 +318,6 @@
         commandsContainer.appendChild(card);
       });
 
-      // 绑定复制按钮事件
       document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           const usage = e.currentTarget.getAttribute('data-usage');
@@ -263,14 +329,11 @@
         });
       });
 
-      // 绑定详情按钮事件
       document.querySelectorAll('.detail-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           const id = e.currentTarget.getAttribute('data-id');
           const cmd = commands.find(c => c.id === id);
-          if (cmd) {
-            ipcRenderer.send('open-detail', cmd);
-          }
+          if (cmd) ipcRenderer.send('open-detail', cmd);
         });
       });
     }
@@ -287,12 +350,11 @@
         const favCommands = commands.filter(cmd => favIds.includes(cmd.id));
 
         favoritesContainer.innerHTML = '';
-
         if (favCommands.length === 0) {
           favoritesContainer.innerHTML = `<div class="placeholder-view">
             <span class="material-symbols-outlined" style="font-size:48px;color:var(--md-sys-color-primary);">favorite_border</span>
             <h2 class="headline-small">暂无收藏</h2>
-            <p class="body-medium">在指令详情中点击收藏按钮添加到这里。</p >
+            <p class="body-medium">在指令详情中点击收藏按钮添加到这里。</p>
           </div>`;
           return;
         }
@@ -303,7 +365,7 @@
           card.innerHTML = `
             <div class="card-content">
               <h3 class="headline-small">${cmd.name}</h3>
-              <p class="body-medium">${cmd.desc}</p >
+              <p class="body-medium">${cmd.desc}</p>
             </div>
             <div class="card-actions">
               <button class="text-button label-large unfav-btn" data-id="${cmd.id}">取消收藏</button>
@@ -321,39 +383,68 @@
             loadFavorites();
           });
         });
-
         document.querySelectorAll('.copy-btn').forEach(btn => {
           btn.addEventListener('click', (e) => {
             const usage = e.currentTarget.getAttribute('data-usage');
-            navigator.clipboard.writeText(usage).then(() => {
-              showSnackbar('指令已复制到剪贴板');
-            }).catch(() => {
-              showSnackbar('复制失败，请手动复制');
-            });
+            navigator.clipboard.writeText(usage).then(() => showSnackbar('指令已复制到剪贴板')).catch(() => showSnackbar('复制失败，请手动复制'));
           });
         });
-
         document.querySelectorAll('.detail-btn').forEach(btn => {
           btn.addEventListener('click', (e) => {
             const id = e.currentTarget.getAttribute('data-id');
             const cmd = commands.find(c => c.id === id);
-            if (cmd) {
-              ipcRenderer.send('open-detail', cmd);
-            }
+            if (cmd) ipcRenderer.send('open-detail', cmd);
           });
         });
       } catch (err) {
-        favoritesContainer.innerHTML = `<p class="body-medium">收藏加载失败：${err.message}</p >`;
+        favoritesContainer.innerHTML = `<p class="body-medium">收藏加载失败：${err.message}</p>`;
       }
     }
 
-    // ========== 搜索过滤 ==========
+    // ========== 更新日志加载 ==========
+    function loadChangelog() {
+      const container = document.getElementById('changelogContainer');
+      if (!container) return;
+      try {
+        const changelogPath = path.join(__dirname, 'changelog.json');
+        if (!fs.existsSync(changelogPath)) {
+          container.innerHTML = `<p class="body-medium">暂无更新日志。</p>`;
+          return;
+        }
+        const raw = fs.readFileSync(changelogPath, 'utf-8');
+        const changelog = JSON.parse(raw);
+        if (changelog.length === 0) {
+          container.innerHTML = `<p class="body-medium">暂无更新内容。</p>`;
+          return;
+        }
+        container.innerHTML = '';
+        changelog.forEach(entry => {
+          const item = document.createElement('div');
+          item.className = 'md3-card filled-card settings-item';
+          item.style.marginBottom = '12px';
+          item.innerHTML = `
+            <div class="settings-item-col">
+              <span class="body-large">版本 ${entry.version}</span>
+              <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">${entry.date}</span>
+              <ul style="margin: 8px 0 0 16px; padding: 0; color: var(--md-sys-color-on-surface-variant);">
+                ${entry.changes.map(change => `<li class="body-medium">${change}</li>`).join('')}
+              </ul>
+            </div>
+          `;
+          container.appendChild(item);
+        });
+      } catch (e) {
+        container.innerHTML = `<p class="body-medium">更新日志加载失败：${e.message}</p>`;
+      }
+    }
+
+    // ========== 搜索 ==========
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('input', (e) => {
       renderCommands(e.target.value);
     });
 
-    // ========== Snackbar 逻辑 ==========
+    // ========== Snackbar ==========
     function showSnackbar(message) {
       const snackbar = document.getElementById('snackbar');
       snackbar.querySelector('.snackbar-text').textContent = message;
@@ -364,7 +455,7 @@
       }, 3000);
     }
 
-    // 查看日志按钮
+    // 查看运行日志按钮
     const viewLogBtn = document.getElementById('viewLogBtn');
     if (viewLogBtn) {
       viewLogBtn.addEventListener('click', () => {
@@ -378,15 +469,62 @@
       });
     }
 
-    // 页面加载完成后拉取数据
+    // ========== 深色模式 ==========
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+      const savedTheme = localStorage.getItem('minecodes_theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        darkModeToggle.checked = true;
+      } else {
+        document.body.classList.remove('dark-theme');
+        darkModeToggle.checked = false;
+      }
+      darkModeToggle.addEventListener('change', () => {
+        if (darkModeToggle.checked) {
+          document.body.classList.add('dark-theme');
+          localStorage.setItem('minecodes_theme', 'dark');
+        } else {
+          document.body.classList.remove('dark-theme');
+          localStorage.setItem('minecodes_theme', 'light');
+        }
+      });
+    }
+
+    // ========== 布局切换 ==========
+    const layoutToggle = document.getElementById('layoutToggle');
+    if (layoutToggle) {
+      const savedLayout = localStorage.getItem('minecodes_layout');
+      if (savedLayout === 'list') {
+        document.body.classList.remove('layout-waterfall');
+        document.body.classList.add('layout-list');
+        layoutToggle.checked = false;
+      } else {
+        document.body.classList.add('layout-waterfall');
+        document.body.classList.remove('layout-list');
+        layoutToggle.checked = true;
+      }
+      layoutToggle.addEventListener('change', () => {
+        if (layoutToggle.checked) {
+          document.body.classList.add('layout-waterfall');
+          document.body.classList.remove('layout-list');
+          localStorage.setItem('minecodes_layout', 'waterfall');
+        } else {
+          document.body.classList.remove('layout-waterfall');
+          document.body.classList.add('layout-list');
+          localStorage.setItem('minecodes_layout', 'list');
+        }
+        if (typeof renderCommands === 'function') renderCommands(searchInput.value);
+      });
+    }
+
+    // 首次加载与切换时加载更新日志（已在导航事件中处理）
     loadCommands();
 
-    // 点击标题文字返回列表顶部
+    // 点击标题文字返回顶部
     document.querySelector('.headline-large').addEventListener('click', () => {
       const mainEl = document.querySelector('main');
-      if (mainEl) {
-        mainEl.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      if (mainEl) mainEl.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
