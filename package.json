@@ -1,6 +1,8 @@
 {
   "name": "minecodes",
   "version": "1.0.0",
+  "description": "为Minecraft玩家准备的辅助工具",
+  "author": "ZionyasVan",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -12,10 +14,11 @@
     "directories": {
       "output": "dist"
     },
-    "icon": "build/icon.ico",
-    "win": {
-      "target": "portable"
-    }
+  "win": {
+    "target": "portable",
+    "forceCodeSigning": false,
+    "signAndEditExecutable": false
+  }
   },
   "devDependencies": {
     "electron": "^28.0.0"
