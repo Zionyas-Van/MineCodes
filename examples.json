@@ -1,0 +1,279 @@
+{
+  "gamemode": [
+    { "cmd": "/gamemode creative", "desc": "将自己切换为创造模式" },
+    { "cmd": "/gamemode survival Steve", "desc": "将 Steve 切换为生存模式" },
+    { "cmd": "/gamemode adventure @p", "desc": "将最近玩家切换为冒险模式" },
+    { "cmd": "/gamemode spectator", "desc": "将自己切换为旁观模式" },
+    { "cmd": "/gamemode 1", "desc": "用数字简写将自己切换为创造模式（1=创造）" }
+  ],
+  "give": [
+    { "cmd": "/give @p diamond 64", "desc": "给最近的玩家64个钻石" },
+    { "cmd": "/give @a stone 1", "desc": "给所有玩家1块石头" },
+    { "cmd": "/give Steve minecraft:diamond_sword", "desc": "给 Steve 一把钻石剑" },
+    { "cmd": "/give @r cooked_beef 32", "desc": "给随机一名玩家32个熟牛肉" },
+    { "cmd": "/give @s oak_log 16", "desc": "给自己16个橡木原木" }
+  ],
+  "tp": [
+    { "cmd": "/tp ~ ~100 ~", "desc": "将自己传送向上100格" },
+    { "cmd": "/tp Steve Alex", "desc": "将 Steve 传送到 Alex 的位置" },
+    { "cmd": "/tp @a @s", "desc": "将所有玩家传送到自己身边" },
+    { "cmd": "/tp 100 64 -200", "desc": "传送到世界坐标 (100,64,-200)" },
+    { "cmd": "/tp ~ ~ ~ ~10 ~", "desc": "原地不动，视角向右转动10度" }
+  ],
+  "time": [
+    { "cmd": "/time set day", "desc": "将时间设为白天（1000）" },
+    { "cmd": "/time set night", "desc": "将时间设为黑夜（13000）" },
+    { "cmd": "/time set noon", "desc": "将时间设为正午（6000）" },
+    { "cmd": "/time add 1000", "desc": "让时间前进1000游戏刻（50秒）" },
+    { "cmd": "/time query daytime", "desc": "查询当天日出后经过的游戏刻数" }
+  ],
+  "weather": [
+    { "cmd": "/weather clear", "desc": "将天气切换为晴天并保持默认时长" },
+    { "cmd": "/weather rain 600", "desc": "开始下雨，持续600秒（10分钟）" },
+    { "cmd": "/weather thunder", "desc": "切换为雷暴天气并保持默认时长" },
+    { "cmd": "/weather clear 999999", "desc": "放晴并设置极长的晴天时间，几乎永不下雨" },
+    { "cmd": "/weather rain 1", "desc": "短暂降雨1秒，适合快速切换天气状态" }
+  ],
+  "clear": [
+    { "cmd": "/clear", "desc": "清空自己的整个背包" },
+    { "cmd": "/clear @p stone", "desc": "清除最近玩家背包中所有石头" },
+    { "cmd": "/clear @a diamond 1", "desc": "清除所有玩家背包中的1个钻石" },
+    { "cmd": "/clear Steve dirt 64", "desc": "从 Steve 背包中移除最多64个泥土" }
+  ],
+  "kill": [
+    { "cmd": "/kill", "desc": "自杀（对自己造成致命伤害）" },
+    { "cmd": "/kill Steve", "desc": "杀死玩家 Steve" },
+    { "cmd": "/kill @e[type=creeper]", "desc": "杀死世界中所有苦力怕" },
+    { "cmd": "/kill @e[type=!player]", "desc": "清除所有非玩家实体，保留玩家自身" }
+  ],
+  "difficulty": [
+    { "cmd": "/difficulty peaceful", "desc": "将难度设为和平，无怪物且生命自动回复" },
+    { "cmd": "/difficulty easy", "desc": "设为简单难度，怪物伤害较低" },
+    { "cmd": "/difficulty hard", "desc": "设为困难难度，怪物伤害高且僵尸会破门" },
+    { "cmd": "/difficulty 0", "desc": "用数字简写设为和平（0=和平）" }
+  ],
+  "spawnpoint": [
+    { "cmd": "/spawnpoint", "desc": "将自己当前所在位置设为个人重生点" },
+    { "cmd": "/spawnpoint @p ~ ~ ~", "desc": "将最近玩家的重生点设为他的当前位置" },
+    { "cmd": "/spawnpoint Steve 0 64 0", "desc": "将 Steve 的重生点强制设在坐标 (0,64,0)" }
+  ],
+  "effect": [
+    { "cmd": "/effect give @p speed 30 1", "desc": "给最近玩家30秒速度 II 效果" },
+    { "cmd": "/effect give @a night_vision 999999 0 true", "desc": "给所有玩家永久夜视效果并隐藏粒子" },
+    { "cmd": "/effect give Steve strength 60 2", "desc": "给 Steve 60秒力量 III" },
+    { "cmd": "/effect clear @p", "desc": "清除最近玩家身上的所有状态效果" },
+    { "cmd": "/effect give @r regeneration 10 4", "desc": "给随机玩家10秒生命恢复 V" }
+  ],
+  "gamerule": [
+    { "cmd": "/gamerule keepInventory true", "desc": "开启死亡不掉落物品与经验" },
+    { "cmd": "/gamerule doDaylightCycle false", "desc": "停止日夜循环，锁定当前时间" },
+    { "cmd": "/gamerule doWeatherCycle false", "desc": "停止天气变化，锁定当前天气" },
+    { "cmd": "/gamerule mobGriefing false", "desc": "禁止苦力怕、末影人等破坏方块" },
+    { "cmd": "/gamerule doFireTick false", "desc": "关闭火焰蔓延，防止火烧建筑" }
+  ],
+  "summon": [
+    { "cmd": "/summon creeper ~ ~2 ~", "desc": "在自己头顶2格处召唤一只苦力怕" },
+    { "cmd": "/summon skeleton 100 64 100", "desc": "在坐标 (100,64,100) 召唤骷髅" },
+    { "cmd": "/summon lightning_bolt", "desc": "在命令执行者位置召唤一道闪电" },
+    { "cmd": "/summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:diamond\",Count:1b}}", "desc": "召唤一个掉落的钻石物品实体" },
+    { "cmd": "/summon zombie ~ ~1 ~ {IsBaby:1}", "desc": "在脚下一格召唤一只小僵尸" }
+  ],
+  "enchant": [
+    { "cmd": "/enchant @p sharpness 5", "desc": "给最近玩家手持的物品附魔锋利V" },
+    { "cmd": "/enchant Steve efficiency 4", "desc": "给 Steve 手持的工具附魔效率IV" },
+    { "cmd": "/enchant @p fortune 3", "desc": "附魔时运III（需手持可附魔工具）" },
+    { "cmd": "/enchant @p silk_touch 1", "desc": "附魔精准采集I" },
+    { "cmd": "/enchant @p unbreaking 3", "desc": "附魔耐久III" }
+  ],
+  "xp": [
+    { "cmd": "/xp add @p 100 levels", "desc": "给最近玩家增加100个等级" },
+    { "cmd": "/xp add @a 500", "desc": "给所有玩家增加500点经验值" },
+    { "cmd": "/xp set Steve 30 levels", "desc": "将 Steve 的经验等级直接设为30级" },
+    { "cmd": "/xp add @p -10 levels", "desc": "减少最近玩家10个等级" },
+    { "cmd": "/xp query @p levels", "desc": "查询最近玩家当前的等级数" }
+  ],
+  "kick": [
+    { "cmd": "/kick Steve", "desc": "将玩家 Steve 踢出服务器" },
+    { "cmd": "/kick Alex 恶意破坏", "desc": "以“恶意破坏”为由踢出 Alex" },
+    { "cmd": "/kick Notch 测试踢人", "desc": "以“测试踢人”为提示信息踢出 Notch" }
+  ],
+  "ban": [
+    { "cmd": "/ban Steve", "desc": "封禁玩家 Steve 使其无法进入服务器" },
+    { "cmd": "/ban Alex 使用外挂", "desc": "以“使用外挂”为原因封禁 Alex" },
+    { "cmd": "/ban-ip 192.168.1.5", "desc": "封禁指定 IP 地址，阻止来自该 IP 的所有连接" }
+  ],
+  "op": [
+    { "cmd": "/op Steve", "desc": "给予 Steve 管理员权限" },
+    { "cmd": "/op Alex", "desc": "给予 Alex 管理员权限" },
+    { "cmd": "/deop Steve", "desc": "撤销 Steve 的管理员权限" }
+  ],
+  "whitelist": [
+    { "cmd": "/whitelist add Steve", "desc": "将 Steve 添加到白名单" },
+    { "cmd": "/whitelist remove Alex", "desc": "将 Alex 从白名单中移除" },
+    { "cmd": "/whitelist on", "desc": "开启白名单，仅白名单内玩家可进入" },
+    { "cmd": "/whitelist off", "desc": "关闭白名单" },
+    { "cmd": "/whitelist list", "desc": "查看当前白名单中的所有玩家" }
+  ],
+  "msg": [
+    { "cmd": "/msg Steve 你好啊", "desc": "向 Steve 发送私聊消息“你好啊”" },
+    { "cmd": "/tell Alex 集合了", "desc": "使用别名 /tell 发送私聊消息" },
+    { "cmd": "/w @p 悄悄话", "desc": "用 /w 给最近的玩家发“悄悄话”" }
+  ],
+  "seed": [
+    { "cmd": "/seed", "desc": "查看当前世界的种子数字" },
+    { "cmd": "/seed", "desc": "在命令方块中执行可获取种子并用于公告" },
+    { "cmd": "/seed", "desc": "配合其他插件将种子记录到日志" }
+  ],
+  "execute": [
+    { "cmd": "/execute as @a run say 哈喽", "desc": "让所有玩家以各自身份说“哈喽”" },
+    { "cmd": "/execute at @p run setblock ~ ~-1 ~ stone", "desc": "在最近玩家脚下方块位置放置石头" },
+    { "cmd": "/execute if entity @e[type=creeper,distance=..10] run tellraw @a [\"\",{\"text\":\"小心！附近有苦力怕\"}]", "desc": "检测10格内是否有苦力怕并向全服提示" },
+    { "cmd": "/execute as @a at @s if block ~ ~-1 ~ grass_block run particle happy_villager ~ ~1 ~", "desc": "在所有站在草方块上的玩家头顶播放开心粒子" },
+    { "cmd": "/execute positioned 0 64 0 run summon armor_stand", "desc": "在坐标 (0,64,0) 召唤一个盔甲架" },
+    { "cmd": "/execute as @e[type=arrow] at @s run summon tnt", "desc": "让每支射出的箭在其位置生成TNT" },
+    { "cmd": "/execute if score money @p matches 100.. as @p run give @p diamond", "desc": "当最近玩家‘money’计分板达到100分时，给予一颗钻石" },
+    { "cmd": "/execute in minecraft:the_nether run say 我在下界", "desc": "以命令执行者的身份在下界维度中说“我在下界”" },
+    { "cmd": "/execute as @a unless entity @s[team=red] run team join red @s", "desc": "将所有不在红队的玩家加入红队" }
+  ],
+  "scoreboard": [
+    { "cmd": "/scoreboard objectives add money dummy \"金币\"", "desc": "创建名为 money 的虚拟计分项，显示为“金币”" },
+    { "cmd": "/scoreboard objectives add deaths deathCount \"死亡次数\"", "desc": "创建一个统计玩家死亡次数的计分项" },
+    { "cmd": "/scoreboard objectives setdisplay sidebar money", "desc": "在屏幕右侧边栏显示 money 分数" },
+    { "cmd": "/scoreboard players add Steve money 50", "desc": "给 Steve 的 money 增加50分" },
+    { "cmd": "/scoreboard players set @p money 100", "desc": "将最近玩家的 money 分数直接设为100" },
+    { "cmd": "/scoreboard players operation Alex money = Steve money", "desc": "将 Steve 的 money 分数复制给 Alex" },
+    { "cmd": "/scoreboard players reset @a money", "desc": "重置所有玩家的 money 分数" },
+    { "cmd": "/scoreboard objectives remove deaths", "desc": "删除 deaths 计分项及其所有数据" },
+    { "cmd": "/scoreboard players get @p money", "desc": "在聊天栏显示最近玩家的 money 分数" }
+  ],
+  "data": [
+    { "cmd": "/data get entity @p", "desc": "获取最近玩家的全部NBT数据" },
+    { "cmd": "/data get block ~ ~-1 ~", "desc": "获取脚下方块的NBT数据" },
+    { "cmd": "/data merge entity @e[type=creeper,limit=1] {powered:1}", "desc": "将最近的一只苦力怕设为高压状态" },
+    { "cmd": "/data merge block 100 64 100 {Lock:\"Secret\"}", "desc": "给坐标处容器上锁，需手持同名物品打开" },
+    { "cmd": "/data modify entity @p SelectedItem set from entity @s Inventory[{Slot:0b}]", "desc": "将玩家的快捷栏第1格物品复制到主手" },
+    { "cmd": "/data modify block ~ ~ ~ Items append from entity @p SelectedItem", "desc": "将玩家主手物品复制并添加到当前容器" },
+    { "cmd": "/data remove entity @p Tags[0]", "desc": "移除玩家身上的第一个标签" },
+    { "cmd": "/data modify entity @e[type=item,limit=1] Item set value {id:\"minecraft:diamond\",Count:1b}", "desc": "将最近的掉落物强制变为钻石" }
+  ],
+  "bossbar": [
+    { "cmd": "/bossbar add mybar \"Boss\"", "desc": "创建一个名为“Boss”的Boss血条，ID为mybar" },
+    { "cmd": "/bossbar set mybar color red", "desc": "将 mybar 血条颜色改为红色" },
+    { "cmd": "/bossbar set mybar style notched_6", "desc": "将血条分为6段显示" },
+    { "cmd": "/bossbar set mybar value 50", "desc": "设置血条当前值为50" },
+    { "cmd": "/bossbar set mybar max 200", "desc": "设置血条最大值为200" },
+    { "cmd": "/bossbar set mybar players @a", "desc": "让所有玩家都能看见这个血条" },
+    { "cmd": "/bossbar set mybar visible false", "desc": "暂时隐藏血条" },
+    { "cmd": "/bossbar remove mybar", "desc": "删除 mybar 血条" }
+  ],
+  "advancement": [
+    { "cmd": "/advancement grant @p only minecraft:story/mine_stone", "desc": "单独授予最近玩家“获得石头”进度" },
+    { "cmd": "/advancement grant @a from minecraft:story/root", "desc": "授予所有玩家从“Minecraft”根进度起的直接子进度" },
+    { "cmd": "/advancement grant Steve through minecraft:nether/root", "desc": "让 Steve 一路完成所有下界相关进度" },
+    { "cmd": "/advancement revoke @p only minecraft:story/mine_stone", "desc": "撤回最近玩家的“获得石头”进度" },
+    { "cmd": "/advancement revoke @a everything", "desc": "移除所有玩家的全部进度" },
+    { "cmd": "/advancement grant @p only minecraft:adventure/adventuring_time", "desc": "授予“探索的时光”进度" },
+    { "cmd": "/advancement grant @a from minecraft:husbandry/root", "desc": "授予所有玩家农牧业根进度下的直接子进度" },
+    { "cmd": "/advancement grant @p only minecraft:end/kill_dragon", "desc": "单独授予“解放末地”进度" }
+  ],
+  "datapack": [
+    { "cmd": "/datapack enable \"file/veinminer\"", "desc": "启用名为 veinminer 的数据包" },
+    { "cmd": "/datapack disable \"file/veinminer\"", "desc": "禁用 veinminer 数据包" },
+    { "cmd": "/datapack list available", "desc": "列出已放置但未启用的数据包" },
+    { "cmd": "/datapack list enabled", "desc": "列出当前已启用的数据包" },
+    { "cmd": "/datapack enable \"data/test_pack\"", "desc": "启用命名空间下的 test_pack 数据包" },
+    { "cmd": "/datapack disable \"data/test_pack\"", "desc": "禁用 test_pack" },
+    { "cmd": "/datapack enable \"file/custom_recipes\"", "desc": "启用自定义合成配方数据包" },
+    { "cmd": "/datapack disable \"file/custom_recipes\"", "desc": "禁用自定义合成配方数据包" }
+  ],
+  "forceload": [
+    { "cmd": "/forceload add 0 0", "desc": "将区块 (0,0) 设为常加载区块" },
+    { "cmd": "/forceload add 1 0", "desc": "将区块 (1,0) 加入常加载" },
+    { "cmd": "/forceload add 0 1", "desc": "将区块 (0,1) 加入常加载" },
+    { "cmd": "/forceload query 0 0", "desc": "查询区块 (0,0) 是否处于常加载状态" },
+    { "cmd": "/forceload query", "desc": "列出所有常加载区块" },
+    { "cmd": "/forceload remove 0 0", "desc": "移除区块 (0,0) 的常加载" },
+    { "cmd": "/forceload remove 1 0", "desc": "移除 (1,0) 常加载" },
+    { "cmd": "/forceload remove all", "desc": "移除所有常加载区块" }
+  ],
+  "function": [
+    { "cmd": "/function mypack:load", "desc": "执行数据包 mypack 中的 load 函数" },
+    { "cmd": "/function game:on_death", "desc": "执行 game 命名空间下的 on_death 函数" },
+    { "cmd": "/function #minecraft:tick", "desc": "执行所有在 tick 标签下的函数（常用于每刻运行）" },
+    { "cmd": "/function admin:reset_all", "desc": "执行管理员专用的重置函数" },
+    { "cmd": "/function custom:greeting", "desc": "运行自定义的问候函数" },
+    { "cmd": "/function #custom:daily_rewards", "desc": "执行每日奖励相关的函数集合" },
+    { "cmd": "/function puzzle:stage2_clear", "desc": "触发解谜地图第2阶段通关函数" },
+    { "cmd": "/function mypack:tools/repair", "desc": "调用工具修理子函数" }
+  ],
+  "title": [
+    { "cmd": "/title @a title \"欢迎\"", "desc": "在全体玩家画面中央显示大标题“欢迎”" },
+    { "cmd": "/title @a subtitle \"来到冒险世界\"", "desc": "在大标题下方显示副标题“来到冒险世界”" },
+    { "cmd": "/title @p actionbar \"当前金币: 50\"", "desc": "在最近玩家的快捷栏上方显示动态文字" },
+    { "cmd": "/title @a times 10 70 20", "desc": "设置标题的淡入10刻、停留70刻、淡出20刻" },
+    { "cmd": "/title @a title {\"text\":\"Boss 出现\",\"color\":\"red\"}", "desc": "显示红色 JSON 文本的大标题" },
+    { "cmd": "/title @p clear", "desc": "立即清除最近玩家屏幕上的标题" },
+    { "cmd": "/title @a reset", "desc": "重置所有玩家的标题显示设置" },
+    { "cmd": "/title @a subtitle [\"\",{\"text\":\"准备战斗\",\"bold\":true}]", "desc": "显示加粗的副标题" }
+  ],
+  "particle": [
+    { "cmd": "/particle flame ~ ~1 ~ 0.5 0.5 0.5 0.1 50", "desc": "在玩家头顶1格处生成50个火焰粒子" },
+    { "cmd": "/particle heart 100 64 100 1 1 1 0.5 20", "desc": "在坐标处生成20个爱心粒子" },
+    { "cmd": "/particle dragon_breath ~ ~ ~ 2 2 2 0 100 force", "desc": "强制向所有玩家显示100个龙息粒子" },
+    { "cmd": "/particle note ~ ~1 ~ 0 0 0 1 1", "desc": "在头顶播放一个音符粒子" },
+    { "cmd": "/particle minecraft:happy_villager ~ ~2 ~ 0.3 0.3 0.3 0 30", "desc": "在头顶2格生成30个快乐村民粒子" },
+    { "cmd": "/particle explosion 0 70 0 5 5 5 0 100 force", "desc": "在世界坐标处生成100个爆炸粒子，远处可见" },
+    { "cmd": "/particle end_rod ~ ~-1 ~ 0.1 0.1 0.1 0.02 10", "desc": "在脚下缓慢生成末地烛粒子" },
+    { "cmd": "/particle totem_of_undying @p ~ ~1 ~ 0 0 0 0 1", "desc": "在玩家头部播放不死图腾粒子特效" }
+  ],
+  "playsound": [
+    { "cmd": "/playsound minecraft:entity.creeper.primed ambient @a", "desc": "让所有玩家听到苦力怕点燃的声音" },
+    { "cmd": "/playsound minecraft:block.note_block.pling block @p", "desc": "最近玩家在方块位置听到音符盒叮咚声" },
+    { "cmd": "/playsound minecraft:entity.ender_dragon.growl hostile @a ~ ~ ~ 0.5 1", "desc": "全局播放末影龙低吼，音量为0.5，音调1" },
+    { "cmd": "/playsound minecraft:music.creative master @p", "desc": "让最近玩家听到创造模式的背景音乐" },
+    { "cmd": "/playsound minecraft:entity.lightning_bolt.thunder weather @a 100 64 100", "desc": "在坐标处播放雷声，所有玩家可闻" },
+    { "cmd": "/playsound minecraft:block.portal.travel player @a", "desc": "让所有玩家听到穿越传送门的声音" },
+    { "cmd": "/playsound minecraft:item.armor.equip_chain neutral @p ~ ~ ~ 1 1.5", "desc": "玩家身上播放穿链甲音效，音调提高" },
+    { "cmd": "/playsound minecraft:ambient.cave ambient @a ~ ~ ~ 0.2 0.8", "desc": "低音量播放洞穴环境音效" }
+  ],
+  "clone": [
+    { "cmd": "/clone 0 64 0 10 70 10 20 64 20", "desc": "将区域(0,64,0)到(10,70,10)的方块复制到(20,64,20)开始的位置" },
+    { "cmd": "/clone 100 60 -100 110 70 -90 ~ ~ ~", "desc": "将源区域复制到玩家当前位置" },
+    { "cmd": "/clone 0 64 0 10 70 10 20 64 20 filtered stone", "desc": "仅复制源区域中的石头到目标区域" },
+    { "cmd": "/clone 0 64 0 10 70 10 20 64 20 replace move", "desc": "复制并移动源区域，原位置留下空气" },
+    { "cmd": "/clone 0 64 0 10 70 10 20 64 20 masked", "desc": "仅将源区域非空气方块复制到目标区域，保留目标中的空气" },
+    { "cmd": "/clone -5 56 -5 5 60 5 15 56 15 force", "desc": "强制复制区域，即使目标区域与源区域重叠" },
+    { "cmd": "/clone 0 64 0 10 70 10 20 64 20 filtered oak_log", "desc": "只复制橡木原木，其余方块忽略" },
+    { "cmd": "/clone 10 64 10 20 74 20 30 64 30 replace normal", "desc": "正常复制，覆盖目标区域所有方块" }
+  ],
+  "fill": [
+    { "cmd": "/fill 0 64 0 10 64 10 stone", "desc": "用石头填充一个10x1x10的平面区域" },
+    { "cmd": "/fill 100 60 100 110 70 110 air", "desc": "清除一个长方体区域内的所有方块（填充空气）" },
+    { "cmd": "/fill ~-5 ~ ~-5 ~5 ~2 ~5 glass hollow", "desc": "在玩家周围生成一个空心玻璃房间" },
+    { "cmd": "/fill 0 64 0 10 70 10 stone replace dirt", "desc": "只将区域内的泥土替换为石头，保留其他方块" },
+    { "cmd": "/fill -10 50 -10 10 55 10 water outline", "desc": "用水的轮廓包围一个长方体（仅外表面）" },
+    { "cmd": "/fill 0 64 0 5 68 5 tnt destroy", "desc": "用TNT填充区域并摧毁原有方块，使其掉落物品" },
+    { "cmd": "/fill 50 70 50 50 70 50 diamond_block", "desc": "在单个坐标放置一个钻石块" },
+    { "cmd": "/fill ~-2 ~-1 ~-2 ~2 ~-1 ~2 stone_bricks keep", "desc": "只在空气位置铺石砖，不替换已有方块" }
+  ],
+  "setblock": [
+    { "cmd": "/setblock ~ ~1 ~ diamond_block", "desc": "在玩家头顶放置一个钻石块" },
+    { "cmd": "/setblock 100 64 -200 torch", "desc": "在坐标 (100,64,-200) 放置一支火把" },
+    { "cmd": "/setblock ~ ~ ~ air destroy", "desc": "摧毁玩家脚下的方块并使其掉落物品" },
+    { "cmd": "/setblock ~ ~1 ~ stone keep", "desc": "只有在头顶位置为空气时才放置石头" },
+    { "cmd": "/setblock 0 70 0 glowstone replace", "desc": "用荧石直接替换目标处原有方块，不掉落" },
+    { "cmd": "/setblock ~ ~-1 ~ crafting_table", "desc": "在脚底放置一个工作台" },
+    { "cmd": "/setblock ~ ~3 ~ redstone_lamp[lit=true]", "desc": "放置一个点亮状态的红石灯" },
+    { "cmd": "/setblock ~ ~ ~ waterlogged:true oak_leaves[persistent=true]", "desc": "放置一个含水的且不会消失的橡树树叶" }
+  ],
+  "random": [
+    { "cmd": "/random value 1..10", "desc": "生成1到10之间的一个随机整数" },
+    { "cmd": "/random roll 3..6", "desc": "按照权重随机选择：3占3权重，6占6权重" },
+    { "cmd": "/random draw 1..5", "desc": "从1到5的数池中随机抽取一个不重复的数字" },
+    { "cmd": "/random reset *", "desc": "重置所有随机序列" },
+    { "cmd": "/random value 1..100", "desc": "生成1到100的随机数，常用于几率判定" },
+    { "cmd": "/execute if predicate {condition:\"minecraft:random_chance\",chance:0.3} run say lucky", "desc": "配合随机实现30%几率触发效果（需1.20.3+）" },
+    { "cmd": "/random draw 1..10", "desc": "从1-10中随机抽取不重复结果，直到池空" },
+    { "cmd": "/random roll 10..20 30..40", "desc": "多范围随机：10占20权重，30占40权重" }
+  ]
+}

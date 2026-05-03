@@ -58,7 +58,9 @@
     .icon-button:hover { background: rgba(0,0,0,0.08); }
     .detail-content {
       flex: 1;
+      overflow-y: auto;
       -webkit-app-region: no-drag;
+      padding-right: 4px;
     }
     .usage-code {
       background: var(--md-sys-color-surface-variant, #f1f3f4);
@@ -71,7 +73,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: var(--md-sys-color-primary);  /* 默认蓝色 */
+      color: var(--md-sys-color-primary);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -80,9 +82,52 @@
       -webkit-app-region: no-drag;
       transition: color 0.2s;
     }
-    /* 新增：收藏状态下的红色样式 */
     .favorite-btn.red {
-      color: #D32F2F;   /* 红色实心爱心时的字体颜色 */
+      color: #D32F2F;
+    }
+
+    /* 使用示例样式 */
+    #examplesContainer {
+      margin-top: 16px;
+    }
+    .example-item {
+      background: var(--md-sys-color-surface-variant, #f1f3f4);
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .example-cmd {
+      font-family: monospace;
+      font-size: 0.875rem;
+      color: var(--md-sys-color-primary);
+    }
+    .example-desc {
+      font-size: 0.8125rem;
+      color: var(--md-sys-color-on-surface-variant);
+    }
+
+    /* 自定义滚动条 */
+    .detail-content::-webkit-scrollbar {
+      width: 6px;
+    }
+    .detail-content::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 3px;
+      margin: 8px 0;
+    }
+    .detail-content::-webkit-scrollbar-thumb {
+      background: rgba(128, 134, 139, 0.4);
+      border-radius: 3px;
+      min-height: 40px;
+    }
+    .detail-content::-webkit-scrollbar-thumb:hover {
+      background: rgba(128, 134, 139, 0.7);
+    }
+    .detail-content::-webkit-scrollbar-thumb:active {
+      background: rgba(128, 134, 139, 0.9);
     }
   </style>
 </head>
@@ -96,10 +141,12 @@
         </button>
       </div>
     </div>
-    <div class="detail-content">
-      <p class="body-medium" id="commandDesc"></p >
+    <div class="detail-content" id="detailContent">
+      <p class="body-medium" id="commandDesc"></p>
       <div class="usage-code" id="commandUsage"></div>
-      <p class="body-medium" id="commandParams"></p >
+      <p class="body-medium" id="commandParams"></p>
+      <!-- 使用示例容器 -->
+      <div id="examplesContainer" style="display: none;"></div>
     </div>
     <button class="favorite-btn" id="favoriteBtn">
       <span class="material-symbols-outlined" id="favoriteIcon">favorite_border</span>
@@ -140,11 +187,11 @@
       if (isFav) {
         favoriteIcon.textContent = 'favorite';
         favoriteIcon.style.fontVariationSettings = "'FILL' 1";
-        favoriteBtn.classList.add('red');           // 变为红色
+        favoriteBtn.classList.add('red');
       } else {
         favoriteIcon.textContent = 'favorite_border';
         favoriteIcon.style.fontVariationSettings = "'FILL' 0";
-        favoriteBtn.classList.remove('red');        // 恢复蓝色
+        favoriteBtn.classList.remove('red');
       }
     }
 
@@ -157,6 +204,34 @@
     });
 
     initFavoriteUI();
+
+    // ========== 加载使用示例 ==========
+    async function loadExamples() {
+      try {
+        const allExamples = await ipcRenderer.invoke('get-examples');
+        const examples = allExamples[commandId] || [];
+        const container = document.getElementById('examplesContainer');
+        if (!container) return;
+        if (examples.length === 0) {
+          container.style.display = 'none';
+          return;
+        }
+        container.innerHTML = '';
+        examples.forEach(ex => {
+          const item = document.createElement('div');
+          item.className = 'example-item';
+          item.innerHTML = `
+            <code class="example-cmd">${ex.cmd}</code>
+            <span class="example-desc">${ex.desc}</span>
+          `;
+          container.appendChild(item);
+        });
+        container.style.display = 'block';
+      } catch (e) {
+        console.error('加载示例失败:', e);
+      }
+    }
+    loadExamples();
   </script>
 </body>
 </html>

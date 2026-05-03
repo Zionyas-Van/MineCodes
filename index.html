@@ -15,6 +15,9 @@
         <button class="rail-item active" data-view="home" title="首页">
           <span class="material-symbols-outlined">home</span>
         </button>
+        <button class="rail-item" data-view="items" title="物品">
+          <span class="material-symbols-outlined">category</span>
+        </button>
         <button class="rail-item" data-view="favorite" title="收藏">
           <span class="material-symbols-outlined">favorite</span>
         </button>
@@ -68,6 +71,19 @@
           </div>
         </div>
 
+        <!-- 物品视图 -->
+        <div class="view" id="view-items">
+          <div class="search-area">
+            <div class="search-bar">
+              <span class="material-symbols-outlined search-icon">search</span>
+              <input type="text" placeholder="搜索物品..." class="body-large" id="itemsSearchInput">
+            </div>
+          </div>
+          <div class="categories-bar" id="itemsCategoriesBar"></div>
+          <p class="body-medium" style="margin: 0 16px 8px; color: var(--md-sys-color-on-surface-variant); font-size:0.75rem;">此界面部分内容来自 zh.minecraft.wiki ，如有侵权，联系删除</p>
+          <div class="cards-grid" id="itemsContainer"></div>
+        </div>
+
         <!-- 设置视图 -->
         <div class="view" id="view-settings">
           <div class="settings-container">
@@ -100,13 +116,30 @@
               </div>
             </div>
 
+            <!-- 功能分组 -->
+            <div class="settings-group">
+              <h3 class="headline-small settings-group-title">功能</h3>
+              <div class="md3-card filled-card settings-item">
+                <div class="settings-item-row">
+                  <div class="settings-item-text">
+                    <span class="body-large">快捷键 Alt+M</span>
+                    <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">快速显示/隐藏 MineCodes 窗口（置顶）</span>
+                  </div>
+                  <label class="m3-switch">
+                    <input type="checkbox" id="hotkeyToggle">
+                    <span class="m3-switch-slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
             <!-- 关于分组 -->
             <div class="settings-group">
               <h3 class="headline-small settings-group-title">关于</h3>
               <div class="md3-card filled-card settings-item">
                 <div class="settings-item-col">
                   <span class="body-large">MineCodes</span>
-                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">版本 0.2.3 测试版</span>
+                  <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">版本 0.3.0 测试版</span>
                   <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant); margin-top: 8px;">策划：ZionyasVan（DXL）</span>
                   <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">开发：ZionyasVan & YasVnite</span>
                   <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">联系我们：2223857511@qq.com</span>
@@ -123,7 +156,6 @@
                   <button class="text-button label-large" id="viewLogBtn" style="align-self: flex-start;">查看运行日志</button>
                 </div>
               </div>
-              <!-- 更新日志区域 -->
               <div class="settings-item" style="margin-top: 12px;">
                 <h3 class="headline-small" style="margin: 0 0 12px 0;">更新日志</h3>
                 <div id="changelogContainer">
@@ -135,16 +167,36 @@
         </div>
       </main>
 
-      <!-- FAB -->
-      <button class="fab">
-        <span class="material-symbols-outlined">add</span>
+    <button class="fab" id="fabNoteBtn">
+        <span class="material-symbols-outlined">sticky_note_2</span>
       </button>
     </div>
-  </div>
 
   <!-- Snackbar 提示 -->
   <div class="snackbar" id="snackbar">
     <span class="snackbar-text">提示信息</span>
+  </div>
+
+  <!-- 右侧笔记边栏 -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="body-large">指令笔记</span>
+        <button class="icon-button" id="closeSidebarBtn">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="sidebar-status body-medium" id="notesStatus">已有 0 条笔记</div>
+      <div class="sidebar-messages" id="notesList"></div>
+      <div class="sidebar-input-area">
+        <div class="sidebar-input-wrapper">
+          <textarea id="noteInput" class="body-large" placeholder="记下指令..." rows="1"></textarea>
+        </div>
+        <div class="sidebar-actions">
+          <button class="text-button label-large" id="sendNoteBtn">发送</button>
+          <button class="text-button label-large" id="copyNoteBtn">复制</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -155,6 +207,20 @@
     // ========== 点击音效 ==========
     const clickSoundPath = path.join(__dirname, 'res', 'data', 'ui', 'click.ogg');
     const clickSoundUrl = 'file:///' + clickSoundPath.replace(/\\/g, '/');
+    // ========== 导航音效 ==========
+    const navSounds = {
+      favorite: new Audio('file:///' + path.join(__dirname, 'res', 'data', 'ui', 'favorite.ogg').replace(/\\/g, '/')),
+      settings: new Audio('file:///' + path.join(__dirname, 'res', 'data', 'ui', 'setting.ogg').replace(/\\/g, '/'))
+    };
+    // 预加载音效（可忽略报错）
+    Object.values(navSounds).forEach(audio => audio.load());
+    function playNavSound(view) {
+      if (navSounds[view]) {
+        navSounds[view].pause();       
+        navSounds[view].currentTime = 0;
+        navSounds[view].play().catch(() => {});
+      }
+    }
     function playClickSound() {
       const audio = new Audio(clickSoundUrl);
       audio.play().catch(() => {});
@@ -163,6 +229,15 @@
       const btn = e.target.closest('button');
       if (btn) playClickSound();
     });
+
+    // 为所有分类条添加鼠标滚轮横向滚动支持
+    document.addEventListener('wheel', (e) => {
+      const bar = e.target.closest('.categories-bar');
+      if (bar) {
+        e.preventDefault();
+        bar.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
 
     // ========== 窗口控制 ==========
     document.getElementById('min-btn').addEventListener('click', () => {
@@ -175,7 +250,6 @@
       ipcRenderer.send('window-close');
     });
 
-    // 监听窗口状态变化，更新最大化图标
     ipcRenderer.on('window-state-change', (event, state) => {
       const maxBtnIcon = document.querySelector('#max-btn .material-symbols-outlined');
       if (!maxBtnIcon) return;
@@ -186,10 +260,234 @@
       }
     });
 
+    // ========== 笔记侧边栏 ==========
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const notesList = document.getElementById('notesList');
+    const noteInput = document.getElementById('noteInput');
+    const sendNoteBtn = document.getElementById('sendNoteBtn');
+    const copyNoteBtn = document.getElementById('copyNoteBtn');
+    const fabNoteBtn = document.getElementById('fabNoteBtn');
+    let notes = [];
+
+    async function loadNotes() {
+      notes = await ipcRenderer.invoke('get-notes');
+      renderNotes();
+    }
+
+    function renderNotes() {
+      notesList.innerHTML = '';
+      const now = Date.now();
+      let lastGroupTime = 0;
+
+      notes.forEach((note, index) => {
+        const noteTime = new Date(note.time || now).getTime();
+        const diffFromLast = noteTime - lastGroupTime;
+
+        // 第一条 或 距离上一条超过3分钟 → 插入时间标签
+        if (index === 0 || diffFromLast > 3 * 60 * 1000) {
+          const timeDiv = document.createElement('div');
+          timeDiv.className = 'note-time-divider';
+          const d = new Date(note.time);
+          timeDiv.textContent = `${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}`;
+          notesList.appendChild(timeDiv);
+          lastGroupTime = noteTime;
+        }
+
+        // 创建气泡
+        const item = document.createElement('div');
+        item.className = 'note-item';
+        item.textContent = note.text;
+        item.setAttribute('data-id', note.id);
+        item.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+          showContextMenu(e.clientX, e.clientY, note.id);
+        });
+        notesList.appendChild(item);
+      });
+
+      // 更新计数
+      const statusEl = document.getElementById('notesStatus');
+      if (statusEl) {
+        statusEl.textContent = `已有 ${notes.length} 条笔记`;
+      }
+    }
+
+    function showContextMenu(x, y, noteId) {
+      const existing = document.querySelector('.context-menu');
+      if (existing) existing.remove();
+
+      const menu = document.createElement('div');
+      menu.className = 'context-menu';
+      // 先临时插入，用于测量尺寸
+      menu.style.visibility = 'hidden';
+      menu.innerHTML = `
+        <button class="context-menu-item" id="ctxCopy">复制</button>
+        <button class="context-menu-item" id="ctxQuote">引用</button>
+        <button class="context-menu-item" id="ctxDelete">删除</button>
+      `;
+      document.body.appendChild(menu);
+
+      // 获取菜单宽高，并修正位置，使其不超出窗口
+      const menuWidth = menu.offsetWidth;
+      const menuHeight = menu.offsetHeight;
+      const winWidth = document.documentElement.clientWidth;
+      const winHeight = document.documentElement.clientHeight;
+
+      let left = x;
+      let top = y;
+      if (left + menuWidth > winWidth) left = winWidth - menuWidth - 5;
+      if (top + menuHeight > winHeight) top = winHeight - menuHeight - 5;
+      if (left < 0) left = 5;
+      if (top < 0) top = 5;
+
+      menu.style.left = left + 'px';
+      menu.style.top = top + 'px';
+      menu.style.visibility = 'visible';
+
+      // 复制
+      document.getElementById('ctxCopy').addEventListener('click', () => {
+        const note = notes.find(n => n.id === noteId);
+        if (note) navigator.clipboard.writeText(note.text).then(() => showSnackbar('已复制到剪贴板'));
+        menu.remove();
+      });
+
+      // 引用
+      document.getElementById('ctxQuote').addEventListener('click', () => {
+        const note = notes.find(n => n.id === noteId);
+        if (note) {
+          noteInput.value = note.text;
+          autoResize();
+        }
+        menu.remove();
+      });
+
+      // 删除
+      document.getElementById('ctxDelete').addEventListener('click', async () => {
+        await ipcRenderer.invoke('delete-note', noteId);
+        menu.remove();
+        loadNotes();
+      });
+
+      const closeMenu = () => { menu.remove(); document.removeEventListener('click', closeMenu); };
+      setTimeout(() => document.addEventListener('click', closeMenu), 0);
+    }
+
+    // 发送与复制按钮
+    sendNoteBtn.addEventListener('click', async () => {
+      const text = noteInput.value.trim();
+      if (!text) return;
+      await ipcRenderer.invoke('add-note', text);
+      noteInput.value = '';
+      loadNotes();
+    });
+    copyNoteBtn.addEventListener('click', () => {
+      const text = noteInput.value.trim();
+      if (text) navigator.clipboard.writeText(text).then(() => showSnackbar('输入内容已复制'));
+    });
+    noteInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendNoteBtn.click();
+    });
+
+    // 自动调整 textarea 高度
+    function autoResize() {
+      noteInput.style.height = 'auto';
+      const newHeight = noteInput.scrollHeight;
+      noteInput.style.height = newHeight + 'px';
+    }
+    noteInput.addEventListener('input', autoResize);
+    noteInput.addEventListener('compositionend', autoResize);
+
+        // ========== 输入框右键菜单 ==========
+    noteInput.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const existing = document.querySelector('.context-menu');
+      if (existing) existing.remove();
+
+      const menu = document.createElement('div');
+      menu.className = 'context-menu';
+      menu.style.visibility = 'hidden';
+      menu.innerHTML = `
+        <button class="context-menu-item" id="ctxCut">剪切</button>
+        <button class="context-menu-item" id="ctxCopyInput">复制</button>
+        <button class="context-menu-item" id="ctxPaste">粘贴</button>
+        <button class="context-menu-item" id="ctxSelectAll">全选</button>
+      `;
+      document.body.appendChild(menu);
+
+      const menuWidth = menu.offsetWidth;
+      const menuHeight = menu.offsetHeight;
+      const winWidth = document.documentElement.clientWidth;
+      const winHeight = document.documentElement.clientHeight;
+
+      let left = e.clientX;
+      let top = e.clientY;
+      if (left + menuWidth > winWidth) left = winWidth - menuWidth - 5;
+      if (top + menuHeight > winHeight) top = winHeight - menuHeight - 5;
+      if (left < 0) left = 5;
+      if (top < 0) top = 5;
+
+      menu.style.left = left + 'px';
+      menu.style.top = top + 'px';
+      menu.style.visibility = 'visible';
+
+      document.getElementById('ctxCut').addEventListener('click', () => {
+        noteInput.select();
+        document.execCommand('cut');
+        menu.remove();
+      });
+      document.getElementById('ctxCopyInput').addEventListener('click', () => {
+        noteInput.select();
+        document.execCommand('copy');
+        menu.remove();
+      });
+      document.getElementById('ctxPaste').addEventListener('click', () => {
+        noteInput.focus();
+        document.execCommand('paste');
+        menu.remove();
+      });
+      document.getElementById('ctxSelectAll').addEventListener('click', () => {
+        noteInput.select();
+        menu.remove();
+      });
+
+      const closeMenu = () => { menu.remove(); document.removeEventListener('click', closeMenu); };
+      setTimeout(() => document.addEventListener('click', closeMenu), 0);
+    });
+
+    // 侧边栏开关 + FAB 联动
+    function openSidebar() {
+      sidebar.classList.add('open');
+      if (fabNoteBtn) fabNoteBtn.style.display = 'none';
+      loadNotes();
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      if (fabNoteBtn) fabNoteBtn.style.display = '';
+    }
+    closeSidebarBtn.addEventListener('click', closeSidebar);
+
+    // FAB 点击：打开侧边栏并聚焦输入框
+    if (fabNoteBtn) {
+      fabNoteBtn.addEventListener('click', () => {
+        if (!sidebar.classList.contains('open')) {
+          openSidebar();
+        }
+        noteInput.focus();
+      });
+    }
+
+    // 默认打开侧边栏，隐藏 FAB
+    sidebar.classList.add('open');
+    if (fabNoteBtn) fabNoteBtn.style.display = 'none';
+    loadNotes();
+
     // ========== 视图标题映射 ==========
     const viewTitles = {
       home: 'MineCodes',
       favorite: '收藏',
+      items: '物品',
       settings: '设置'
     };
 
@@ -202,6 +500,7 @@
         railItems.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
         const targetView = item.getAttribute('data-view');
+        if (!targetView) return;
         views.forEach(view => {
           view.classList.remove('active');
           if (view.id === 'view-' + targetView) {
@@ -209,17 +508,22 @@
           }
         });
 
-        // 更新标题文字
         document.querySelector('.headline-large').textContent = viewTitles[targetView] || 'MineCodes';
 
-        // 切换到收藏视图时自动加载收藏列表
         if (targetView === 'favorite') {
           loadFavorites();
         }
-        // 切换到设置视图时，加载更新日志
         if (targetView === 'settings') {
           loadChangelog();
         }
+        if (targetView === 'items') {
+          loadItems();
+        }
+
+        if (window._navSoundTimer) clearTimeout(window._navSoundTimer);
+        window._navSoundTimer = setTimeout(() => {
+          playNavSound(targetView);
+        }, 20);
       });
     });
 
@@ -253,8 +557,10 @@
       }
     }
 
-    // ========== 从主进程获取指令数据 ==========
+    // ========== 数据加载 ==========
     let commands = [];
+    let examples = {};
+
     const commandsContainer = document.getElementById('commandsContainer');
     const categoriesBar = document.getElementById('categoriesBar');
     let currentCategory = '全部';
@@ -262,6 +568,7 @@
     async function loadCommands() {
       try {
         commands = await ipcRenderer.invoke('get-commands');
+        examples = await ipcRenderer.invoke('get-examples');
         buildCategories();
         renderCommands();
       } catch (err) {
@@ -270,25 +577,47 @@
     }
 
     function buildCategories() {
+      if (!categoriesBar) return;
       const kinds = new Set(['全部']);
       commands.forEach(cmd => {
         if (cmd.kind) kinds.add(cmd.kind);
       });
       const kindList = Array.from(kinds);
       categoriesBar.innerHTML = '';
+
       kindList.forEach(kind => {
         const btn = document.createElement('button');
         btn.className = 'category-tab';
         if (kind === currentCategory) btn.classList.add('active');
         btn.textContent = kind;
         btn.addEventListener('click', () => {
-          document.querySelectorAll('.category-tab').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('#categoriesBar .category-tab').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           currentCategory = kind;
           renderCommands(searchInput.value);
         });
         categoriesBar.appendChild(btn);
       });
+    }
+
+    function getExamplesHTML(cmdId) {
+      const exList = examples[cmdId] || [];
+      if (exList.length === 0) return '';
+      return `
+        <div class="card-examples">
+          ${exList.map(ex => `
+            <div class="example-item">
+              <div class="example-text">
+                <code class="example-cmd">${ex.cmd}</code>
+                <span class="example-desc">${ex.desc}</span>
+              </div>
+              <button class="copy-example-btn" data-usage="${ex.cmd.replace(/"/g, '&quot;')}">
+                <span class="material-symbols-outlined">content_copy</span>
+              </button>
+            </div>
+          `).join('')}
+        </div>
+      `;
     }
 
     function renderCommands(filter = '') {
@@ -309,6 +638,7 @@
           <div class="card-content">
             <h3 class="headline-small">${cmd.name}</h3>
             <p class="body-medium">${cmd.desc}</p>
+            ${getExamplesHTML(cmd.id)}
           </div>
           <div class="card-actions">
             <button class="text-button label-large copy-btn" data-usage="${cmd.usage.replace(/"/g, '&quot;')}">复制指令</button>
@@ -319,6 +649,17 @@
       });
 
       document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const usage = e.currentTarget.getAttribute('data-usage');
+          navigator.clipboard.writeText(usage).then(() => {
+            showSnackbar('指令已复制到剪贴板');
+          }).catch(() => {
+            showSnackbar('复制失败，请手动复制');
+          });
+        });
+      });
+
+      document.querySelectorAll('.copy-example-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           const usage = e.currentTarget.getAttribute('data-usage');
           navigator.clipboard.writeText(usage).then(() => {
@@ -345,6 +686,7 @@
       try {
         if (commands.length === 0) {
           commands = await ipcRenderer.invoke('get-commands');
+          examples = await ipcRenderer.invoke('get-examples');
         }
         const favIds = await ipcRenderer.invoke('get-favorites');
         const favCommands = commands.filter(cmd => favIds.includes(cmd.id));
@@ -366,6 +708,7 @@
             <div class="card-content">
               <h3 class="headline-small">${cmd.name}</h3>
               <p class="body-medium">${cmd.desc}</p>
+              ${getExamplesHTML(cmd.id)}
             </div>
             <div class="card-actions">
               <button class="text-button label-large unfav-btn" data-id="${cmd.id}">取消收藏</button>
@@ -389,6 +732,16 @@
             navigator.clipboard.writeText(usage).then(() => showSnackbar('指令已复制到剪贴板')).catch(() => showSnackbar('复制失败，请手动复制'));
           });
         });
+        document.querySelectorAll('.copy-example-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const usage = e.currentTarget.getAttribute('data-usage');
+            navigator.clipboard.writeText(usage).then(() => {
+              showSnackbar('指令已复制到剪贴板');
+            }).catch(() => {
+              showSnackbar('复制失败，请手动复制');
+            });
+          });
+        });
         document.querySelectorAll('.detail-btn').forEach(btn => {
           btn.addEventListener('click', (e) => {
             const id = e.currentTarget.getAttribute('data-id');
@@ -401,7 +754,118 @@
       }
     }
 
-    // ========== 更新日志加载 ==========
+    // ========== 物品数据 ==========
+    let itemsData = [];
+    const itemsContainer = document.getElementById('itemsContainer');
+    const itemsSearchInput = document.getElementById('itemsSearchInput');
+    const itemsCategoriesBar = document.getElementById('itemsCategoriesBar');
+    let currentItemCategory = '全部';
+
+    async function loadItems() {
+      if (itemsData.length === 0) {
+        try {
+          itemsData = await ipcRenderer.invoke('get-items');
+          buildItemCategories();
+        } catch (e) {
+          itemsContainer.innerHTML = `<p class="body-medium">物品加载失败：${e.message}</p>`;
+          return;
+        }
+      }
+      renderItems(itemsSearchInput ? itemsSearchInput.value : '');
+    }
+
+    function buildItemCategories() {
+      if (!itemsCategoriesBar) return;
+      const kinds = new Set(['全部']);
+      itemsData.forEach(item => {
+        if (item.kind) kinds.add(item.kind);
+      });
+      const kindList = Array.from(kinds);
+      itemsCategoriesBar.innerHTML = '';
+
+      kindList.forEach(kind => {
+        const btn = document.createElement('button');
+        btn.className = 'category-tab';
+        if (kind === currentItemCategory) btn.classList.add('active');
+        btn.textContent = kind;
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#itemsCategoriesBar .category-tab').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentItemCategory = kind;
+          renderItems(itemsSearchInput ? itemsSearchInput.value : '');
+        });
+        itemsCategoriesBar.appendChild(btn);
+      });
+    }
+
+    function renderItems(filter = '') {
+      if (!itemsContainer) return;
+      itemsContainer.innerHTML = '';
+      const lower = filter.toLowerCase();
+      let filtered = itemsData.filter(item =>
+        item.name.toLowerCase().includes(lower) ||
+        (item.desc && item.desc.toLowerCase().includes(lower)) ||
+        item.id.includes(lower)
+      );
+      if (currentItemCategory !== '全部') {
+        filtered = filtered.filter(item => item.kind === currentItemCategory);
+      }
+
+      if (filtered.length === 0) {
+        itemsContainer.style.display = 'flex';
+        itemsContainer.style.alignItems = 'center';
+        itemsContainer.style.justifyContent = 'center';
+        itemsContainer.style.minHeight = '200px';
+        itemsContainer.innerHTML = `<p class="body-medium">未找到匹配物品</p>`;
+        return;
+      }
+
+      itemsContainer.style.display = '';
+      itemsContainer.style.alignItems = '';
+      itemsContainer.style.justifyContent = '';
+      itemsContainer.style.minHeight = '';
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'md3-card filled-card';
+        card.innerHTML = `
+          <div class="card-content">
+            <h3 class="headline-small">${item.name}</h3>
+            <p class="body-medium">${item.desc || ''}</p>
+            <div class="body-medium" style="margin-top: 8px; font-size: 0.75rem; color: var(--md-sys-color-on-surface-variant);">
+              <div><strong>获取方式：</strong>${item.obtain || '无'}</div>
+              <div><strong>首次登场：</strong>${item.first_appearance || '未知'}</div>
+              <div><strong>用法说明：</strong>${item.usage_detail || '无'}</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            ${item.wiki_url ? `<button class="text-button label-large wiki-btn" data-url="${item.wiki_url}">查看Wiki</button>` : ''}
+            <button class="text-button label-large copy-id-btn" data-id="${item.id}">复制ID</button>
+          </div>
+        `;
+        itemsContainer.appendChild(card);
+      });
+
+      document.querySelectorAll('.wiki-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const url = e.currentTarget.getAttribute('data-url');
+          if (url) ipcRenderer.send('open-external', url);
+        });
+      });
+
+      document.querySelectorAll('.copy-id-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = e.currentTarget.getAttribute('data-id');
+          navigator.clipboard.writeText(id).then(() => showSnackbar('物品ID已复制到剪贴板')).catch(() => showSnackbar('复制失败'));
+        });
+      });
+    }
+
+    if (itemsSearchInput) {
+      itemsSearchInput.addEventListener('input', (e) => renderItems(e.target.value));
+    }
+
+    // ========== 更新日志 ==========
     function loadChangelog() {
       const container = document.getElementById('changelogContainer');
       if (!container) return;
@@ -455,7 +919,6 @@
       }, 3000);
     }
 
-    // 查看运行日志按钮
     const viewLogBtn = document.getElementById('viewLogBtn');
     if (viewLogBtn) {
       viewLogBtn.addEventListener('click', () => {
@@ -518,10 +981,32 @@
       });
     }
 
-    // 首次加载与切换时加载更新日志（已在导航事件中处理）
+    // ========== 快捷键开关 ==========
+    const hotkeyToggle = document.getElementById('hotkeyToggle');
+    if (hotkeyToggle) {
+      async function initHotkey() {
+        try {
+          const status = await ipcRenderer.invoke('get-hotkey-status');
+          hotkeyToggle.checked = status;
+        } catch (e) {
+          console.error('获取快捷键状态失败:', e);
+        }
+      }
+      initHotkey();
+      hotkeyToggle.addEventListener('change', async () => {
+        const enable = hotkeyToggle.checked;
+        const result = await ipcRenderer.invoke('toggle-hotkey', enable);
+        if (result && result.enabled === enable) {
+          hotkeyToggle.checked = result.enabled;
+        } else {
+          hotkeyToggle.checked = !enable;
+          showSnackbar(result.message || '快捷键切换失败');
+        }
+      });
+    }
+
     loadCommands();
 
-    // 点击标题文字返回顶部
     document.querySelector('.headline-large').addEventListener('click', () => {
       const mainEl = document.querySelector('main');
       if (mainEl) mainEl.scrollTo({ top: 0, behavior: 'smooth' });

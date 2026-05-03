@@ -162,8 +162,10 @@ body {
   flex-direction: column;
   height: 100%;
   -webkit-app-region: no-drag;
-  padding-right: 8px;      
-  box-sizing: border-box;   
+  padding-right: 8px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== 5. 字体排印 (Typography) ===== */
@@ -175,7 +177,12 @@ body {
   margin: 0;
   -webkit-app-region: no-drag;   
   user-select: none;
-  cursor: pointer;              
+  cursor: pointer;        
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  min-width: 0;      
 }
 
 .headline-small {
@@ -216,9 +223,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;     
+  padding: 12px 16px;
   -webkit-app-region: drag;
-  min-height: 48px;     
+  min-height: 48px;
+  min-width: 0;
+  flex-shrink: 1;
+  overflow: hidden;
 }
 
 /* ----- 图标按钮 (Icon Button) ----- */
@@ -247,6 +257,7 @@ body {
   gap: 8px;
   align-items: center;
   -webkit-app-region: no-drag;
+  flex-shrink: 0;
 }
 
 /* ----- 搜索栏 (Search Bar) ----- */
@@ -371,10 +382,11 @@ body.layout-list .cards-grid .md3-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard),
-              box-shadow var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   -webkit-app-region: no-drag;
+  z-index: 50;                         
+  transition: right 0.25s var(--md-sys-motion-easing-standard),
+              background var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
 }
 
 .fab:hover {
@@ -404,13 +416,19 @@ main {
   position: relative;
   flex: 1;
   overflow-y: auto;
-  padding: 0;              
+  overflow-x: hidden;
+  padding: 0;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 .view {
   display: none;
   padding: 0 16px 16px 16px;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .view.active {
@@ -468,6 +486,26 @@ main {
 /* ===== M3 风格滚动条 ===== */
 main::-webkit-scrollbar {
   width: 6px;                    /* 细窄滚动条 */
+}
+
+/* 横向滚动条统一风格 */
+main::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+main::-webkit-scrollbar-track:horizontal {
+  background: transparent;
+  margin: 0 8px;
+}
+main::-webkit-scrollbar-thumb:horizontal {
+  background: rgba(128, 134, 139, 0.4);
+  border-radius: 3px;
+  min-width: 40px;
+}
+main::-webkit-scrollbar-thumb:horizontal:hover {
+  background: rgba(128, 134, 139, 0.7);
+}
+main::-webkit-scrollbar-thumb:active {
+  background: rgba(128, 134, 139, 0.9);
 }
 
 main::-webkit-scrollbar-track {
@@ -589,6 +627,9 @@ main::-webkit-scrollbar-thumb:active {
   border-bottom: 1px solid var(--md-sys-color-outline-variant);
   -webkit-app-region: no-drag;
   scrollbar-width: none;
+  max-width: 100%;          /* 新增：防止撑宽父容器 */
+  box-sizing: border-box; 
+  width: 100%;   
 }
 .categories-bar::-webkit-scrollbar {
   display: none;
@@ -669,4 +710,371 @@ body.dark-theme {
   .app-container {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
   }
+}
+
+/* 卡片内使用示例（首页/收藏页） */
+.card-examples {
+  margin-top: 12px;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-examples .example-item {
+  background: transparent;                    /* 透明融入底板 */
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-examples .example-cmd {
+  font-family: monospace;
+  font-size: 0.875rem;                    
+  color: var(--md-sys-color-primary);
+}
+
+.card-examples .example-desc {
+  font-size: 0.8125rem;                   
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* 示例复制按钮 */
+.copy-example-btn {
+  background: transparent;
+  border: none;
+  border-radius: var(--md-sys-shape-corner-small);
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  transition: background var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  -webkit-app-region: no-drag;
+}
+.copy-example-btn:hover {
+  background: rgba(26, 115, 232, 0.08);
+}
+.copy-example-btn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* 卡片内的示例项横向布局，让复制按钮靠右 */
+.card-examples .example-item {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card-examples .example-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+/* 分类溢出菜单 */
+.categories-bar {
+  position: relative;            /* 确保溢出按钮相对于分类条定位 */
+}
+.categories-overflow-btn {
+  position: sticky;
+  right: 0;
+  background: var(--md-sys-color-background);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--md-sys-color-on-surface-variant);
+  transition: background 0.2s;
+  -webkit-app-region: no-drag;
+  flex-shrink: 0;
+  margin-left: auto;            /* 始终靠右 */
+  z-index: 11;
+}
+.categories-overflow-btn:hover {
+  background: rgba(128, 134, 139, 0.12);
+}
+
+/* 下拉菜单容器 */
+.overflow-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-sys-shape-corner-medium);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 100;
+  min-width: 120px;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;                /* 默认隐藏 */
+  flex-direction: column;
+  padding: 4px 0;
+}
+.overflow-menu.active {
+  display: flex;
+}
+.overflow-menu button {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+.overflow-menu button:hover {
+  background: rgba(128, 134, 139, 0.12);
+}
+.overflow-menu button.active {
+  color: var(--md-sys-color-primary);
+  font-weight: 500;
+}
+
+/* ===== 右侧笔记边栏 ===== */
+.sidebar {
+  width: 260px;
+  height: 100%;
+  background: var(--md-sys-color-surface);
+  border-left: 1px solid var(--md-sys-color-outline-variant);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  -webkit-app-region: no-drag;
+  border-radius: 0 24px 24px 0;       /* 只保留右侧圆角 */
+  transition: width 0.25s var(--md-sys-motion-easing-standard),
+              min-width 0.25s var(--md-sys-motion-easing-standard),
+              opacity 0.25s, margin 0.25s;
+  overflow: hidden;
+  opacity: 1;
+}
+
+/* 关闭状态：完全消失，不影响主窗口 */
+.sidebar:not(.open) {
+  width: 0 !important;
+  min-width: 0 !important;
+  border-left: none;
+  opacity: 0;
+  margin-left: 0;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  -webkit-app-region: no-drag;
+}
+
+.sidebar-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px;
+  margin-bottom: 8px;
+}
+
+.note-item {
+  background: var(--md-sys-color-surface-variant);
+  border-radius: 16px 16px 4px 16px;   /* 右侧底部方形，左侧底部微圆，体现有机感 */
+  padding: 10px 14px;
+  margin-bottom: 4px;                   /* 同组靠拢 */
+  margin-top: 4px;
+  font-size: 0.875rem;
+  color: var(--md-sys-color-on-surface);
+  white-space: pre-wrap;
+  word-break: break-word;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 极微阴影，表现调色高度 */
+  max-width: 90%;
+  word-wrap: break-word;
+  transition: background 0.15s, box-shadow 0.15s;
+  align-self: flex-end;                 /* 靠右对齐 */
+  margin-left: auto;
+}
+/* 气泡悬停态 */
+.note-item:hover {
+  background: var(--md-sys-color-surface);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 尖角向右（表示用户发送） */
+.note-item::before {
+  content: '';
+  position: absolute;
+  right: -6px;
+  bottom: 8px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid var(--md-sys-color-surface-variant);
+}
+
+/* 悬停时尖角也变色 */
+.note-item:hover::before {
+  border-left-color: var(--md-sys-color-surface);
+}
+
+
+
+
+
+
+
+.sidebar-input-area {
+  padding: 8px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 保留你原有的输入框和按钮样式，以下是最小补充 */
+.sidebar-input-wrapper input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  background: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.sidebar-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+
+
+
+/* 输入框自适应高度 */
+#noteInput {
+  resize: none;
+  overflow-y: auto;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+  min-height: 36px;
+  max-height: 120px;
+  line-height: 1.5;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: inherit;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Chrome/Safari/Edge 隐藏滚动条 */
+#noteInput::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* 右键菜单 */
+.context-menu {
+  position: fixed;
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-sys-shape-corner-small);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  z-index: 9999;
+  min-width: 100px;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+}
+.context-menu-item {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+.context-menu-item:hover {
+  background: rgba(128, 134, 139, 0.12);
+}
+
+.note-time-divider {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--md-sys-color-on-surface-variant);
+  margin: 12px 0 8px;
+  user-select: none;
+  letter-spacing: 0.3px;
+}
+
+
+
+/* ----- 发送按钮（Filled Button，最高强调） ----- */
+#sendNoteBtn {
+  background-color: var(--md-sys-color-primary);   /* 主色背景 */
+  color: var(--md-sys-color-on-primary);           /* 主色上的文字 */
+  border-radius: 12px;
+  padding: 6px 18px;
+  font-weight: 500;
+  transition: background 0.2s, box-shadow 0.2s;
+  border: none;
+  text-transform: none;
+}
+#sendNoteBtn:hover {
+  background-color: #1669D0;   /* 稍深，悬停反馈 */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+/* ----- 复制按钮（Outlined Button，中等强调） ----- */
+#copyNoteBtn {
+  background-color: transparent;                  /* 透明背景 */
+  color: var(--md-sys-color-primary);             /* 主色文字 */
+  border: 1px solid var(--md-sys-color-outline);  /* 轮廓色描边 */
+  border-radius: 12px;
+  padding: 6px 18px;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s;
+  text-transform: none;
+}
+#copyNoteBtn:hover {
+  background-color: rgba(26, 115, 232, 0.08);     /* 主色叠加层 */
+  border-color: var(--md-sys-color-primary);
+}
+
+
+
+
+
+.sidebar-status {
+  padding: 0 16px 8px;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.75rem;
+  text-align: left;
+}
+.sidebar-header {
+  padding-bottom: 4px;   /* 缩小标题底部内边距 */
+}
+.sidebar-status {
+  padding-top: 0;
+  margin-top: -8px;      /* 向上提，紧贴标题 */
 }

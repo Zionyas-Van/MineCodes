@@ -1,0 +1,2119 @@
+[
+  {
+    "id": "cobblestone",
+    "name": "圆石",
+    "kind": "建筑方块",
+    "desc": "圆石（Cobblestone）是主世界和地下常见的方块，主要用于合成与建筑。",
+    "obtain": "用任何镐开采石头掉落，空手或其它工具不掉落。",
+    "first_appearance": "2009年（Classic）",
+    "usage_detail": "制作熔炉、石质工具、武器、台阶、楼梯等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%9C%86%E7%9F%B3"
+  },
+  {
+    "id": "sand",
+    "name": "沙子",
+    "kind": "自然方块",
+    "desc": "沙子（Sand）是一种受重力影响的方块，在沙漠和水底大量生成。",
+    "obtain": "空手或任何工具均可获得。",
+    "first_appearance": "2009年（Classic）",
+    "usage_detail": "烧制玻璃、合成砂岩、TNT，或用于种植仙人掌。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B2%99%E5%AD%90"
+  },
+  {
+    "id": "glass",
+    "name": "玻璃",
+    "kind": "建筑方块",
+    "desc": "玻璃（Glass）是一种透明的装饰性方块，烧制沙子获得。",
+    "obtain": "只能用精准采集工具回收，否则直接破碎。",
+    "first_appearance": "2009年（Classic 0.0.19a）",
+    "usage_detail": "窗户、玻璃瓶、阳光传感器、信标等合成材料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%8E%BB%E7%92%83"
+  },
+  {
+    "id": "torch",
+    "name": "火把",
+    "kind": "照明用品",
+    "desc": "火把（Torch）是一种提供光照的方块，能阻止怪物生成。",
+    "obtain": "煤炭或木炭加木棍合成。",
+    "first_appearance": "2009年（Classic）",
+    "usage_detail": "照明、融化雪和冰、激活红石电路（熄灭状态）等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%81%AB%E6%8A%8A"
+  },
+  {
+    "id": "crafting_table",
+    "name": "工作台",
+    "kind": "功能性方块",
+    "desc": "工作台（Crafting Table）是最基本的合成设施，提供3x3合成格。",
+    "obtain": "空手即可破坏获得，用斧更快。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "右键打开3x3合成界面，几乎所有物品都需要在此合成。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%B7%A5%E4%BD%9C%E5%8F%B0"
+  },
+  {
+    "id": "furnace",
+    "name": "熔炉",
+    "kind": "功能性方块",
+    "desc": "熔炉（Furnace）用于烧炼物品，将原材料转化为更有用的形态。",
+    "obtain": "用任何镐开采，空手破坏不掉落。",
+    "first_appearance": "2009年（Classic）",
+    "usage_detail": "燃料驱动，可烧炼矿石、食物等，高炉和烟熏炉是其变种。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%86%94%E7%82%89"
+  },
+  {
+    "id": "chest",
+    "name": "箱子",
+    "kind": "储存容器",
+    "desc": "箱子（Chest）用来安全存放物品，单个有27格空间。",
+    "obtain": "空手即可，用斧更快。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "存放物品，两个并排放置可合成为大型箱子（54格）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%AE%B1%E5%AD%90"
+  },
+  {
+    "id": "iron_ore",
+    "name": "铁矿石",
+    "kind": "矿石",
+    "desc": "铁矿石（Iron Ore）是冶炼铁锭的来源，在地下很常见。",
+    "obtain": "用石镐或更高品质镐开采，掉落铁矿本身，需熔炼。",
+    "first_appearance": "2009年（Classic 0.0.14a）",
+    "usage_detail": "熔炼后获得铁锭，用于制作工具、盔甲、铁块等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%93%81%E7%9F%BF%E7%9F%B3"
+  },
+  {
+    "id": "gold_ore",
+    "name": "金矿石",
+    "kind": "矿石",
+    "desc": "金矿石（Gold Ore）在主世界深处和恶地生物群系出现。",
+    "obtain": "用铁镐或更好镐开采，直接掉落粗金，需熔炼。",
+    "first_appearance": "2009年（Classic 0.0.14a）",
+    "usage_detail": "熔炼为金锭，制作金质工具、金苹果、充能铁轨等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%87%91%E7%9F%BF%E7%9F%B3"
+  },
+  {
+    "id": "coal",
+    "name": "煤炭",
+    "kind": "原材料",
+    "desc": "煤炭（Coal）是基础的燃料和火把合成材料。",
+    "obtain": "用任何镐开采煤矿石，或烧炼原木得到木炭。",
+    "first_appearance": "2009年（Indev 0.31）",
+    "usage_detail": "制作火把、动力矿车、作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%85%A4%E7%82%AD"
+  },
+  {
+    "id": "stick",
+    "name": "木棍",
+    "kind": "原材料",
+    "desc": "木棍（Stick）是合成大多数工具和武器的基础材料。",
+    "obtain": "用两块木板垂直合成，或破坏枯萎灌木掉落。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "制作镐、斧、剑、锄、铲、火把、栅栏等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%A3%8D"
+  },
+  {
+    "id": "oak_planks",
+    "name": "橡木木板",
+    "kind": "建筑方块",
+    "desc": "橡木木板（Oak Planks）是用橡木原木合成的建筑材料。",
+    "obtain": "一个橡木原木合成四块木板。",
+    "first_appearance": "2009年（Classic）",
+    "usage_detail": "基础建材、合成各种木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "stone_sword",
+    "name": "石剑",
+    "kind": "武器",
+    "desc": "石剑（Stone Sword）是初期的近战武器，攻击较高。",
+    "obtain": "用两个圆石和一根木棍合成。",
+    "first_appearance": "2009年（Indev 0.31）",
+    "usage_detail": "攻击生物造成5点伤害，也可用于快速破坏蜘蛛网等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%89%91"
+  },
+  {
+    "id": "iron_pickaxe",
+    "name": "铁镐",
+    "kind": "工具",
+    "desc": "铁镐（Iron Pickaxe）能开采几乎所有矿石，是最常用的镐。",
+    "obtain": "三块铁锭加两根木棍合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "开采钻石、金、红石等高级矿石，挖掘速度较快。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%95%90"
+  },
+  {
+    "id": "bread",
+    "name": "面包",
+    "kind": "食物",
+    "desc": "面包（Bread）是容易获得的主食，恢复5点饥饿值。",
+    "obtain": "用三个小麦水平合成。",
+    "first_appearance": "2010年（Indev 20100206）",
+    "usage_detail": "食用后恢复大量饥饿值，适合早期生存。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%9D%A2%E5%8C%85"
+  },
+  {
+    "id": "apple",
+    "name": "苹果",
+    "kind": "食物",
+    "desc": "苹果（Apple）可以食用，也可用于合成金苹果。",
+    "obtain": "破坏橡树或深色橡树树叶有几率掉落，或与村民交易。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "恢复4点饥饿值，主要用途是合成金苹果。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8B%B9%E6%9E%9C"
+  },
+  {
+    "id": "golden_apple",
+    "name": "金苹果",
+    "kind": "食物",
+    "desc": "金苹果（Golden Apple）提供生命恢复和伤害吸收效果。",
+    "obtain": "用八个金锭和一个苹果合成。",
+    "first_appearance": "2010年（Beta 1.8）",
+    "usage_detail": "食用后获得5秒生命恢复Ⅱ和2分钟伤害吸收，附魔金苹果效果更强。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%87%91%E8%8B%B9%E6%9E%9C"
+  },
+  {
+    "id": "bow",
+    "name": "弓",
+    "kind": "武器",
+    "desc": "弓（Bow）是远程武器，使用箭进行攻击。",
+    "obtain": "三根木棍和三根线合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "拉弓蓄力，松开发射箭矢，可附魔力量、冲击、火矢等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%BC%93"
+  },
+  {
+    "id": "arrow",
+    "name": "箭",
+    "kind": "弹药",
+    "desc": "箭（Arrow）是弓和弩的弹药，也可单独投射。",
+    "obtain": "燧石、木棍和羽毛合成，或击杀骷髅掉落。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "提供伤害，可附魔药水效果，发射器也可射出。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%AE%AD"
+  },
+  {
+    "id": "tnt",
+    "name": "TNT",
+    "kind": "红石元件",
+    "desc": "TNT是爆炸物，被红石信号激活后延迟爆炸。",
+    "obtain": "五个火药和四个沙子合成。",
+    "first_appearance": "2009年（Classic 0.26 SURVIVAL TEST）",
+    "usage_detail": "挖掘、战斗、陷阱，点燃或通电引燃。",
+    "wiki_url": "https://zh.minecraft.wiki/w/TNT"
+  },
+  {
+    "id": "piston",
+    "name": "活塞",
+    "kind": "红石元件",
+    "desc": "活塞（Piston）能被红石信号推动方块。",
+    "obtain": "三个木板、四个圆石、一个铁锭和一个红石粉合成。",
+    "first_appearance": "2011年（Beta 1.7）",
+    "usage_detail": "配合红石电路移动方块，制作门、陷阱、机械等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E5%A1%9E"
+  },
+  {
+    "id": "sticky_piston",
+    "name": "粘性活塞",
+    "kind": "红石元件",
+    "desc": "粘性活塞（Sticky Piston）伸出后还能拉回方块。",
+    "obtain": "活塞和一个粘液球合成。",
+    "first_appearance": "2011年（Beta 1.7）",
+    "usage_detail": "推动并拉回方块，适合制作隐藏门、飞行器。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%B2%98%E6%80%A7%E6%B4%BB%E5%A1%9E"
+  },
+  {
+    "id": "redstone",
+    "name": "红石粉",
+    "kind": "红石元件",
+    "desc": "红石粉（Redstone Dust）是红石电路的最小单元，能传输信号。",
+    "obtain": "用铁镐或更好镐开采红石矿石，或击杀女巫。",
+    "first_appearance": "2010年（Alpha 1.0.1）",
+    "usage_detail": "铺设成红石线，传递能量至15格，可合成各种红石元件。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%BA%A2%E7%9F%B3%E7%B2%89"
+  },
+  {
+    "id": "repeater",
+    "name": "红石中继器",
+    "kind": "红石元件",
+    "desc": "红石中继器（Redstone Repeater）用于延长信号、延迟和方向控制。",
+    "obtain": "两个红石火把、一个红石粉和三个石头合成。",
+    "first_appearance": "2011年（Beta 1.3）",
+    "usage_detail": "重传信号至15格，可设定1-4个游戏刻的延迟。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%BA%A2%E7%9F%B3%E4%B8%AD%E7%BB%A7%E5%99%A8"
+  },
+  {
+    "id": "comparator",
+    "name": "红石比较器",
+    "kind": "红石元件",
+    "desc": "红石比较器（Redstone Comparator）能比较或测量容器满度。",
+    "obtain": "三个红石火把、一个下界石英和三个石头合成。",
+    "first_appearance": "2012年（1.5）",
+    "usage_detail": "比较后方与侧边信号，输出容器填充程度信号。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%BA%A2%E7%9F%B3%E6%AF%94%E8%BE%83%E5%99%A8"
+  },
+  {
+    "id": "brewing_stand",
+    "name": "酿造台",
+    "kind": "功能性方块",
+    "desc": "酿造台（Brewing Stand）用于制作药水。",
+    "obtain": "一根烈焰棒和三个圆石或黑石合成。",
+    "first_appearance": "2011年（Beta 1.9-pre2）",
+    "usage_detail": "放入水瓶和材料酿造各种药水，需要烈焰粉作为燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%85%BF%E9%80%A0%E5%8F%B0"
+  },
+  {
+    "id": "enchanting_table",
+    "name": "附魔台",
+    "kind": "功能性方块",
+    "desc": "附魔台（Enchanting Table）能让工具和盔甲获得魔法能力。",
+    "obtain": "四个黑曜石、两个钻石和一本书合成。",
+    "first_appearance": "2011年（Beta 1.9-pre3）",
+    "usage_detail": "消耗经验值和青金石，赋予随机附魔。书架提升等级。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%99%84%E9%AD%94%E5%8F%B0"
+  },
+  {
+    "id": "ender_pearl",
+    "name": "末影珍珠",
+    "kind": "用品",
+    "desc": "末影珍珠（Ender Pearl）投掷后可传送到落点，但会受伤。",
+    "obtain": "击杀末影人掉落，或与牧师村民交易。",
+    "first_appearance": "2011年（Beta 1.8）",
+    "usage_detail": "快速移动，合成末影之眼，触发末地传送门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%AB%E5%BD%B1%E7%8F%8D%E7%8F%A0"
+  },
+  {
+    "id": "ender_eye",
+    "name": "末影之眼",
+    "kind": "用品",
+    "desc": "末影之眼（Eye of Ender）用于定位和激活要塞传送门。",
+    "obtain": "末影珍珠与烈焰粉合成。",
+    "first_appearance": "2011年（Beta 1.9-pre3）",
+    "usage_detail": "右键抛掷指引要塞方向，填充末地传送门框架。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%AB%E5%BD%B1%E4%B9%8B%E7%9C%BC"
+  },
+  {
+    "id": "dragon_egg",
+    "name": "龙蛋",
+    "kind": "装饰品",
+    "desc": "龙蛋（Dragon Egg）是击败末影龙后获得的战利品，每个世界仅生成一个。",
+    "obtain": "首次击败末影龙后返回主世界传送门上出现。",
+    "first_appearance": "2011年（Beta 1.9-pre6）",
+    "usage_detail": "纯粹的纪念品，可推动或用活塞获取，无法生成龙。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%BE%99%E8%9B%8B"
+  },
+  {
+    "id": "nether_star",
+    "name": "下界之星",
+    "kind": "贵重物品",
+    "desc": "下界之星（Nether Star）是击败凋灵的稀有掉落物，用于合成信标。",
+    "obtain": "击杀凋灵后必定掉落。",
+    "first_appearance": "2012年（1.4.2）",
+    "usage_detail": "合成信标的核心材料，提供状态效果。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E4%B9%8B%E6%98%9F"
+  },
+  {
+    "id": "beacon",
+    "name": "信标",
+    "kind": "功能性方块",
+    "desc": "信标（Beacon）向一定高度范围内玩家提供增益效果。",
+    "obtain": "下界之星、玻璃和黑曜石合成。",
+    "first_appearance": "2012年（1.4.2）",
+    "usage_detail": "底部放置矿物金字塔，选择速度、急迫、抗性等效果。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%BF%A1%E6%A0%87"
+  },
+  {
+    "id": "bed",
+    "name": "床",
+    "kind": "功能性方块",
+    "desc": "床（Bed）用来跳过夜晚并设重生点。",
+    "obtain": "三个同色羊毛和三块木板合成。",
+    "first_appearance": "2011年（Beta 1.3）",
+    "usage_detail": "睡觉重置天气、跳过夜晚，右键设定出生点。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%BA%8A"
+  },
+  {
+    "id": "lava_bucket",
+    "name": "熔岩桶",
+    "kind": "工具",
+    "desc": "熔岩桶（Lava Bucket）装着可以放置的熔岩，也是强力燃料。",
+    "obtain": "用桶对着熔岩源右键。",
+    "first_appearance": "2010年（Infdev 20100615）",
+    "usage_detail": "放置熔岩，作熔炉燃料可烧炼100个物品，能烧毁掉落物。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%86%94%E5%B2%A9%E6%A1%B6"
+  },
+  {
+    "id": "water_bucket",
+    "name": "水桶",
+    "kind": "工具",
+    "desc": "水桶（Water Bucket）能够放置水源，用于浇灌、推离实体等。",
+    "obtain": "用桶右键水源。",
+    "first_appearance": "2010年（Infdev 20100615）",
+    "usage_detail": "形成无限水源，浇灭火焰，安全落地（落地水），冲走作物。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B0%B4%E6%A1%B6"
+  },
+  {
+    "id": "diamond_sword",
+    "name": "钻石剑",
+    "kind": "武器",
+    "desc": "钻石剑（Diamond Sword）是耐久和伤害最高的近战武器。",
+    "obtain": "两个钻石和一根木棍合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "造成7点攻击伤害，耐久度1562，可附魔锋利等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%89%91"
+  },
+  {
+    "id": "shield",
+    "name": "盾牌",
+    "kind": "武器/盔甲",
+    "desc": "盾牌（Shield）能够格挡大部分攻击，保护玩家。",
+    "obtain": "一个铁锭和六个木板合成。",
+    "first_appearance": "2016年（1.9）",
+    "usage_detail": "按住右键格挡前方攻击，可附加旗帜图案。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%9B%BE%E7%89%8C"
+  },
+  {
+    "id": "elytra",
+    "name": "鞘翅",
+    "kind": "装备",
+    "desc": "鞘翅（Elytra）装备在胸甲槽可以滑翔飞行。",
+    "obtain": "在末地船中找到。",
+    "first_appearance": "2016年（1.9）",
+    "usage_detail": "跳跃中按下跳跃键开始滑翔，配合烟花火箭加速。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%9E%98%E7%BF%85"
+  },
+  {
+    "id": "trident",
+    "name": "三叉戟",
+    "kind": "武器",
+    "desc": "三叉戟（Trident）是近战和投掷两用的武器。",
+    "obtain": "击杀溺尸有几率掉落。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "右键投掷，可附魔忠诚、引雷、激流等专属魔咒。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%89%E5%8F%89%E6%88%9F"
+  },
+  {
+    "id": "crossbow",
+    "name": "弩",
+    "kind": "武器",
+    "desc": "弩（Crossbow）比弓射程更远，能预装弹药并发射烟花。",
+    "obtain": "绊线钩、铁锭、木棍和线合成。",
+    "first_appearance": "2019年（1.14）",
+    "usage_detail": "装填后右键发射箭或烟花火箭，可附魔多重射击和穿透。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%BC%A9"
+  },
+  {
+    "id": "netherite_ingot",
+    "name": "下界合金锭",
+    "kind": "原材料",
+    "desc": "下界合金锭（Netherite Ingot）用于升级钻石装备，使其更强。",
+    "obtain": "四个下界合金碎片和四个金锭合成。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "在锻造台上将钻石质装备升级为下界合金，提升耐久和击退抗性。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E5%90%88%E9%87%91%E9%94%AD"
+  },
+  {
+    "id": "observer",
+    "name": "侦测器",
+    "kind": "红石元件",
+    "desc": "侦测器（Observer）能检测面前方块更新并输出短脉冲。",
+    "obtain": "圆石、红石粉和下界石英合成。",
+    "first_appearance": "2016年（1.11）",
+    "usage_detail": "检测作物生长、活塞移动等，是自动化核心元件。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%BE%A6%E6%B5%8B%E5%99%A8"
+  },
+  {
+    "id": "slime_block",
+    "name": "粘液块",
+    "kind": "建筑方块",
+    "desc": "粘液块（Slime Block）富有弹性，能使实体弹跳并粘动相邻方块。",
+    "obtain": "九个粘液球合成。",
+    "first_appearance": "2014年（1.8）",
+    "usage_detail": "搭配活塞制作飞行器，作为弹跳平台。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%B2%98%E6%B6%B2%E5%9D%97"
+  },
+  {
+    "id": "honey_block",
+    "name": "蜂蜜块",
+    "kind": "建筑方块",
+    "desc": "蜂蜜块（Honey Block）能减缓实体移动，并拖动相邻非蜂蜜方块。",
+    "obtain": "四个蜂蜜瓶合成。",
+    "first_appearance": "2019年（1.15）",
+    "usage_detail": "制作减速陷阱、飞行器互补粘液块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%9C%82%E8%9C%9C%E5%9D%97"
+  },
+  {
+    "id": "spawner",
+    "name": "刷怪笼",
+    "kind": "自然方块",
+    "desc": "刷怪笼（Spawner）是地牢中生成特定生物的方块。",
+    "obtain": "无法正常获取，精准采集也无法掉落。",
+    "first_appearance": "2010年（Infdev 20100625）",
+    "usage_detail": "自然生成，不停产出生物，可用火把降低亮度压制。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%88%B7%E6%80%AA%E7%AC%BC"
+  },
+  {
+    "id": "lead",
+    "name": "拴绳",
+    "kind": "工具",
+    "desc": "拴绳（Lead）可以牵着大部分被动生物移动。",
+    "obtain": "四个线和一颗粘液球合成，或击杀流浪商人掉落。",
+    "first_appearance": "2013年（1.6.1）",
+    "usage_detail": "右键生物拴住，再右键栅栏固定，方便转移和管理。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%8B%B4%E7%BB%B3"
+  },
+  {
+    "id": "name_tag",
+    "name": "命名牌",
+    "kind": "用品",
+    "desc": "命名牌（Name Tag）可以给生物命名，阻止其自然消失。",
+    "obtain": "宝箱中找到，或钓鱼获取。",
+    "first_appearance": "2013年（1.6.1）",
+    "usage_detail": "在铁砧中重命名后右键生物使用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%89%8C"
+  },
+  {
+    "id": "saddle",
+    "name": "鞍",
+    "kind": "用品",
+    "desc": "鞍（Saddle）用于骑乘猪、炽足兽和驯服的马等。",
+    "obtain": "地牢、沙漠神殿等战利品箱中找到，钓鱼获得。",
+    "first_appearance": "2010年（Infdev 20100625）",
+    "usage_detail": "对可骑乘生物右键装备，然后右键骑乘。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%9E%8D"
+  },
+  {
+    "id": "clock",
+    "name": "时钟",
+    "kind": "用品",
+    "desc": "时钟（Clock）可以显示游戏中的时间位置。",
+    "obtain": "四个金锭和一个红石粉合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "观察太阳和月亮的位置，下界和末地中会不停旋转。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%97%B6%E9%92%9F"
+  },
+  {
+    "id": "compass",
+    "name": "指南针",
+    "kind": "用品",
+    "desc": "指南针（Compass）指向世界出生点或磁石位置。",
+    "obtain": "四个铁锭和一个红石粉合成。",
+    "first_appearance": "2010年（Alpha 1.0.8）",
+    "usage_detail": "指向世界重生点，对磁石使用后绑定并指向磁石。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%8C%87%E5%8D%97%E9%92%88"
+  },
+  {
+    "id": "enchanted_golden_apple",
+    "name": "附魔金苹果",
+    "kind": "食物",
+    "desc": "附魔金苹果（Enchanted Golden Apple）提供强大的生命恢复和抗性。",
+    "obtain": "无法合成，仅能在地牢、废弃矿井等战利品箱中找到。",
+    "first_appearance": "2010年（Beta 1.8）",
+    "usage_detail": "食用后获得伤害吸收IV、生命恢复V、防火和抗性，效果极强。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%99%84%E9%AD%94%E9%87%91%E8%8B%B9%E6%9E%9C"
+  },
+
+
+
+
+
+
+
+  {
+    "id": "wooden_sword",
+    "name": "木剑",
+    "kind": "武器",
+    "desc": "木剑（Wooden Sword）是游戏前期最易合成的近战武器。",
+    "obtain": "使用2块任意木板和1根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "造成4点（♥♥）伤害，基础近战武器，可用于清理蜘蛛网。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%89%91"
+  },
+  {
+    "id": "golden_sword",
+    "name": "金剑",
+    "kind": "武器",
+    "desc": "金剑（Golden Sword）拥有最高的附魔能力，但耐久极低。",
+    "obtain": "使用2个金锭和1根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "造成4点（♥♥）伤害，附魔属性出色，但基础伤害和耐久（32点）极低。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%89%91"
+  },
+  {
+    "id": "iron_sword",
+    "name": "铁剑",
+    "kind": "武器",
+    "desc": "铁剑（Iron Sword）是性价比较高的初期进阶武器。",
+    "obtain": "使用2个铁锭和1根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "造成6点（♥♥♥）伤害，是度过前中期最可靠的武器之一。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%89%91"
+  },
+  {
+    "id": "netherite_sword",
+    "name": "下界合金剑",
+    "kind": "武器",
+    "desc": "下界合金剑（Netherite Sword）是原版游戏中伤害最高的剑。",
+    "obtain": "在锻造台上使用一个下界合金锭升级钻石剑获得。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "造成8点（♥♥♥♥）伤害，不会被熔岩烧毁，耐久度高达2031。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E5%90%88%E9%87%91%E5%89%91"
+  },
+  {
+    "id": "wooden_axe",
+    "name": "木斧",
+    "kind": "工具",
+    "desc": "木斧（Wooden Axe）是基础的伐木工具。",
+    "obtain": "使用3块木板和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "快速破坏木质方块，基础攻击伤害7点，耐久度60。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%96%A7"
+  },
+  {
+    "id": "stone_axe",
+    "name": "石斧",
+    "kind": "工具",
+    "desc": "石斧（Stone Axe）是升级自木斧的初期伐木及武器。",
+    "obtain": "使用3个任意类圆石方块和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "伐木效率和伤害均高于木斧，基础攻击伤害9点，耐久度132。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%96%A7"
+  },
+  {
+    "id": "iron_axe",
+    "name": "铁斧",
+    "kind": "工具",
+    "desc": "铁斧（Iron Axe）兼顾了伐木效率和武器伤害。",
+    "obtain": "使用3个铁锭和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "伐木效率显著提升，基础攻击伤害9点，耐久度251。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%96%A7"
+  },
+  {
+    "id": "golden_axe",
+    "name": "金斧",
+    "kind": "工具",
+    "desc": "金斧（Golden Axe）是游戏内伐木速度最快的斧头。",
+    "obtain": "使用3个金锭和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "拥有最快的伐木速度，但耐久度仅33点，攻击伤害同木斧。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%96%A7"
+  },
+  {
+    "id": "diamond_axe",
+    "name": "钻石斧",
+    "kind": "工具",
+    "desc": "钻石斧（Diamond Axe）是顶级的伐木和武器工具。",
+    "obtain": "使用3颗钻石和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "效率极高，基础攻击伤害9点，耐久度1561。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%96%A7"
+  },
+  {
+    "id": "netherite_axe",
+    "name": "下界合金斧",
+    "kind": "工具",
+    "desc": "下界合金斧（Netherite Axe）拥有极高的耐久和伤害。",
+    "obtain": "在锻造台上使用一个下界合金锭升级钻石斧获得。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "最高耐久标识的斧，不会被熔岩烧毁，基础攻击伤害10点。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%96%A7"
+  },
+  {
+    "id": "wooden_pickaxe",
+    "name": "木镐",
+    "kind": "工具",
+    "desc": "木镐（Wooden Pickaxe）是生存模式下第一把必备工具。",
+    "obtain": "使用3块木板和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "可挖掘石头和煤矿，无法挖掘铁矿或更高级的矿石，耐久度59。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%95%90"
+  },
+  {
+    "id": "stone_pickaxe",
+    "name": "石镐",
+    "kind": "工具",
+    "desc": "石镐（Stone Pickaxe）是进入铁器时代的敲门砖。",
+    "obtain": "使用3个任意类圆石方块和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "可挖掘铁矿石和青金石，是不可或缺的过渡工具，耐久度131。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%95%90"
+  },
+  {
+    "id": "golden_pickaxe",
+    "name": "金镐",
+    "kind": "工具",
+    "desc": "金镐（Golden Pickaxe）是挖掘速度最快的镐。",
+    "obtain": "使用3个金锭和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "挖掘速度最快但耐久仅33点，不能挖掘金矿以上的矿物，附魔能力最强。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%95%90"
+  },
+  {
+    "id": "diamond_pickaxe",
+    "name": "钻石镐",
+    "kind": "工具",
+    "desc": "钻石镐（Diamond Pickaxe）是获取黑曜石和远古残骸的关键。",
+    "obtain": "使用3颗钻石和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "能开采所有矿石包括黑曜石，耐久度1561，是后期的核心工具。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%95%90"
+  },
+  {
+    "id": "netherite_pickaxe",
+    "name": "下界合金镐",
+    "kind": "工具",
+    "desc": "下界合金镐（Netherite Pickaxe）是原版终极镐。",
+    "obtain": "在锻造台上使用一个下界合金锭升级钻石镐获得。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "耐久度2031，可浮在熔岩上，拥有最高的挖掘等级和极佳的挖掘速度。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E5%90%88%E9%87%91%E9%95%90"
+  },
+  {
+    "id": "wooden_hoe",
+    "name": "木锄",
+    "kind": "工具",
+    "desc": "木锄（Wooden Hoe）是最简单的耕地工具。",
+    "obtain": "使用2块木板和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 20100206）",
+    "usage_detail": "将泥土、草方块转化为耕地，耐久度59。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%84"
+  },
+  {
+    "id": "stone_hoe",
+    "name": "石锄",
+    "kind": "工具",
+    "desc": "石锄（Stone Hoe）是木锄的升级版。",
+    "obtain": "使用2个任意类圆石方块和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 20100206）",
+    "usage_detail": "耕地，耐久度131，可以快速破坏干草块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%84"
+  },
+  {
+    "id": "iron_hoe",
+    "name": "铁锄",
+    "kind": "工具",
+    "desc": "铁锄（Iron Hoe）是性价比较高的耕地工具。",
+    "obtain": "使用2个铁锭和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 20100206）",
+    "usage_detail": "耕地，耐久度251，可作为基础农具长期使用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%84"
+  },
+  {
+    "id": "golden_hoe",
+    "name": "金锄",
+    "kind": "工具",
+    "desc": "金锄（Golden Hoe）的使用寿命很短但附魔属性最好。",
+    "obtain": "使用2个金锭和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Indev 20100206）",
+    "usage_detail": "耕地，耐久度仅33点，但拥有最高的附魔能力。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%84"
+  },
+  {
+    "id": "diamond_hoe",
+    "name": "钻石锄",
+    "kind": "工具",
+    "desc": "钻石锄（Diamond Hoe）是原版顶级的耕地工具。",
+    "obtain": "使用2颗钻石和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "耕地，耐久度1561，可以用作长期且高效的工具。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%84"
+  },
+  {
+    "id": "netherite_hoe",
+    "name": "下界合金锄",
+    "kind": "工具",
+    "desc": "下界合金锄（Netherite Hoe）是原版耐久最高的锄头。",
+    "obtain": "在锻造台上使用一个下界合金锭升级钻石锄获得。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "耕地，浮于熔岩，耐久度2031，可用来挑战“终极奉献”进度。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E5%90%88%E9%87%91%E9%94%84"
+  },
+  {
+    "id": "ic2_bronze_pickaxe",
+    "name": "青铜镐",
+    "kind": "工具",
+    "desc": "青铜镐（Bronze Pickaxe）是工业时代2模组中的初期工具，耐久和性能接近铁镐。",
+    "obtain": "【工业时代2模组】3个青铜锭 + 2根木棍在工作台合成。",
+    "first_appearance": "2011年（IC2）",
+    "usage_detail": "可挖掘铁矿等方块，耐久度351，略高于铁镐但低于钻石镐。",
+    "wiki_url": "https://wiki.industrial-craft.net/index.php?title=Bronze_Pickaxe"
+  },
+  {
+    "id": "ic2_mining_drill",
+    "name": "采矿钻头",
+    "kind": "工具",
+    "desc": "采矿钻头（Mining Drill）是工业时代2模组中标志性的电动工具，可充电。",
+    "obtain": "【工业时代2模组】使用驱动把手、铁板、电路板等材料合成。",
+    "first_appearance": "2011年（IC2）",
+    "usage_detail": "耗电挖掘，效率等同铁镐，可添加3x3或精准采集模式。",
+    "wiki_url": "https://wiki.industrial-craft.net/index.php?title=Mining_Drill"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+    "id": "leather_helmet",
+    "name": "皮革头盔",
+    "kind": "盔甲",
+    "desc": "皮革头盔（Leather Helmet）是游戏中最基础的头部防具。",
+    "obtain": "使用5个皮革在工作台按头盔形状合成。",
+    "first_appearance": "2010年（Alpha 1.0.8）",
+    "usage_detail": "提供1点（半格）护甲值，可染色，耐久度55。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%9A%AE%E9%9D%A9%E5%A4%B4%E7%9B%94"
+  },
+  {
+    "id": "leather_chestplate",
+    "name": "皮革外衣",
+    "kind": "盔甲",
+    "desc": "皮革外衣（Leather Tunic）是皮革制胸甲，提供基础防御。",
+    "obtain": "使用8个皮革在工作台按胸甲形状合成。",
+    "first_appearance": "2010年（Alpha 1.0.8）",
+    "usage_detail": "提供3点（1.5格）护甲值，可染色，耐久度80。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%9A%AE%E9%9D%A9%E5%A4%96%E8%A1%A3"
+  },
+  {
+    "id": "leather_leggings",
+    "name": "皮革护腿",
+    "kind": "盔甲",
+    "desc": "皮革护腿（Leather Pants）是游戏中最基础的腿部防具。",
+    "obtain": "使用7个皮革在工作台按护腿形状合成。",
+    "first_appearance": "2010年（Alpha 1.0.8）",
+    "usage_detail": "提供2点（1格）护甲值，可染色，耐久度75。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%9A%AE%E9%9D%A9%E6%8A%A4%E8%85%BF"
+  },
+  {
+    "id": "leather_boots",
+    "name": "皮革靴子",
+    "kind": "盔甲",
+    "desc": "皮革靴子（Leather Boots）是基础的脚部防具。",
+    "obtain": "使用4个皮革在工作台按靴子形状合成。",
+    "first_appearance": "2010年（Alpha 1.0.8）",
+    "usage_detail": "提供1点（半格）护甲值，可染色，穿着可平滑穿过细雪，耐久度65。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%9A%AE%E9%9D%A9%E9%9D%B4%E5%AD%90"
+  },
+  {
+    "id": "chainmail_helmet",
+    "name": "锁链头盔",
+    "kind": "盔甲",
+    "desc": "锁链头盔（Chainmail Helmet）是一种无法合成的中等头部防具。",
+    "obtain": "无法合成，可通过与盔甲匠村民交易或击杀穿着锁链盔甲的生物掉落获得。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "提供2点（1格）护甲值，耐久度165。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%81%E9%93%BE%E5%A4%B4%E7%9B%94"
+  },
+  {
+    "id": "chainmail_chestplate",
+    "name": "锁链胸甲",
+    "kind": "盔甲",
+    "desc": "锁链胸甲（Chainmail Chestplate）是无法合成的中等胸甲。",
+    "obtain": "无法合成，获取途径同锁链头盔。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "提供5点（2.5格）护甲值，耐久度240。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%81%E9%93%BE%E8%83%B8%E7%94%B2"
+  },
+  {
+    "id": "chainmail_leggings",
+    "name": "锁链护腿",
+    "kind": "盔甲",
+    "desc": "锁链护腿（Chainmail Leggings）是无法合成，通过交易或掉落获取。",
+    "obtain": "无法合成，获取途径同锁链头盔。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "提供4点（2格）护甲值，耐久度225。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%81%E9%93%BE%E6%8A%A4%E8%85%BF"
+  },
+  {
+    "id": "chainmail_boots",
+    "name": "锁链靴子",
+    "kind": "盔甲",
+    "desc": "锁链靴子（Chainmail Boots）无法合成，提供中等脚部防护。",
+    "obtain": "无法合成，获取途径同锁链头盔。",
+    "first_appearance": "2010年（Indev 0.31）",
+    "usage_detail": "提供1点（半格）护甲值，耐久度195。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%94%81%E9%93%BE%E9%9D%B4%E5%AD%90"
+  },
+  {
+    "id": "iron_helmet",
+    "name": "铁头盔",
+    "kind": "盔甲",
+    "desc": "铁头盔（Iron Helmet）是性价比较高的头部防具。",
+    "obtain": "使用5个铁锭在工作台按头盔形状合成。",
+    "first_appearance": "2010年（Infdev 20100618）",
+    "usage_detail": "提供2点（1格）护甲值，耐久度165。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%93%81%E5%A4%B4%E7%9B%94"
+  },
+  {
+    "id": "iron_chestplate",
+    "name": "铁胸甲",
+    "kind": "盔甲",
+    "desc": "铁胸甲（Iron Chestplate）能提供可观的防御力。",
+    "obtain": "使用8个铁锭在工作台按胸甲形状合成。",
+    "first_appearance": "2010年（Infdev 20100618）",
+    "usage_detail": "提供6点（3格）护甲值，耐久度240。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%93%81%E8%83%B8%E7%94%B2"
+  },
+  {
+    "id": "iron_leggings",
+    "name": "铁护腿",
+    "kind": "盔甲",
+    "desc": "铁护腿（Iron Leggings）提供均衡的腿部防护。",
+    "obtain": "使用7个铁锭在工作台按护腿形状合成。",
+    "first_appearance": "2010年（Infdev 20100618）",
+    "usage_detail": "提供5点（2.5格）护甲值，耐久度225。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%93%81%E6%8A%A4%E8%85%BF"
+  },
+  {
+    "id": "iron_boots",
+    "name": "铁靴子",
+    "kind": "盔甲",
+    "desc": "铁靴子（Iron Boots）提供基础的脚部防护。",
+    "obtain": "使用4个铁锭在工作台按靴子形状合成。",
+    "first_appearance": "2010年（Infdev 20100618）",
+    "usage_detail": "提供2点（1格）护甲值，耐久度195。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%93%81%E9%9D%B4%E5%AD%90"
+  },
+  {
+    "id": "golden_helmet",
+    "name": "金头盔",
+    "kind": "盔甲",
+    "desc": "金头盔（Golden Helmet）防御力低但附魔能力出色。",
+    "obtain": "使用5个金锭在工作台按头盔形状合成。",
+    "first_appearance": "2010年（Infdev 20100618）",
+    "usage_detail": "提供2点（1格）护甲值，耐久度77，附魔能力优于其他材质。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%87%91%E5%A4%B4%E7%9B%94"
+  },
+  {
+    "id": "golden_chestplate",
+    "name": "金胸甲",
+    "kind": "盔甲",
+    "desc": "金胸甲（Golden Chestplate）防御力低于铁甲，但附魔属性好。",
+    "obtain": "使用8个金锭在工作台按胸甲形状合成。",
+    "first_appearance": "2010年（Infdev 20100618）",
+    "usage_detail": "提供5点（2.5格）护甲值，耐久度112。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%87%91%E8%83%B8%E7%94%B2"
+  },
+  {
+    "id": "golden_leggings",
+    "name": "金护腿",
+    "kind": "盔甲",
+    "desc": "金护腿（Golden Leggings）防御力一般，但很受附魔玩法欢迎。",
+    "obtain": "使用7个金锭在工作台按护腿形状合成。",
+    "first_appearance": "2010年（Infdev 20100618）",
+    "usage_detail": "提供3点（1.5格）护甲值，耐久度105。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%87%91%E6%8A%A4%E8%85%BF"
+  },
+  {
+    "id": "golden_boots",
+    "name": "金靴子",
+    "kind": "盔甲",
+    "desc": "金靴子（Golden Boots）防御低，但潜行加速附魔概率高。",
+    "obtain": "使用4个金锭在工作台按靴子形状合成。",
+    "first_appearance": "2010年（Infdev 20100618）",
+    "usage_detail": "提供1点（半格）护甲值，耐久度91。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%87%91%E9%9D%B4%E5%AD%90"
+  },
+  {
+    "id": "diamond_helmet",
+    "name": "钻石头盔",
+    "kind": "盔甲",
+    "desc": "钻石头盔（Diamond Helmet）提供顶级的头部防护。",
+    "obtain": "使用5颗钻石在工作台按头盔形状合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "提供3点（1.5格）护甲值和2点盔甲韧性，耐久度363。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%92%BB%E7%9F%B3%E5%A4%B4%E7%9B%94"
+  },
+  {
+    "id": "diamond_chestplate",
+    "name": "钻石胸甲",
+    "kind": "盔甲",
+    "desc": "钻石胸甲（Diamond Chestplate）提供极高的防御力。",
+    "obtain": "使用8颗钻石在工作台按胸甲形状合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "提供8点（4格）护甲值和2点盔甲韧性，耐久度528。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%92%BB%E7%9F%B3%E8%83%B8%E7%94%B2"
+  },
+  {
+    "id": "diamond_leggings",
+    "name": "钻石护腿",
+    "kind": "盔甲",
+    "desc": "钻石护腿（Diamond Leggings）提供顶级的腿部防护。",
+    "obtain": "使用7颗钻石在工作台按护腿形状合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "提供6点（3格）护甲值和2点盔甲韧性，耐久度495。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%92%BB%E7%9F%B3%E6%8A%A4%E8%85%BF"
+  },
+  {
+    "id": "diamond_boots",
+    "name": "钻石靴子",
+    "kind": "盔甲",
+    "desc": "钻石靴子（Diamond Boots）提供顶级的脚部防护。",
+    "obtain": "使用4颗钻石在工作台按靴子形状合成。",
+    "first_appearance": "2010年（Alpha 1.0.14）",
+    "usage_detail": "提供3点（1.5格）护甲值和2点盔甲韧性，耐久度429。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%92%BB%E7%9F%B3%E9%9D%B4%E5%AD%90"
+  },
+  {
+    "id": "netherite_helmet",
+    "name": "下界合金头盔",
+    "kind": "盔甲",
+    "desc": "下界合金头盔（Netherite Helmet）是原版终极头部防具，拥有击退抗性。",
+    "obtain": "在锻造台上使用一个下界合金锭升级钻石头盔获得。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "提供3点（1.5格）护甲值、3点盔甲韧性和1点击退抗性，耐久度407。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E5%90%88%E9%87%91%E5%A4%B4%E7%9B%94"
+  },
+  {
+    "id": "netherite_chestplate",
+    "name": "下界合金胸甲",
+    "kind": "盔甲",
+    "desc": "下界合金胸甲（Netherite Chestplate）是原版防御力最高的胸甲。",
+    "obtain": "在锻造台上使用一个下界合金锭升级钻石胸甲获得。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "提供8点（4格）护甲值、3点盔甲韧性和1点击退抗性，耐久度592。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E5%90%88%E9%87%91%E8%83%B8%E7%94%B2"
+  },
+  {
+    "id": "netherite_leggings",
+    "name": "下界合金护腿",
+    "kind": "盔甲",
+    "desc": "下界合金护腿（Netherite Leggings）提供顶级的腿部防护和击退抗性。",
+    "obtain": "在锻造台上使用一个下界合金锭升级钻石护腿获得。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "提供6点（3格）护甲值、3点盔甲韧性和1点击退抗性，耐久度555。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E5%90%88%E9%87%91%E6%8A%A4%E8%85%BF"
+  },
+  {
+    "id": "netherite_boots",
+    "name": "下界合金靴子",
+    "kind": "盔甲",
+    "desc": "下界合金靴子（Netherite Boots）是原版最强脚部防具。",
+    "obtain": "在锻造台上使用一个下界合金锭升级钻石靴子获得。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "提供3点（1.5格）护甲值、3点盔甲韧性和1点击退抗性，耐久度481。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E4%B8%8B%E7%95%8C%E5%90%88%E9%87%91%E9%9D%B4%E5%AD%90"
+  },
+
+
+
+
+
+
+    {
+    "id": "man_from_the_fog_spawn_egg",
+    "name": "雾中人",
+    "kind": "生物",
+    "desc": "雾中人（The Man From The Fog）是一个恐怖模组中的标志性生物。一个缠满绷带的人形实体，会在雾中生成，悄然跟踪并惊吓玩家。",
+    "obtain": "【雾中人模组】在创造模式中通过生物蛋生成，或模组特定的生成条件下自然出现。",
+    "first_appearance": "2024年（网易版）",
+    "usage_detail": "提升游戏恐怖氛围，会出其不意地出现在玩家身边。需要玩家在浓雾环境中保持警惕。",
+    "wiki_url": "https://www.bilibili.com/video/BV1CJ4m1s7nu/"
+  },
+  {
+    "id": "the_man_from_the_fog_mod",
+    "name": "雾中人模组",
+    "kind": "模组",
+    "desc": "《雾中人》是网易版《我的世界》中一款高人气恐怖模组，添加了标志性生物“雾中人”及一系列恐怖音效与氛围。",
+    "obtain": "【木偶老人团队开发】本组件为付费模组，具体售价以网易《我的世界》资源中心实时显示为准。",
+    "first_appearance": "2024年（网易版）",
+    "usage_detail": "安装后游戏将变为恐怖生存，需在躲避雾中人追杀的同时完成冒险目标。",
+    "wiki_url": "https://mc.163.com/"
+  },
+
+
+
+
+
+    {
+    "id": "xray_mod_tian_lemon",
+    "name": "X光块+超级矿石",
+    "kind": "模组",
+    "desc": "“X光块+超级矿石”是网易版《我的世界》中一个知名的辅助模组，通过添加X光透视方块，帮助玩家快速定位和挖掘矿物。",
+    "obtain": "【甜柠檬工作室开发】本组件为付费模组，曾有售价为300钻石的记载，实际价格请以网易《我的世界》资源中心实时显示为准。",
+    "first_appearance": "2020年（网易版）",
+    "usage_detail": "合成并放置X光块即可透视地形，发现隐藏的钻石、铁等珍贵矿物。大幅降低挖矿难度与时间。",
+    "wiki_url": "https://www.wywyx.com/gonglue/495702.html"
+  },
+
+
+
+
+
+
+    {
+    "id": "spruce_log",
+    "name": "云杉原木",
+    "kind": "自然方块",
+    "desc": "云杉原木（Spruce Log）是云杉树的树干部分，主要生成于针叶林、积雪针叶林等寒冷生物群系。",
+    "obtain": "空手或任意工具破坏云杉树的树干获得，使用斧最快。",
+    "first_appearance": "2011年（Beta 1.2）",
+    "usage_detail": "合成云杉木板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "birch_log",
+    "name": "白桦原木",
+    "kind": "自然方块",
+    "desc": "白桦原木（Birch Log）是白桦树的树干部分，拥有白色树皮和黑色斑点纹理。",
+    "obtain": "空手或任意工具破坏白桦树的树干获得，使用斧最快。",
+    "first_appearance": "2011年（Beta 1.2）",
+    "usage_detail": "合成白桦木板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "jungle_log",
+    "name": "丛林原木",
+    "kind": "自然方块",
+    "desc": "丛林原木（Jungle Log）是丛林树的树干部分，拥有棕色树皮和偏绿的竖直条纹纹理。",
+    "obtain": "空手或任意工具破坏丛林树的树干获得，使用斧最快。",
+    "first_appearance": "2012年（1.2.1）",
+    "usage_detail": "合成丛林木板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "acacia_log",
+    "name": "金合欢原木",
+    "kind": "自然方块",
+    "desc": "金合欢原木（Acacia Log）是金合欢树的树干部分，外表为灰色树皮，内面为橙色。",
+    "obtain": "空手或任意工具破坏金合欢树的树干获得，使用斧最快。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "合成金合欢木板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "dark_oak_log",
+    "name": "深色橡木原木",
+    "kind": "自然方块",
+    "desc": "深色橡木原木（Dark Oak Log）是深色橡树的树干部分，拥有深棕色树皮纹理。",
+    "obtain": "空手或任意工具破坏深色橡树的树干获得，使用斧最快。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "合成深色橡木木板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "mangrove_log",
+    "name": "红树原木",
+    "kind": "自然方块",
+    "desc": "红树原木（Mangrove Log）是红树的树干部分，生成于红树林沼泽生物群系。",
+    "obtain": "空手或任意工具破坏红树的树干获得，使用斧最快。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "合成红树木板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "cherry_log",
+    "name": "樱花原木",
+    "kind": "自然方块",
+    "desc": "樱花原木（Cherry Log）是樱花树的树干部分，拥有粉色树皮纹理，生成于樱花树林生物群系。",
+    "obtain": "空手或任意工具破坏樱花树的树干获得，使用斧最快。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "合成樱花木板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "pale_oak_log",
+    "name": "苍白橡木原木",
+    "kind": "自然方块",
+    "desc": "苍白橡木原木（Pale Oak Log）是苍白橡树的树干部分，拥有灰白色树皮纹理。",
+    "obtain": "空手或任意工具破坏苍白橡树的树干获得，使用斧最快。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "合成苍白橡木木板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "crimson_stem",
+    "name": "绯红菌柄",
+    "kind": "自然方块",
+    "desc": "绯红菌柄（Crimson Stem）是下界巨型绯红菌的茎干部位，生成于绯红森林生物群系。",
+    "obtain": "空手或任意工具破坏巨型绯红菌的菌柄获得，使用斧最快。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "合成绯红木板、装饰，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8F%8C%E6%9F%84"
+  },
+  {
+    "id": "warped_stem",
+    "name": "诡异菌柄",
+    "kind": "自然方块",
+    "desc": "诡异菌柄（Warped Stem）是下界巨型诡异菌的茎干部位，拥有青色纹理，生成于诡异森林生物群系。",
+    "obtain": "空手或任意工具破坏巨型诡异菌的菌柄获得，使用斧最快。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "合成诡异木板、装饰，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8F%8C%E6%9F%84"
+  },
+  {
+    "id": "oak_wood",
+    "name": "橡木木头",
+    "kind": "建筑方块",
+    "desc": "橡木木头（Oak Wood）是一种六面皆为橡木树皮纹理的装饰性方块。",
+    "obtain": "使用4个橡木原木在工作台合成，获得3个。",
+    "first_appearance": "2014年（1.7.2）",
+    "usage_detail": "建筑装饰、合成营火等，可作为熔炉燃料（每块可烧炼1.5个物品）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "spruce_wood",
+    "name": "云杉木木头",
+    "kind": "建筑方块",
+    "desc": "云杉木木头（Spruce Wood）是一种六面皆为云杉木树皮纹理的装饰性方块。",
+    "obtain": "使用4个云杉原木在工作台合成，获得3个。",
+    "first_appearance": "2014年（1.7.2）",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "birch_wood",
+    "name": "白桦木木头",
+    "kind": "建筑方块",
+    "desc": "白桦木木头（Birch Wood）是一种六面皆为白桦木树皮纹理的装饰性方块。",
+    "obtain": "使用4个白桦原木在工作台合成，获得3个。",
+    "first_appearance": "2014年（1.7.2）",
+    "usage_detail": "建筑装饰、合成营火等，可作为熔炉燃料（每块可烧炼1.5个物品）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "jungle_wood",
+    "name": "丛林木木头",
+    "kind": "建筑方块",
+    "desc": "丛林木木头（Jungle Wood）是一种六面皆为丛林木树皮纹理的装饰性方块。",
+    "obtain": "使用4个丛林原木在工作台合成，获得3个。",
+    "first_appearance": "2014年（1.7.2）",
+    "usage_detail": "建筑装饰、合成营火等，可作为熔炉燃料（每块可烧炼1.5个物品）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "acacia_wood",
+    "name": "金合欢木木头",
+    "kind": "建筑方块",
+    "desc": "金合欢木木头（Acacia Wood）是一种六面皆为金合欢木树皮纹理的装饰性方块。",
+    "obtain": "使用4个金合欢原木在工作台合成，获得3个。",
+    "first_appearance": "2014年（1.7.2）",
+    "usage_detail": "建筑装饰、合成营火等，可作为熔炉燃料（每块可烧炼1.5个物品）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "dark_oak_wood",
+    "name": "深色橡木木头",
+    "kind": "建筑方块",
+    "desc": "深色橡木木头（Dark Oak Wood）是一种六面皆为深色橡木树皮纹理的装饰性方块。",
+    "obtain": "使用4个深色橡木原木在工作台合成，获得3个。",
+    "first_appearance": "2014年（1.7.2）",
+    "usage_detail": "建筑装饰、合成营火等，可作为熔炉燃料（每块可烧炼1.5个物品）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "mangrove_wood",
+    "name": "红树木木头",
+    "kind": "建筑方块",
+    "desc": "红树木木头（Mangrove Wood）是一种六面皆为红树树皮纹理的装饰性方块。",
+    "obtain": "使用4个红树原木在工作台合成，获得3个。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "建筑装饰、合成营火等，可作为熔炉燃料（每块可烧炼1.5个物品）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "cherry_wood",
+    "name": "樱花木木头",
+    "kind": "建筑方块",
+    "desc": "樱花木木头（Cherry Wood）是一种六面皆为樱花木树皮纹理的装饰性方块。",
+    "obtain": "使用4个樱花原木在工作台合成，获得3个。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "建筑装饰、合成营火等，可作为熔炉燃料（每块可烧炼1.5个物品）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "pale_oak_wood",
+    "name": "苍白橡木木头",
+    "kind": "建筑方块",
+    "desc": "苍白橡木木头（Pale Oak Wood）是一种六面皆为苍白橡木树皮纹理的装饰性方块。",
+    "obtain": "使用4个苍白橡木原木在工作台合成，获得3个。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "建筑装饰、合成营火等，可作为熔炉燃料（每块可烧炼1.5个物品）。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "crimson_hyphae",
+    "name": "绯红菌核",
+    "kind": "建筑方块",
+    "desc": "绯红菌核（Crimson Hyphae）是一种六面皆为绯红菌皮纹理的装饰性方块。",
+    "obtain": "使用4个绯红菌柄在工作台合成，获得3个。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "建筑装饰、合成营火等，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8F%8C%E6%A0%B8"
+  },
+  {
+    "id": "warped_hyphae",
+    "name": "诡异菌核",
+    "kind": "建筑方块",
+    "desc": "诡异菌核（Warped Hyphae）是一种六面皆为诡异菌皮纹理的装饰性方块。",
+    "obtain": "使用4个诡异菌柄在工作台合成，获得3个。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "建筑装饰、合成营火等，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8F%8C%E6%A0%B8"
+  },
+  {
+    "id": "bamboo_block",
+    "name": "竹块",
+    "kind": "建筑方块",
+    "desc": "竹块（Block of Bamboo）是一种由竹子合成的装饰性方块，纹理类似捆扎的竹竿。",
+    "obtain": "使用9个竹子在工作台合成。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "合成竹板、作为熔炉燃料（每块可烧炼1.5个物品）、建筑装饰。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%AB%B9%E5%9D%97"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+    "id": "oak_planks",
+    "name": "橡木木板",
+    "kind": "建筑方块",
+    "desc": "橡木木板（Oak Planks）是用橡木原木合成的建筑材料。",
+    "obtain": "一个橡木原木合成四块木板。",
+    "first_appearance": "2009年（Classic）",
+    "usage_detail": "基础建材、合成各种木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "spruce_planks",
+    "name": "云杉木板",
+    "kind": "建筑方块",
+    "desc": "云杉木板（Spruce Planks）是用云杉原木合成的建筑材料。",
+    "obtain": "一个云杉原木合成四块木板。",
+    "first_appearance": "2011年（Beta 1.2）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "birch_planks",
+    "name": "白桦木板",
+    "kind": "建筑方块",
+    "desc": "白桦木板（Birch Planks）是用白桦原木合成的建筑材料。",
+    "obtain": "一个白桦原木合成四块木板。",
+    "first_appearance": "2011年（Beta 1.2）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "jungle_planks",
+    "name": "丛林木板",
+    "kind": "建筑方块",
+    "desc": "丛林木板（Jungle Planks）是用丛林原木合成的建筑材料。",
+    "obtain": "一个丛林原木合成四块木板。",
+    "first_appearance": "2012年（1.2.1）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "acacia_planks",
+    "name": "金合欢木板",
+    "kind": "建筑方块",
+    "desc": "金合欢木板（Acacia Planks）是用金合欢原木合成的建筑材料。",
+    "obtain": "一个金合欢原木合成四块木板。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "dark_oak_planks",
+    "name": "深色橡木木板",
+    "kind": "建筑方块",
+    "desc": "深色橡木木板（Dark Oak Planks）是用深色橡木原木合成的建筑材料。",
+    "obtain": "一个深色橡木原木合成四块木板。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "mangrove_planks",
+    "name": "红树木板",
+    "kind": "建筑方块",
+    "desc": "红树木板（Mangrove Planks）是用红树原木合成的建筑材料。",
+    "obtain": "一个红树原木合成四块木板。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "cherry_planks",
+    "name": "樱花木板",
+    "kind": "建筑方块",
+    "desc": "樱花木板（Cherry Planks）是用樱花原木合成的建筑材料。",
+    "obtain": "一个樱花原木合成四块木板。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "pale_oak_planks",
+    "name": "苍白橡木木板",
+    "kind": "建筑方块",
+    "desc": "苍白橡木木板（Pale Oak Planks）是用苍白橡木原木合成的建筑材料。",
+    "obtain": "一个苍白橡木原木合成四块木板。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "bamboo_planks",
+    "name": "竹板",
+    "kind": "建筑方块",
+    "desc": "竹板（Bamboo Planks）是用竹块合成的建筑材料。",
+    "obtain": "一个竹块合成两块竹板。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "基础建材，合成竹制工具、容器、门等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "crimson_planks",
+    "name": "绯红木板",
+    "kind": "建筑方块",
+    "desc": "绯红木板（Crimson Planks）是用绯红菌柄合成的建筑材料。",
+    "obtain": "一个绯红菌柄合成四块木板。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "warped_planks",
+    "name": "诡异木板",
+    "kind": "建筑方块",
+    "desc": "诡异木板（Warped Planks）是用诡异菌柄合成的建筑材料。",
+    "obtain": "一个诡异菌柄合成四块木板。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "基础建材，合成对应的木质工具、容器、门等，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E6%9D%BF"
+  },
+  {
+    "id": "stripped_oak_log",
+    "name": "去皮橡木原木",
+    "kind": "建筑方块",
+    "desc": "去皮橡木原木（Stripped Oak Log）是用斧右键橡木原木获得的去皮变种。",
+    "obtain": "用斧对着放置的橡木原木使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮橡木木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_spruce_log",
+    "name": "去皮云杉原木",
+    "kind": "建筑方块",
+    "desc": "去皮云杉原木（Stripped Spruce Log）是用斧右键云杉原木获得的去皮变种。",
+    "obtain": "用斧对着放置的云杉原木使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮云杉木木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_birch_log",
+    "name": "去皮白桦原木",
+    "kind": "建筑方块",
+    "desc": "去皮白桦原木（Stripped Birch Log）是用斧右键白桦原木获得的去皮变种。",
+    "obtain": "用斧对着放置的白桦原木使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮白桦木木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_jungle_log",
+    "name": "去皮丛林原木",
+    "kind": "建筑方块",
+    "desc": "去皮丛林原木（Stripped Jungle Log）是用斧右键丛林原木获得的去皮变种。",
+    "obtain": "用斧对着放置的丛林原木使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮丛林木木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_acacia_log",
+    "name": "去皮金合欢原木",
+    "kind": "建筑方块",
+    "desc": "去皮金合欢原木（Stripped Acacia Log）是用斧右键金合欢原木获得的去皮变种。",
+    "obtain": "用斧对着放置的金合欢原木使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮金合欢木木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_dark_oak_log",
+    "name": "去皮深色橡木原木",
+    "kind": "建筑方块",
+    "desc": "去皮深色橡木原木（Stripped Dark Oak Log）是用斧右键深色橡木原木获得的去皮变种。",
+    "obtain": "用斧对着放置的深色橡木原木使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮深色橡木木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_mangrove_log",
+    "name": "去皮红树原木",
+    "kind": "建筑方块",
+    "desc": "去皮红树原木（Stripped Mangrove Log）是用斧右键红树原木获得的去皮变种。",
+    "obtain": "用斧对着放置的红树原木使用右键即可去皮。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮红树木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_cherry_log",
+    "name": "去皮樱花原木",
+    "kind": "建筑方块",
+    "desc": "去皮樱花原木（Stripped Cherry Log）是用斧右键樱花原木获得的去皮变种。",
+    "obtain": "用斧对着放置的樱花原木使用右键即可去皮。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮樱花木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_pale_oak_log",
+    "name": "去皮苍白橡木原木",
+    "kind": "建筑方块",
+    "desc": "去皮苍白橡木原木（Stripped Pale Oak Log）是用斧右键苍白橡木原木获得的去皮变种。",
+    "obtain": "用斧对着放置的苍白橡木原木使用右键即可去皮。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成去皮苍白橡木木头。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8E%9F%E6%9C%A8"
+  },
+  {
+    "id": "stripped_crimson_stem",
+    "name": "去皮绯红菌柄",
+    "kind": "建筑方块",
+    "desc": "去皮绯红菌柄（Stripped Crimson Stem）是用斧右键绯红菌柄获得的去皮变种。",
+    "obtain": "用斧对着放置的绯红菌柄使用右键即可去皮。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "建筑装饰，合成去皮绯红菌核，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8F%8C%E6%9F%84"
+  },
+  {
+    "id": "stripped_warped_stem",
+    "name": "去皮诡异菌柄",
+    "kind": "建筑方块",
+    "desc": "去皮诡异菌柄（Stripped Warped Stem）是用斧右键诡异菌柄获得的去皮变种。",
+    "obtain": "用斧对着放置的诡异菌柄使用右键即可去皮。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "建筑装饰，合成去皮诡异菌核，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8F%8C%E6%9F%84"
+  },
+  {
+    "id": "stripped_oak_wood",
+    "name": "去皮橡木木头",
+    "kind": "建筑方块",
+    "desc": "去皮橡木木头（Stripped Oak Wood）是用斧右键橡木木头获得的去皮变种。",
+    "obtain": "用斧对着放置的橡木木头使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_spruce_wood",
+    "name": "去皮云杉木木头",
+    "kind": "建筑方块",
+    "desc": "去皮云杉木木头（Stripped Spruce Wood）是用斧右键云杉木木头获得的去皮变种。",
+    "obtain": "用斧对着放置的云杉木木头使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_birch_wood",
+    "name": "去皮白桦木木头",
+    "kind": "建筑方块",
+    "desc": "去皮白桦木木头（Stripped Birch Wood）是用斧右键白桦木木头获得的去皮变种。",
+    "obtain": "用斧对着放置的白桦木木头使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_jungle_wood",
+    "name": "去皮丛林木木头",
+    "kind": "建筑方块",
+    "desc": "去皮丛林木木头（Stripped Jungle Wood）是用斧右键丛林木木头获得的去皮变种。",
+    "obtain": "用斧对着放置的丛林木木头使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_acacia_wood",
+    "name": "去皮金合欢木木头",
+    "kind": "建筑方块",
+    "desc": "去皮金合欢木木头（Stripped Acacia Wood）是用斧右键金合欢木木头获得的去皮变种。",
+    "obtain": "用斧对着放置的金合欢木木头使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_dark_oak_wood",
+    "name": "去皮深色橡木木头",
+    "kind": "建筑方块",
+    "desc": "去皮深色橡木木头（Stripped Dark Oak Wood）是用斧右键深色橡木木头获得的去皮变种。",
+    "obtain": "用斧对着放置的深色橡木木头使用右键即可去皮。",
+    "first_appearance": "2018年（1.13）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_mangrove_wood",
+    "name": "去皮红树木头",
+    "kind": "建筑方块",
+    "desc": "去皮红树木头（Stripped Mangrove Wood）是用斧右键红树木头获得的去皮变种。",
+    "obtain": "用斧对着放置的红树木头使用右键即可去皮。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_cherry_wood",
+    "name": "去皮樱花木头",
+    "kind": "建筑方块",
+    "desc": "去皮樱花木头（Stripped Cherry Wood）是用斧右键樱花木头获得的去皮变种。",
+    "obtain": "用斧对着放置的樱花木头使用右键即可去皮。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_pale_oak_wood",
+    "name": "去皮苍白橡木木头",
+    "kind": "建筑方块",
+    "desc": "去皮苍白橡木木头（Stripped Pale Oak Wood）是用斧右键苍白橡木木头获得的去皮变种。",
+    "obtain": "用斧对着放置的苍白橡木木头使用右键即可去皮。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%9C%A8%E5%A4%B4"
+  },
+  {
+    "id": "stripped_crimson_hyphae",
+    "name": "去皮绯红菌核",
+    "kind": "建筑方块",
+    "desc": "去皮绯红菌核（Stripped Crimson Hyphae）是用斧右键绯红菌核获得的去皮变种。",
+    "obtain": "用斧对着放置的绯红菌核使用右键即可去皮。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "建筑装饰，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8F%8C%E6%A0%B8"
+  },
+  {
+    "id": "stripped_warped_hyphae",
+    "name": "去皮诡异菌核",
+    "kind": "建筑方块",
+    "desc": "去皮诡异菌核（Stripped Warped Hyphae）是用斧右键诡异菌核获得的去皮变种。",
+    "obtain": "用斧对着放置的诡异菌核使用右键即可去皮。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "建筑装饰，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E8%8F%8C%E6%A0%B8"
+  },
+  {
+    "id": "stripped_bamboo_block",
+    "name": "去皮竹块",
+    "kind": "建筑方块",
+    "desc": "去皮竹块（Stripped Bamboo Block）是用斧右键竹块获得的去皮变种。",
+    "obtain": "用斧对着放置的竹块使用右键即可去皮。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "建筑装饰，可作为熔炉燃料，合成竹板等。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E7%AB%B9%E5%9D%97"
+  },
+  {
+    "id": "oak_slab",
+    "name": "橡木台阶",
+    "kind": "建筑方块",
+    "desc": "橡木台阶（Oak Slab）是橡木的半砖版本。",
+    "obtain": "使用3个橡木木板在工作台合成，获得6个。",
+    "first_appearance": "2012年（1.0.0）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "spruce_slab",
+    "name": "云杉木台阶",
+    "kind": "建筑方块",
+    "desc": "云杉木台阶（Spruce Slab）是云杉木的半砖版本。",
+    "obtain": "使用3个云杉木板在工作台合成，获得6个。",
+    "first_appearance": "2012年（1.0.0）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "birch_slab",
+    "name": "白桦木台阶",
+    "kind": "建筑方块",
+    "desc": "白桦木台阶（Birch Slab）是白桦木的半砖版本。",
+    "obtain": "使用3个白桦木板在工作台合成，获得6个。",
+    "first_appearance": "2012年（1.0.0）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "jungle_slab",
+    "name": "丛林木台阶",
+    "kind": "建筑方块",
+    "desc": "丛林木台阶（Jungle Slab）是丛林木的半砖版本。",
+    "obtain": "使用3个丛林木板在工作台合成，获得6个。",
+    "first_appearance": "2012年（1.0.0）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "acacia_slab",
+    "name": "金合欢木台阶",
+    "kind": "建筑方块",
+    "desc": "金合欢木台阶（Acacia Slab）是金合欢木的半砖版本。",
+    "obtain": "使用3个金合欢木板在工作台合成，获得6个。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "dark_oak_slab",
+    "name": "深色橡木台阶",
+    "kind": "建筑方块",
+    "desc": "深色橡木台阶（Dark Oak Slab）是深色橡木的半砖版本。",
+    "obtain": "使用3个深色橡木木板在工作台合成，获得6个。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "mangrove_slab",
+    "name": "红树木台阶",
+    "kind": "建筑方块",
+    "desc": "红树木台阶（Mangrove Slab）是红树木的半砖版本。",
+    "obtain": "使用3个红树木板在工作台合成，获得6个。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "cherry_slab",
+    "name": "樱花木台阶",
+    "kind": "建筑方块",
+    "desc": "樱花木台阶（Cherry Slab）是樱花木的半砖版本。",
+    "obtain": "使用3个樱花木板在工作台合成，获得6个。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "pale_oak_slab",
+    "name": "苍白橡木台阶",
+    "kind": "建筑方块",
+    "desc": "苍白橡木台阶（Pale Oak Slab）是苍白橡木的半砖版本。",
+    "obtain": "使用3个苍白橡木木板在工作台合成，获得6个。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "bamboo_slab",
+    "name": "竹台阶",
+    "kind": "建筑方块",
+    "desc": "竹台阶（Bamboo Slab）是竹板的半砖版本。",
+    "obtain": "使用3个竹板在工作台合成，获得6个。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "crimson_slab",
+    "name": "绯红木台阶",
+    "kind": "建筑方块",
+    "desc": "绯红木台阶（Crimson Slab）是绯红木板的半砖版本。",
+    "obtain": "使用3个绯红木板在工作台合成，获得6个。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "warped_slab",
+    "name": "诡异木台阶",
+    "kind": "建筑方块",
+    "desc": "诡异木台阶（Warped Slab）是诡异木板的半砖版本。",
+    "obtain": "使用3个诡异木板在工作台合成，获得6个。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "建筑装饰，可上下合并成完整方块，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E5%8F%B0%E9%98%B6"
+  },
+  {
+    "id": "oak_fence",
+    "name": "橡木栅栏",
+    "kind": "建筑方块",
+    "desc": "橡木栅栏（Oak Fence）是橡木制成的障碍物，高度为1.5格。",
+    "obtain": "使用4个橡木木板和2根木棍在工作台合成。",
+    "first_appearance": "2010年（Alpha 1.0.17）",
+    "usage_detail": "装饰、围栏，可与栅栏门连接，生物一般无法跳过。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "spruce_fence",
+    "name": "云杉木栅栏",
+    "kind": "建筑方块",
+    "desc": "云杉木栅栏（Spruce Fence）是云杉木制成的障碍物。",
+    "obtain": "使用4个云杉木板和2根木棍在工作台合成。",
+    "first_appearance": "2011年（Beta 1.2）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "birch_fence",
+    "name": "白桦木栅栏",
+    "kind": "建筑方块",
+    "desc": "白桦木栅栏（Birch Fence）是白桦木制成的障碍物。",
+    "obtain": "使用4个白桦木板和2根木棍在工作台合成。",
+    "first_appearance": "2011年（Beta 1.2）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "jungle_fence",
+    "name": "丛林木栅栏",
+    "kind": "建筑方块",
+    "desc": "丛林木栅栏（Jungle Fence）是丛林木制成的障碍物。",
+    "obtain": "使用4个丛林木板和2根木棍在工作台合成。",
+    "first_appearance": "2012年（1.2.1）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "acacia_fence",
+    "name": "金合欢木栅栏",
+    "kind": "建筑方块",
+    "desc": "金合欢木栅栏（Acacia Fence）是金合欢木制成的障碍物。",
+    "obtain": "使用4个金合欢木板和2根木棍在工作台合成。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "dark_oak_fence",
+    "name": "深色橡木栅栏",
+    "kind": "建筑方块",
+    "desc": "深色橡木栅栏（Dark Oak Fence）是深色橡木制成的障碍物。",
+    "obtain": "使用4个深色橡木木板和2根木棍在工作台合成。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "mangrove_fence",
+    "name": "红树木栅栏",
+    "kind": "建筑方块",
+    "desc": "红树木栅栏（Mangrove Fence）是红树木制成的障碍物。",
+    "obtain": "使用4个红树木板和2根木棍在工作台合成。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "cherry_fence",
+    "name": "樱花木栅栏",
+    "kind": "建筑方块",
+    "desc": "樱花木栅栏（Cherry Fence）是樱花木制成的障碍物。",
+    "obtain": "使用4个樱花木板和2根木棍在工作台合成。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "pale_oak_fence",
+    "name": "苍白橡木栅栏",
+    "kind": "建筑方块",
+    "desc": "苍白橡木栅栏（Pale Oak Fence）是苍白橡木制成的障碍物。",
+    "obtain": "使用4个苍白橡木木板和2根木棍在工作台合成。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "bamboo_fence",
+    "name": "竹栅栏",
+    "kind": "建筑方块",
+    "desc": "竹栅栏（Bamboo Fence）是用竹板制成的障碍物。",
+    "obtain": "使用4个竹板和2根木棍在工作台合成。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "装饰、围栏，与木栅栏功能相同。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "crimson_fence",
+    "name": "绯红木栅栏",
+    "kind": "建筑方块",
+    "desc": "绯红木栅栏（Crimson Fence）是用绯红木板制成的障碍物，不可燃。",
+    "obtain": "使用4个绯红木板和2根木棍在工作台合成。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "装饰、围栏，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "warped_fence",
+    "name": "诡异木栅栏",
+    "kind": "建筑方块",
+    "desc": "诡异木栅栏（Warped Fence）是用诡异木板制成的障碍物，不可燃。",
+    "obtain": "使用4个诡异木板和2根木棍在工作台合成。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "装饰、围栏，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%A0%85%E6%A0%8F"
+  },
+  {
+    "id": "oak_door",
+    "name": "橡木门",
+    "kind": "红石元件",
+    "desc": "橡木门（Oak Door）是橡木制成的可开关的入口。",
+    "obtain": "使用6个橡木木板在工作台合成，获得3个。",
+    "first_appearance": "2010年（Alpha 1.0.1）",
+    "usage_detail": "提供阻隔，可被右键或红石信号开启，僵尸可破坏。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "spruce_door",
+    "name": "云杉木门",
+    "kind": "红石元件",
+    "desc": "云杉木门（Spruce Door）是云杉木制成的门。",
+    "obtain": "使用6个云杉木板在工作台合成，获得3个。",
+    "first_appearance": "2011年（Beta 1.2）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "birch_door",
+    "name": "白桦木门",
+    "kind": "红石元件",
+    "desc": "白桦木门（Birch Door）是白桦木制成的门。",
+    "obtain": "使用6个白桦木板在工作台合成，获得3个。",
+    "first_appearance": "2011年（Beta 1.2）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "jungle_door",
+    "name": "丛林木门",
+    "kind": "红石元件",
+    "desc": "丛林木门（Jungle Door）是丛林木制成的门。",
+    "obtain": "使用6个丛林木板在工作台合成，获得3个。",
+    "first_appearance": "2012年（1.2.1）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "acacia_door",
+    "name": "金合欢木门",
+    "kind": "红石元件",
+    "desc": "金合欢木门（Acacia Door）是金合欢木制成的门。",
+    "obtain": "使用6个金合欢木板在工作台合成，获得3个。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "dark_oak_door",
+    "name": "深色橡木门",
+    "kind": "红石元件",
+    "desc": "深色橡木门（Dark Oak Door）是深色橡木制成的门。",
+    "obtain": "使用6个深色橡木木板在工作台合成，获得3个。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "mangrove_door",
+    "name": "红树木门",
+    "kind": "红石元件",
+    "desc": "红树木门（Mangrove Door）是红树木制成的门。",
+    "obtain": "使用6个红树木板在工作台合成，获得3个。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "cherry_door",
+    "name": "樱花木门",
+    "kind": "红石元件",
+    "desc": "樱花木门（Cherry Door）是樱花木制成的门。",
+    "obtain": "使用6个樱花木板在工作台合成，获得3个。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "pale_oak_door",
+    "name": "苍白橡木门",
+    "kind": "红石元件",
+    "desc": "苍白橡木门（Pale Oak Door）是苍白橡木制成的门。",
+    "obtain": "使用6个苍白橡木木板在工作台合成，获得3个。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "bamboo_door",
+    "name": "竹门",
+    "kind": "红石元件",
+    "desc": "竹门（Bamboo Door）是竹板制成的门。",
+    "obtain": "使用6个竹板在工作台合成，获得3个。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "同橡木门，装饰和阻隔作用。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "crimson_door",
+    "name": "绯红木门",
+    "kind": "红石元件",
+    "desc": "绯红木门（Crimson Door）是绯红木板制成的门，不可燃。",
+    "obtain": "使用6个绯红木板在工作台合成，获得3个。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "同木门，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "warped_door",
+    "name": "诡异木门",
+    "kind": "红石元件",
+    "desc": "诡异木门（Warped Door）是诡异木板制成的门，不可燃。",
+    "obtain": "使用6个诡异木板在工作台合成，获得3个。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "同木门，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E9%97%A8"
+  },
+  {
+    "id": "oak_trapdoor",
+    "name": "橡木活板门",
+    "kind": "红石元件",
+    "desc": "橡木活板门（Oak Trapdoor）是橡木制成的水平门。",
+    "obtain": "使用6个橡木木板在工作台合成，获得2个。",
+    "first_appearance": "2012年（1.4.2）",
+    "usage_detail": "可放置在方块的顶部或底部，通过右键或红石开关。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "spruce_trapdoor",
+    "name": "云杉木活板门",
+    "kind": "红石元件",
+    "desc": "云杉木活板门（Spruce Trapdoor）是云杉木制成的活板门。",
+    "obtain": "使用6个云杉木板在工作台合成，获得2个。",
+    "first_appearance": "2013年（1.5）",
+    "usage_detail": "同橡木活板门，装饰和功能性入口。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "birch_trapdoor",
+    "name": "白桦木活板门",
+    "kind": "红石元件",
+    "desc": "白桦木活板门（Birch Trapdoor）是白桦木制成的活板门。",
+    "obtain": "使用6个白桦木板在工作台合成，获得2个。",
+    "first_appearance": "2013年（1.5）",
+    "usage_detail": "同橡木活板门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "jungle_trapdoor",
+    "name": "丛林木活板门",
+    "kind": "红石元件",
+    "desc": "丛林木活板门（Jungle Trapdoor）是丛林木制成的活板门。",
+    "obtain": "使用6个丛林木板在工作台合成，获得2个。",
+    "first_appearance": "2013年（1.5）",
+    "usage_detail": "同橡木活板门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "acacia_trapdoor",
+    "name": "金合欢木活板门",
+    "kind": "红石元件",
+    "desc": "金合欢木活板门（Acacia Trapdoor）是金合欢木制成的活板门。",
+    "obtain": "使用6个金合欢木板在工作台合成，获得2个。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "同橡木活板门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "dark_oak_trapdoor",
+    "name": "深色橡木活板门",
+    "kind": "红石元件",
+    "desc": "深色橡木活板门（Dark Oak Trapdoor）是深色橡木制成的活板门。",
+    "obtain": "使用6个深色橡木木板在工作台合成，获得2个。",
+    "first_appearance": "2013年（1.7.2）",
+    "usage_detail": "同橡木活板门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "mangrove_trapdoor",
+    "name": "红树木活板门",
+    "kind": "红石元件",
+    "desc": "红树木活板门（Mangrove Trapdoor）是红树木制成的活板门。",
+    "obtain": "使用6个红树木板在工作台合成，获得2个。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "同橡木活板门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "cherry_trapdoor",
+    "name": "樱花木活板门",
+    "kind": "红石元件",
+    "desc": "樱花木活板门（Cherry Trapdoor）是樱花木制成的活板门。",
+    "obtain": "使用6个樱花木板在工作台合成，获得2个。",
+    "first_appearance": "2023年（1.20）",
+    "usage_detail": "同橡木活板门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "pale_oak_trapdoor",
+    "name": "苍白橡木活板门",
+    "kind": "红石元件",
+    "desc": "苍白橡木活板门（Pale Oak Trapdoor）是苍白橡木制成的活板门。",
+    "obtain": "使用6个苍白橡木木板在工作台合成，获得2个。",
+    "first_appearance": "2024年（1.21.2）",
+    "usage_detail": "同橡木活板门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "bamboo_trapdoor",
+    "name": "竹活板门",
+    "kind": "红石元件",
+    "desc": "竹活板门（Bamboo Trapdoor）是竹板制成的活板门。",
+    "obtain": "使用6个竹板在工作台合成，获得2个。",
+    "first_appearance": "2022年（1.19）",
+    "usage_detail": "同橡木活板门。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "crimson_trapdoor",
+    "name": "绯红木活板门",
+    "kind": "红石元件",
+    "desc": "绯红木活板门（Crimson Trapdoor）是绯红木板制成的活板门，不可燃。",
+    "obtain": "使用6个绯红木板在工作台合成，获得2个。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "同橡木活板门，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  },
+  {
+    "id": "warped_trapdoor",
+    "name": "诡异木活板门",
+    "kind": "红石元件",
+    "desc": "诡异木活板门（Warped Trapdoor）是诡异木板制成的活板门，不可燃。",
+    "obtain": "使用6个诡异木板在工作台合成，获得2个。",
+    "first_appearance": "2020年（1.16）",
+    "usage_detail": "同橡木活板门，不可作为熔炉燃料。",
+    "wiki_url": "https://zh.minecraft.wiki/w/%E6%B4%BB%E6%9D%BF%E9%97%A8"
+  }
+]
