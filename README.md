@@ -20,7 +20,7 @@ MineCodes是一个基于electron构建的项目，它的主程序位于`index.ht
 ![输入图片说明](https://raw.githubusercontent.com/Zionyas-Van/stackedit-app-data/master/imgs/2026-05-01/bkLneyk79MKLjpiY.png)
 
 MineCodes采用了 Google 的质感设计。主界面可以查阅 Minecraft 的指令，并详细了解每一个指令的作用和用法。
-例如，当您查阅`/gamemode`指令时，您会详细指导他的作用是：
+例如，当您查阅`/gamemode`指令时，您会详细知道它的作用是：
 >模式：creative（创造模式，资源无限可飞行）、survival（生存模式，有血量和饥饿条）、adventure（冒险模式，不可破坏方块）、spectator（旁观模式，穿墙飞行但无法互动）。小技巧：也可以用数字简写替代，0=生存，1=创造，2=冒险，3=旁观。后面加上玩家名可以单独帮别人切换，如 /gamemode creative Steve。
 ---
 如果你觉得某个指令很实用，但又非常难记住，你可以收藏它：
