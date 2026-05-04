@@ -1,56 +1,66 @@
 /* ===== 1. 设计令牌 (Design Tokens) ===== */
 :root {
-  /* ----- Google Play 风格动态颜色系统（浅色主题） ----- */
+  /* ===== Material Design 3 浅色色彩方案 ===== */
   --md-sys-color-primary: #1A73E8;
   --md-sys-color-on-primary: #FFFFFF;
   --md-sys-color-primary-container: #D3E3FD;
   --md-sys-color-on-primary-container: #001D35;
-  
+
   --md-sys-color-secondary: #5F6368;
   --md-sys-color-on-secondary: #FFFFFF;
   --md-sys-color-secondary-container: #E8EAED;
   --md-sys-color-on-secondary-container: #1F1F1F;
-  
+
   --md-sys-color-tertiary: #1E8E3E;
   --md-sys-color-on-tertiary: #FFFFFF;
   --md-sys-color-tertiary-container: #CEEAD6;
   --md-sys-color-on-tertiary-container: #0D2B13;
-  
+
   --md-sys-color-error: #D93025;
   --md-sys-color-on-error: #FFFFFF;
   --md-sys-color-error-container: #FCE8E6;
   --md-sys-color-on-error-container: #8C1D18;
-  
+
+  /* 表面色组 (Surface) 和 背景色 */
   --md-sys-color-background: #FAFAFA;
   --md-sys-color-on-background: #1F1F1F;
   --md-sys-color-surface: #FFFFFF;
   --md-sys-color-on-surface: #1F1F1F;
   --md-sys-color-surface-variant: #F1F3F4;
   --md-sys-color-on-surface-variant: #444746;
+
+  /* 表面容器层级 (Surface Containers) – M3 核心 */
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F7F7F7;
+  --md-sys-color-surface-container: #F1F3F4;
+  --md-sys-color-surface-container-high: #EBECED;
+  --md-sys-color-surface-container-highest: #E5E6E7;
+
+  /* 轮廓色 */
   --md-sys-color-outline: #80868B;
   --md-sys-color-outline-variant: #BDC1C6;
-  
-  /* ----- 字体排印系统 (Typography) ----- */
+
+  /* 字体、动效、形状令牌保持不变 */
   --md-sys-typescale-headline-large: 'Roboto', 'Microsoft YaHei', sans-serif;
   --md-sys-typescale-headline-small: 'Roboto', 'Microsoft YaHei', sans-serif;
   --md-sys-typescale-body-large: 'Roboto', 'Microsoft YaHei', sans-serif;
   --md-sys-typescale-body-medium: 'Roboto', 'Microsoft YaHei', sans-serif;
   --md-sys-typescale-label-large: 'Roboto', 'Microsoft YaHei', sans-serif;
-  
-  /* ----- 动效与运动系统 (Motion Tokens) ----- */
+
   --md-sys-motion-duration-short: 0.2s;
   --md-sys-motion-duration-medium: 0.3s;
   --md-sys-motion-duration-long: 0.5s;
   --md-sys-motion-easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
   --md-sys-motion-easing-emphasized: cubic-bezier(0.4, 0.0, 0.2, 1);
-  
-  /* ----- 形状系统 (Shape) ----- */
+
   --md-sys-shape-corner-extra-small: 4px;
   --md-sys-shape-corner-small: 8px;
   --md-sys-shape-corner-medium: 12px;
   --md-sys-shape-corner-large: 16px;
   --md-sys-shape-corner-extra-large: 28px;
 }
+
+
 
 /* ===== 2. 全局样式重置 ===== */
 body {
@@ -72,6 +82,8 @@ body {
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);  
 }
+
+
 
 /* ===== 3. 导航轨道 (Navigation Rail) ===== */
 .navigation-rail {
@@ -297,6 +309,7 @@ body {
 .cards-grid {
   margin: 0 0 80px 0;
   -webkit-app-region: no-drag;
+  gap: 16px;  
 }
 
 /* ----- 瀑布流模式（默认） ----- */
@@ -307,14 +320,14 @@ body.layout-waterfall .cards-grid {
 
 body.layout-waterfall .cards-grid .md3-card {
   break-inside: avoid;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 /* ----- 列表模式 ----- */
 body.layout-list .cards-grid {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 /* 确保在列表模式下卡片之间有间距 */
@@ -322,30 +335,60 @@ body.layout-list .cards-grid .md3-card {
   margin-bottom: 0;
 }
 
-/* ----- Material Design 3 卡片 (Card) ----- */
+
+
+
+/* ----- Material Design 3 卡片（Elevated Card） ----- */
 .md3-card {
   background: var(--md-sys-color-surface);
-  border-radius: var(--md-sys-shape-corner-medium);
-  padding: 16px;
-  transition: background var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard),
-              box-shadow var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+  border-radius: var(--md-sys-shape-corner-medium);   /* 12dp 圆角 */
+  padding: 16px;                                      /* 16dp 内边距 */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.06);  /* 静止态 1dp 阴影 */
+  transition: box-shadow var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard),
+              background var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
 }
 
-/* 填充卡片（层级1） */
-.filled-card {
-  background: var(--md-sys-color-surface-variant);
+/* 悬停态：2dp 阴影 + 8% on-surface 状态层 */
+.md3-card:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.08);
+  background: color-mix(in srgb, var(--md-sys-color-surface) 92%, var(--md-sys-color-on-surface));
 }
 
-.filled-card:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+/* 按下态：1dp 阴影 + 12% on-surface 状态层 */
+.md3-card:active {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.06);
+  background: color-mix(in srgb, var(--md-sys-color-surface) 88%, var(--md-sys-color-on-surface));
 }
 
+/* 卡片内容区排版 */
+.md3-card .headline-small {
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  font-size: 1rem;       /* 16sp */
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 4px 0;
+  color: var(--md-sys-color-on-surface);
+}
+
+.md3-card .body-medium {
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  font-size: 0.875rem;   /* 14sp */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--md-sys-color-on-surface-variant);
+  margin: 0;
+}
+
+/* 卡片操作区（按钮区域） */
 .card-actions {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
   margin-top: 12px;
 }
+
+
+
 
 /* ----- 文字按钮 (Text Button) ----- */
 .text-button {
@@ -681,32 +724,39 @@ body.dark-theme {
   --md-sys-color-on-primary: #001D35;
   --md-sys-color-primary-container: #004A77;
   --md-sys-color-on-primary-container: #D3E3FD;
-  
+
   --md-sys-color-secondary: #C4C7D2;
   --md-sys-color-on-secondary: #2D3142;
   --md-sys-color-secondary-container: #434759;
   --md-sys-color-on-secondary-container: #DFE1ED;
-  
+
   --md-sys-color-tertiary: #A0D2A2;
   --md-sys-color-on-tertiary: #003A1A;
   --md-sys-color-tertiary-container: #1E522B;
   --md-sys-color-on-tertiary-container: #CEEAD6;
-  
+
   --md-sys-color-error: #F28B82;
   --md-sys-color-on-error: #601410;
   --md-sys-color-error-container: #8C1D18;
   --md-sys-color-on-error-container: #F9DEDC;
-  
+
   --md-sys-color-background: #1B1B1F;
   --md-sys-color-on-background: #E4E1E6;
   --md-sys-color-surface: #1B1B1F;
   --md-sys-color-on-surface: #E4E1E6;
   --md-sys-color-surface-variant: #45464F;
   --md-sys-color-on-surface-variant: #C6C5D0;
+
+  --md-sys-color-surface-container-lowest: #0F0F13;
+  --md-sys-color-surface-container-low: #1B1B1F;
+  --md-sys-color-surface-container: #1F1F23;
+  --md-sys-color-surface-container-high: #2A2A2F;
+  --md-sys-color-surface-container-highest: #35353A;
+
   --md-sys-color-outline: #90909A;
   --md-sys-color-outline-variant: #45464F;
-  
-  /* 阴影在深色背景下需要更微弱，稍作调整 */
+
+  /* 阴影在深色背景下更微弱 */
   .app-container {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
   }
@@ -1077,4 +1127,298 @@ body.dark-theme {
 .sidebar-status {
   padding-top: 0;
   margin-top: -8px;      /* 向上提，紧贴标题 */
+}
+
+
+
+
+
+
+
+/* ===== 指令详情弹窗 (M3 Dialog) ===== */
+.dialog-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.32);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s var(--md-sys-motion-easing-standard);
+}
+.dialog-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dialog-container {
+  background: var(--md-sys-color-surface-container-high);
+  border-radius: 28px;
+  padding: 24px;
+  max-width: 560px;
+  width: 85%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transform: scale(0.9);
+  transition: transform 0.2s var(--md-sys-motion-easing-standard);
+}
+.dialog-overlay.open .dialog-container {
+  transform: scale(1);
+}
+
+.dialog-title {
+  margin: 0 0 16px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+}
+
+.dialog-content {
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dialog-content::-webkit-scrollbar {
+  width: 6px;
+}
+.dialog-content::-webkit-scrollbar-thumb {
+  background: rgba(128,134,139,0.4);
+  border-radius: 3px;
+}
+
+/* 隐藏外层多余的 actions 区域 */
+.dialog-actions {
+  display: none;
+}
+
+/* 描述文本 */
+.dialog-desc {
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+}
+
+/* 代码块 */
+.dialog-usage {
+  background: var(--md-sys-color-surface-variant);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.dialog-code {
+  font-family: 'Roboto Mono', 'Consolas', monospace;
+  font-size: 0.875rem;
+  color: var(--md-sys-color-primary);
+  word-break: break-all;
+}
+
+/* 参数说明 */
+.dialog-params {
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* 使用示例区域 */
+.dialog-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dialog-example-item {
+  background: var(--md-sys-color-surface-variant);
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dialog-example-cmd {
+  font-family: 'Roboto Mono', 'Consolas', monospace;
+  font-size: 0.875rem;
+  color: var(--md-sys-color-primary);
+}
+
+.dialog-example-desc {
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  font-size: 0.8125rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* 操作按钮区 */
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dialog-fav-btn.red {
+  color: #D32F2F;
+}
+
+.dialog-close-btn {
+  margin-top: 8px;
+}
+
+
+
+
+
+/* ===== 指令详情弹窗内容排版（MD3 规范） ===== */
+.dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;                    /* 段落间距 16dp */
+}
+
+.dialog-desc {
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  font-size: 0.9375rem;         /* 中文 15sp */
+  font-weight: 400;
+  line-height: 1.5;             /* 行高 1.5 倍 */
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+}
+
+.dialog-usage {
+  background: var(--md-sys-color-surface-variant);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.dialog-code {
+  font-family: 'Roboto Mono', 'Consolas', monospace;
+  font-size: 0.875rem;
+  color: var(--md-sys-color-primary);
+  word-break: break-all;
+}
+
+.dialog-params {
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  font-size: 0.8125rem;         /* 辅助文本 13sp */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* 使用示例区域 */
+.dialog-examples {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dialog-example-item {
+  background: var(--md-sys-color-surface-variant);
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dialog-example-cmd {
+  font-family: 'Roboto Mono', 'Consolas', monospace;
+  font-size: 0.875rem;
+  color: var(--md-sys-color-primary);
+}
+
+.dialog-example-desc {
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  font-size: 0.8125rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* 操作按钮区 */
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;             /* 按钮组与内容间距 24dp */
+}
+
+/* 收藏按钮红色态 */
+.dialog-fav-btn.red {
+  color: #D32F2F;
+}
+
+.dialog-fav-btn {
+  padding: 4px;
+  min-width: unset;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+/* 弹窗内复制按钮 */
+.dialog-copy-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--md-sys-color-on-surface-variant);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.dialog-copy-btn:hover {
+  background: rgba(26, 115, 232, 0.08);
+  color: var(--md-sys-color-primary);
+}
+.dialog-copy-btn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* 代码块区域让按钮靠右上角 */
+.dialog-usage {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.dialog-usage .dialog-code {
+  flex: 1;
+}
+.dialog-usage .dialog-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.dialog-example-item {
+  position: relative;
+  padding-right: 36px; 
+}
+.dialog-example-item .dialog-copy-btn {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
 }

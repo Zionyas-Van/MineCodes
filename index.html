@@ -107,6 +107,7 @@
                   <div class="settings-item-text">
                     <span class="body-large">瀑布流布局</span>
                     <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant);">指令卡片以瀑布流形式排列</span>
+                    <span class="body-medium" style="color: var(--md-sys-color-on-surface-variant); font-size: 0.7rem; margin-top: 2px;">开启指令笔记后不可见</span>
                   </div>
                   <label class="m3-switch">
                     <input type="checkbox" id="layoutToggle" checked>
@@ -114,7 +115,6 @@
                   </label>
                 </div>
               </div>
-            </div>
 
             <!-- 功能分组 -->
             <div class="settings-group">
@@ -171,6 +171,19 @@
         <span class="material-symbols-outlined">sticky_note_2</span>
       </button>
     </div>
+
+  <!-- 指令详情弹窗（模态） -->
+  <div class="dialog-overlay" id="detailDialogOverlay">
+    <div class="dialog-container" id="detailDialog">
+      <div class="dialog-title headline-small" id="dialogTitle">/command</div>
+      <div class="dialog-content" id="dialogContent">
+     <!-- 动态填充 -->
+      </div>
+      <div class="dialog-actions" id="dialogActions">
+        <button class="text-button label-large dialog-close-btn" id="dialogCloseBtn">关闭</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Snackbar 提示 -->
   <div class="snackbar" id="snackbar">
@@ -483,6 +496,128 @@
     if (fabNoteBtn) fabNoteBtn.style.display = 'none';
     loadNotes();
 
+        // ========================= 指令详情弹窗 ===========================
+    const dialogOverlay = document.getElementById('detailDialogOverlay');
+    const dialogContent = document.getElementById('dialogContent');
+    const dialogTitle = document.getElementById('dialogTitle');
+    const dialogCloseBtn = document.getElementById('dialogCloseBtn');
+
+    // 点击遮罩或关闭按钮关闭
+    dialogOverlay.addEventListener('click', (e) => {
+      if (e.target === dialogOverlay || e.target === dialogCloseBtn) {
+        dialogOverlay.classList.remove('open');
+      }
+    });
+    // ESC 关闭
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dialogOverlay.classList.contains('open')) {
+        dialogOverlay.classList.remove('open');
+      }
+    });
+
+    function showDetailDialog(cmd) {
+      if (!dialogOverlay || !dialogContent) return;
+
+      // 标题栏（标题 + 收藏按钮）
+      dialogTitle.innerHTML = `
+        <span>${cmd.name || '/command'}</span>
+        <button class="text-button label-large dialog-fav-btn" id="dialogFavBtn">
+          <span class="material-symbols-outlined" id="dialogFavIcon">favorite_border</span>
+        </button>
+      `;
+
+      // 内容区填充（M3 规范）
+      let html = `
+        <p class="dialog-desc">${cmd.desc || ''}</p>
+        <div class="dialog-usage">
+          <code class="dialog-code">${cmd.usage || ''}</code>
+          <button class="dialog-copy-btn" data-copy="${cmd.usage ? cmd.usage.replace(/\\/g, '\\\\').replace(/"/g, '&quot;') : ''}">
+            <span class="material-symbols-outlined">content_copy</span>
+          </button>
+        </div>
+        <p class="dialog-params">${cmd.params || ''}</p>
+      `;
+
+      // 使用示例
+      const cmdExamples = examples[cmd.id] || [];
+      if (cmdExamples.length > 0) {
+        html += `<div class="dialog-examples">`;
+        cmdExamples.forEach(ex => {
+          html += `
+            <div class="dialog-example-item">
+              <code class="dialog-example-cmd">${ex.cmd}</code>
+              <span class="dialog-example-desc">${ex.desc}</span>
+              <button class="dialog-copy-btn" data-copy="${ex.cmd.replace(/\\/g, '\\\\').replace(/"/g, '&quot;')}">
+                <span class="material-symbols-outlined">content_copy</span>
+              </button>
+            </div>
+          `;
+        });
+        html += `</div>`;
+      }
+
+      // 按钮区（查看Wiki）
+      if (cmd.wiki_url) {
+        html += `
+          <div class="dialog-buttons">
+            <button class="text-button label-large dialog-wiki-btn" id="dialogWikiBtn">查看Wiki</button>
+          </div>
+        `;
+      }
+
+      dialogContent.innerHTML = html;
+
+      // ========= 绑定所有复制按钮 =========
+      document.querySelectorAll('.dialog-copy-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();  // 防止触发其他事件
+          const textToCopy = btn.getAttribute('data-copy');
+          if (textToCopy) {
+            navigator.clipboard.writeText(textToCopy).then(() => {
+              showSnackbar('已复制到剪贴板');
+            }).catch(() => {
+              showSnackbar('复制失败');
+            });
+          }
+        });
+      });
+
+      // 收藏按钮
+      const favIcon = document.getElementById('dialogFavIcon');
+      const favBtn = document.getElementById('dialogFavBtn');
+      const cmdId = cmd.id;
+
+      async function updateFavState() {
+        const favs = await ipcRenderer.invoke('get-favorites');
+        const isFav = favs.includes(cmdId);
+        if (favIcon) {
+          favIcon.textContent = isFav ? 'favorite' : 'favorite_border';
+          favIcon.style.fontVariationSettings = isFav ? "'FILL' 1" : "'FILL' 0";
+        }
+        if (favBtn) {
+          favBtn.classList.toggle('red', isFav);
+        }
+      }
+      updateFavState();
+
+      if (favBtn) {
+        favBtn.addEventListener('click', async () => {
+          const result = await ipcRenderer.invoke('toggle-favorite', cmdId);
+          if (result.success) updateFavState();
+        });
+      }
+
+      // 查看Wiki
+      const wikiBtn = document.getElementById('dialogWikiBtn');
+      if (wikiBtn) {
+        wikiBtn.addEventListener('click', () => {
+          ipcRenderer.send('open-external', cmd.wiki_url);
+        });
+      }
+
+      dialogOverlay.classList.add('open');
+    }
+
     // ========== 视图标题映射 ==========
     const viewTitles = {
       home: 'MineCodes',
@@ -646,6 +781,11 @@
           </div>
         `;
         commandsContainer.appendChild(card);
+        card.addEventListener('click', (e) => {
+          // 如果点击的是按钮则不触发
+          if (e.target.closest('button')) return;
+          showDetailDialog(cmd);
+        });
       });
 
       document.querySelectorAll('.copy-btn').forEach(btn => {
@@ -674,7 +814,7 @@
         btn.addEventListener('click', (e) => {
           const id = e.currentTarget.getAttribute('data-id');
           const cmd = commands.find(c => c.id === id);
-          if (cmd) ipcRenderer.send('open-detail', cmd);
+          if (cmd) showDetailDialog(cmd);
         });
       });
     }
@@ -717,6 +857,10 @@
             </div>
           `;
           favoritesContainer.appendChild(card);
+          card.addEventListener('click', (e) => {
+            if (e.target.closest('button')) return;
+            showDetailDialog(cmd);
+          });
         });
 
         document.querySelectorAll('.unfav-btn').forEach(btn => {
@@ -746,7 +890,7 @@
           btn.addEventListener('click', (e) => {
             const id = e.currentTarget.getAttribute('data-id');
             const cmd = commands.find(c => c.id === id);
-            if (cmd) ipcRenderer.send('open-detail', cmd);
+            if (cmd) showDetailDialog(cmd);
           });
         });
       } catch (err) {
